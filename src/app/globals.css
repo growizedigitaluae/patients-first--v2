@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --color-midnight: #052138;
+  --color-royal: #052138;
+  --color-navy: #052138;
+  --color-gold: #c5a059;
+  --color-gold-dark: #a8864a;
+  --color-champagne: #d4b26b;
+  --color-ivory: #f8f8f5;
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
+}
+
+body {
+  @apply bg-ivory text-navy antialiased;
+}
+
+.brand-gold-icon {
+  stroke: url(#brandGoldGrad);
+}
+
+.brand-gold-fill {
+  fill: url(#brandGoldGrad);
+}
