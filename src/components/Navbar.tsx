@@ -55,12 +55,12 @@ export default function Navbar() {
 
           <button
             type="button"
-            className="lg:hidden text-gold p-2 -mr-2"
+            className="lg:hidden shrink-0 flex items-center justify-center text-[#fCDA7B] bg-white/10 border border-white/15 rounded-xl p-2.5 hover:bg-white/15 transition"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
           >
-            {open ? <X className="w-6 h-6 brand-gold-icon" /> : <Menu className="w-6 h-6 brand-gold-icon" />}
+            {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
