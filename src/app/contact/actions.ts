@@ -10,10 +10,14 @@ export type ContactState = {
 };
 
 export async function submitLead(_prev: ContactState, formData: FormData): Promise<ContactState> {
+  const countryCode = String(formData.get("countryCode") ?? "").trim();
+  const phoneNumber = String(formData.get("phone") ?? "").trim();
+  const phone = `${countryCode} ${phoneNumber}`.trim();
+
   const raw = {
     name: String(formData.get("name") ?? ""),
     email: String(formData.get("email") ?? ""),
-    phone: String(formData.get("phone") ?? ""),
+    phone,
     contactMethod: String(formData.get("contactMethod") ?? ""),
     careArea: String(formData.get("careArea") ?? ""),
     message: String(formData.get("message") ?? ""),
@@ -23,7 +27,8 @@ export async function submitLead(_prev: ContactState, formData: FormData): Promi
   const values = {
     name: raw.name,
     email: raw.email,
-    phone: raw.phone,
+    phone: phoneNumber,
+    countryCode,
     contactMethod: raw.contactMethod,
     careArea: raw.careArea,
     message: raw.message,

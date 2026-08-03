@@ -4,11 +4,15 @@ import { useActionState, useEffect, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 import { CheckCircle2, Send } from "lucide-react";
 import { submitLead, type ContactState } from "@/app/contact/actions";
+import { countries, defaultCountryCode } from "@/data/countries";
 
 const initialState: ContactState = { status: "idle" };
 
 const inputClass =
   "w-full border border-navy/20 rounded-xl px-3.5 py-3 text-[14.5px] text-navy bg-white placeholder:text-slate-400 focus:outline-none focus:border-gold transition";
+
+const selectClass =
+  "flex-shrink-0 w-[150px] sm:w-[190px] border border-navy/20 rounded-xl px-3 py-3 text-[13.5px] text-navy bg-white focus:outline-none focus:border-gold transition cursor-pointer";
 
 const labelClass = "block text-[12.5px] text-navy tracking-[0.03em] mb-1.5";
 
@@ -47,37 +51,51 @@ export function ContactForm() {
     <form ref={formRef} action={formAction}>
       <input type="hidden" name="careArea" defaultValue={state.values?.careArea ?? initialCareArea} />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-[18px] gap-y-[18px] mb-[18px]">
-        <div>
-          <label htmlFor="name" className={labelClass}>
-            Full Name *
-          </label>
-          <input
-            id="name"
-            name="name"
-            type="text"
-            required
-            placeholder="Your name"
-            className={inputClass}
-            defaultValue={state.values?.name}
-          />
-          {state.errors?.name && <p className="mt-1.5 text-xs text-red-600">{state.errors.name[0]}</p>}
-        </div>
-        <div>
-          <label htmlFor="phone" className={labelClass}>
-            Phone Number *
-          </label>
+      <div className="mb-[18px]">
+        <label htmlFor="name" className={labelClass}>
+          Full Name *
+        </label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          required
+          placeholder="Your name"
+          className={inputClass}
+          defaultValue={state.values?.name}
+        />
+        {state.errors?.name && <p className="mt-1.5 text-xs text-red-600">{state.errors.name[0]}</p>}
+      </div>
+
+      <div className="mb-[18px]">
+        <label htmlFor="phone" className={labelClass}>
+          Phone Number *
+        </label>
+        <div className="flex gap-2">
+          <select
+            id="countryCode"
+            name="countryCode"
+            aria-label="Country code"
+            className={selectClass}
+            defaultValue={state.values?.countryCode ?? defaultCountryCode}
+          >
+            {countries.map((country) => (
+              <option key={country.iso} value={country.code}>
+                {country.flag} {country.name} ({country.code})
+              </option>
+            ))}
+          </select>
           <input
             id="phone"
             name="phone"
             type="tel"
             required
-            placeholder="Best number to reach you"
-            className={inputClass}
+            placeholder="e.g. 50 123 4567"
+            className={`${inputClass} flex-1 min-w-0`}
             defaultValue={state.values?.phone}
           />
-          {state.errors?.phone && <p className="mt-1.5 text-xs text-red-600">{state.errors.phone[0]}</p>}
         </div>
+        {state.errors?.phone && <p className="mt-1.5 text-xs text-red-600">{state.errors.phone[0]}</p>}
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-[18px] gap-y-[18px] mb-[18px]">
