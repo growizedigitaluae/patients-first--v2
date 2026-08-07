@@ -29,7 +29,7 @@ export default async function HospitalPage(props: PageProps<"/hospitals/[id]">) 
 
   return (
     <main>
-      <section className="relative pt-40 pb-24 px-6 overflow-hidden bg-ivory">
+      <section className="relative pt-40 pb-20 px-6 overflow-hidden bg-ivory">
         <div className="absolute inset-x-0 top-16 sm:top-20 bottom-0 z-0">
           <Image src={hospital.image} alt="" fill className="object-cover object-top opacity-95" priority />
           <div className="absolute inset-0 bg-gradient-to-b from-white/75 via-ivory/85 to-ivory" />

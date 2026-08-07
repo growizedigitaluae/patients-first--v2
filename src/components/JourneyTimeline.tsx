@@ -54,7 +54,7 @@ export function JourneyTimeline() {
                   <div className={`h-0.5 flex-1 transition-colors ${index === processSteps.length - 1 ? "bg-transparent" : isPast || isActive ? "bg-gold" : "bg-royal/20"}`} />
                 </div>
                 <div className="text-center px-1">
-                  <p className={`text-[10px] uppercase tracking-wider font-bold ${isActive ? "text-gold-dark" : "text-royal/60"}`}>
+                  <p className={`text-[11px] uppercase tracking-wider font-bold ${isActive ? "text-gold-dark" : "text-royal/60"}`}>
                     Step {step.id}
                   </p>
                   <p className={`text-xs font-semibold mt-0.5 leading-tight ${isActive ? "text-midnight" : "text-royal/70"}`}>
@@ -131,7 +131,7 @@ export function JourneyTimeline() {
                   <Icon className={`w-5 h-5 ${open ? "" : "brand-gold-icon"}`} />
                 </span>
                 <span className="flex-1">
-                  <span className="block text-[10px] uppercase tracking-wider font-bold text-gold-dark">Step {step.id}</span>
+                  <span className="block text-[11px] uppercase tracking-wider font-bold text-gold-dark">Step {step.id}</span>
                   <span className="block font-serif font-bold text-midnight leading-snug">{step.title}</span>
                 </span>
                 <ChevronDown className={`w-5 h-5 brand-gold-icon shrink-0 transition-transform ${open ? "rotate-180" : ""}`} />

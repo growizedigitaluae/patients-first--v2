@@ -9,14 +9,15 @@ import {
   Baby,
   Eye,
   Droplets,
-  Pill,
-  HeartHandshake,
+  UtensilsCrossed,
+  HandHeart,
   Accessibility,
   Smile,
-  Scale,
-  Sparkles,
+  AirVent,
+  Gauge,
   ClipboardCheck,
   Microscope,
+  HeartHandshake,
   CheckCircle2,
 } from "lucide-react";
 import { PageHero } from "@/components/ui";
@@ -37,12 +38,12 @@ const specialtyIcons = [
   Baby,
   Eye,
   Droplets,
-  Pill,
-  HeartHandshake,
+  UtensilsCrossed,
+  HandHeart,
   Accessibility,
   Smile,
-  Scale,
-  Sparkles,
+  AirVent,
+  Gauge,
   ClipboardCheck,
   Microscope,
 ];
@@ -56,27 +57,23 @@ const expectations = [
   "Independent Patient Support",
 ];
 
-const px = (id: number) =>
-  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=1200`;
-
 const specialtyImages: Record<string, string> = {
-  "orthopaedics-spine": px(37406596),
-  "cardiology-cardiac-surgery": px(8460232),
-  "oncology-haematology": px(6436258),
-  "neurology-neurosurgery": px(5723883),
-  "womens-health-fertility": px(6462750),
-  paediatrics: px(7447001),
-  ophthalmology: px(37885584),
-  "urology-nephrology": px(8442440),
-  gastroenterology: px(7579831),
-  transplantation:
-    "https://images.unsplash.com/photo-1759813641406-980519f58b1c?w=1200&q=80&auto=format&fit=crop",
-  rehabilitation: px(20860594),
-  dentistry: px(3845737),
-  bariatrics: px(8844553),
-  "plastic-surgery": px(7446683),
-  "executive-health-screening": px(6285353),
-  "rare-diseases": px(9574332),
+  "orthopaedics-spine": "/orthopaedics-spine-support.webp",
+  "cardiology-cardiac-surgery": "/cardiology-cardiac-care.webp",
+  "oncology-haematology": "/oncology-haematology-care.webp",
+  "neurology-neurosurgery": "/neurology-neurosurgery-care.webp",
+  "womens-health-fertility": "/womens-health-fertility-care.webp",
+  paediatrics: "/paediatrics-care.webp",
+  ophthalmology: "/ophthalmology-care.webp",
+  "urology-nephrology": "/urology-nephrology-care.webp",
+  gastroenterology: "/gastroenterology-care.webp",
+  transplantation: "/transplantation-care.webp",
+  rehabilitation: "/rehabilitation-care.webp",
+  dentistry: "/dentistry-care.webp",
+  pulmonology: "/pulmonology-care.webp",
+  "endocrinology-diabetes": "/endocrinology-diabetes-care.webp",
+  "executive-health-screening": "/executive-health-screening-care.webp",
+  "rare-diseases": "/rare-diseases-care.webp",
 };
 
 export default function MedicalSpecialtiesPage() {
@@ -87,6 +84,7 @@ export default function MedicalSpecialtiesPage() {
         title="Medical Specialties We Support"
         description="Whether you’re seeking a second opinion, specialist care, or treatment closer to home or abroad, Patients First Worldwide helps you navigate your healthcare journey by connecting you with appropriate healthcare providers across a wide range of medical specialties."
         image="/feture-blog.webp"
+        compact
       >
         <p className="text-xs text-navy mt-4 max-w-xl mx-auto">
           Medical advice, diagnosis, and treatment are provided exclusively by licensed
@@ -104,18 +102,16 @@ export default function MedicalSpecialtiesPage() {
       <div className="h-2 w-1/2 mx-auto rounded-full bg-royal" aria-hidden />
 
       {/* SPECIALTIES */}
-      <section className="py-24 px-6 max-w-7xl mx-auto">
-        <div className="max-w-3xl mx-auto text-center mb-14 space-y-3">
-          <p className="text-gold font-semibold tracking-[0.18em] uppercase text-xs">
+      <section className="pt-8 pb-16 px-6 max-w-7xl mx-auto">
+        <div className="max-w-3xl mx-auto text-center mb-10 space-y-3">
+          <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">
             Healthcare Coordination Across Multiple Specialties
           </p>
           <h2 className="text-3xl md:text-4xl font-serif text-midnight">Medical Specialties</h2>
           <p className="text-navy leading-relaxed">
-            Patients First Worldwide helps patients navigate access to healthcare providers
-            across a broad range of medical specialties. We support the non-clinical aspects of
-            the healthcare journey, including communication, coordination, and patient support.
-            All medical advice, diagnoses, treatment recommendations, and clinical decisions are
-            provided solely by licensed healthcare professionals.
+            Select a specialty to see how we support patients seeking appropriate care — close
+            to home or abroad. Our team coordinates the non-clinical side of your journey:
+            communication, appointments, medical records, and follow-up.
           </p>
         </div>
 
@@ -128,7 +124,7 @@ export default function MedicalSpecialtiesPage() {
                 href={`/contact?careArea=${encodeURIComponent(specialty.title)}`}
                 className="group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
               >
-                <div className="relative h-44 w-full overflow-hidden">
+                <div className="relative aspect-[9/16] w-full overflow-hidden">
                   <Image
                     src={specialtyImages[specialty.slug] ?? specialtyImages["rare-diseases"]}
                     alt=""
@@ -138,7 +134,7 @@ export default function MedicalSpecialtiesPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-royal/80 via-royal/25 to-transparent" />
                   <div className="absolute bottom-4 left-5 w-12 h-12 bg-white/95 rounded-xl flex items-center justify-center shadow-lg">
-                    <Icon className="w-6 h-6 brand-gold-icon" />
+                    <Icon className="w-6 h-6 text-midnight" />
                   </div>
                 </div>
                 <div className="p-7 flex flex-col flex-1">
@@ -157,7 +153,7 @@ export default function MedicalSpecialtiesPage() {
       </section>
 
       {/* OUR ROLE */}
-      <section className="relative py-20 px-6 bg-royal text-white overflow-hidden">
+      <section className="relative py-14 px-6 bg-royal text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image src="/care.webp" alt="" fill className="object-cover opacity-20" />
           <div className="absolute inset-0 bg-gradient-to-r from-royal via-royal/90 to-royal" />
@@ -176,8 +172,8 @@ export default function MedicalSpecialtiesPage() {
       </section>
 
       {/* WHAT YOU CAN EXPECT */}
-      <section className="py-24 px-6 max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-14 items-center">
+      <section className="py-16 px-6 max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-10 items-center">
           <div className="relative h-[400px] lg:h-[440px] rounded-3xl overflow-hidden shadow-xl">
             <Image
               src="/about-us-2.webp"
@@ -189,7 +185,7 @@ export default function MedicalSpecialtiesPage() {
           </div>
           <div className="space-y-6">
             <div className="space-y-3">
-              <p className="text-gold font-semibold tracking-[0.18em] uppercase text-xs">
+              <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">
                 What You Can Expect
               </p>
               <h2 className="text-3xl md:text-4xl font-serif text-midnight">
@@ -216,7 +212,7 @@ export default function MedicalSpecialtiesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-6 bg-midnight text-white">
+      <section className="py-14 px-6 bg-midnight text-white">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <h2 className="text-3xl md:text-4xl font-serif leading-tight">
             Let’s Start with a Conversation

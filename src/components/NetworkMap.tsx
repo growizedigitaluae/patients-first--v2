@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { X, CheckCircle2, Languages, Globe2, MapPin } from "lucide-react";
 import { destinations, type Destination } from "@/data/destinations";
-import { hospitals } from "@/data/hospitals";
 
 export function NetworkMap() {
   const [selected, setSelected] = useState<Destination | null>(null);
@@ -41,7 +40,7 @@ export function NetworkMap() {
                   <span className="text-xl leading-none">{dest.emoji}</span>
                   <span className="text-base font-bold whitespace-nowrap">{dest.name}</span>
                 </div>
-                <span className="mt-1 text-[11px] font-semibold uppercase tracking-widest text-gold">
+                <span className="mt-1 text-xs font-semibold uppercase tracking-widest text-gold">
                   Tap to explore
                 </span>
                 <span className="absolute left-1/2 -bottom-1.5 -translate-x-1/2 w-3 h-3 bg-midnight rotate-45" />
@@ -109,28 +108,6 @@ export function NetworkMap() {
 
               <div>
                 <h3 className="text-xs font-bold uppercase tracking-widest text-gold-dark mb-3">
-                  Healthcare Providers in Our Network
-                </h3>
-                <div className="flex flex-wrap gap-4">
-                  {selected.hospitalIds.map((id) => {
-                    const hospital = hospitals.find((h) => h.id === id);
-                    if (!hospital) return null;
-                    return (
-                      <Link
-                        key={id}
-                        href={`/hospitals/${id}`}
-                        title={hospital.name}
-                        className="relative w-16 h-12 rounded-xl overflow-hidden border border-slate-200 bg-slate-100 hover:border-gold transition"
-                      >
-                        <Image src={hospital.image} alt={hospital.name} fill className="object-cover" />
-                      </Link>
-                    );
-                  })}
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-xs font-bold uppercase tracking-widest text-gold-dark mb-3">
                   Patients First Worldwide Can Assist With
                 </h3>
                 <ul className="space-y-2">
@@ -149,7 +126,7 @@ export function NetworkMap() {
               >
                 Speak with Our Team
               </Link>
-              <p className="text-[11px] text-navy leading-relaxed">
+              <p className="text-xs text-navy leading-relaxed">
                 <Globe2 className="inline w-3.5 h-3.5 mr-1 brand-gold-icon" />
                 Patients First Worldwide is an independent patient support and healthcare
                 coordination company. We do not provide medical advice, diagnosis, or treatment.

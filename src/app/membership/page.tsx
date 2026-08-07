@@ -7,8 +7,8 @@ import {
   Users,
   FolderOpen,
   Plane,
-  MessageCircle,
-  FileText,
+  HeartHandshake,
+  Compass,
   Stethoscope,
   Award,
   Star,
@@ -119,11 +119,26 @@ const faqs = [
 export default function MembershipPage() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.q,
+              acceptedAnswer: { "@type": "Answer", text: faq.a },
+            })),
+          }),
+        }}
+      />
       <PageHero
         eyebrow="Patients First Membership"
         title="Personalised Healthcare Support Membership"
         description="Stay connected with ongoing healthcare coordination, personalised support, and easier access to trusted healthcare services whenever you need them."
         image="/support-background.webp"
+        compact
       >
         <p className="text-xs text-navy mt-4 max-w-xl mx-auto">
           Receive ongoing healthcare coordination and patient support — not medical care.
@@ -137,8 +152,8 @@ export default function MembershipPage() {
       </PageHero>
 
       {/* MEMBERSHIP BENEFITS */}
-      <section className="py-24 px-6 max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+      <section className="pt-8 pb-16 px-6 max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
           <div className="relative h-[300px] lg:h-[440px] rounded-3xl overflow-hidden shadow-xl">
             <Image
               src="https://images.pexels.com/photos/7551677/pexels-photo-7551677.jpeg?auto=compress&cs=tinysrgb&w=1600"
@@ -150,7 +165,7 @@ export default function MembershipPage() {
             <div className="absolute inset-0 bg-gradient-to-t from-royal/25 to-transparent" />
           </div>
           <div className="space-y-6">
-            <p className="text-gold font-semibold tracking-[0.18em] uppercase text-xs">
+            <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">
               Membership Benefits
             </p>
             <h2 className="text-3xl md:text-4xl font-serif text-midnight">
@@ -173,7 +188,7 @@ export default function MembershipPage() {
 
         <div className="grid md:grid-cols-3 gap-6">
           <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm">
-            <FileText className="w-8 h-8 brand-gold-icon mb-5" />
+            <HeartHandshake className="w-8 h-8 brand-gold-icon mb-5" />
             <h3 className="font-serif text-lg text-midnight font-bold mb-2">Ongoing Healthcare Support</h3>
             <p className="text-sm text-navy leading-relaxed">
               Continuous patient support and coordination, helping you stay organised across
@@ -189,7 +204,7 @@ export default function MembershipPage() {
             </p>
           </div>
           <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm">
-            <MessageCircle className="w-8 h-8 brand-gold-icon mb-5" />
+            <Compass className="w-8 h-8 brand-gold-icon mb-5" />
             <h3 className="font-serif text-lg text-midnight font-bold mb-2">Healthcare Navigation</h3>
             <p className="text-sm text-navy leading-relaxed">
               Personalised patient support to help you understand your options and coordinate
@@ -200,10 +215,10 @@ export default function MembershipPage() {
       </section>
 
       {/* MEMBERSHIP INCLUDES */}
-      <section className="py-24 px-6 bg-white border-y border-slate-100">
+      <section className="py-16 px-6 bg-white border-y border-slate-100">
         <div className="max-w-7xl mx-auto">
-          <div className="max-w-2xl mx-auto text-center mb-14 space-y-3">
-            <p className="text-gold font-semibold tracking-[0.18em] uppercase text-xs">
+          <div className="max-w-2xl mx-auto text-center mb-10 space-y-3">
+            <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">
               Membership Includes
             </p>
             <h2 className="text-3xl md:text-4xl font-serif text-midnight">
@@ -236,7 +251,7 @@ export default function MembershipPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-royal/90 via-royal/60 to-royal/20" />
         <div className="absolute inset-0 flex items-center">
           <div className="max-w-7xl mx-auto px-6 w-full">
-            <p className="text-gold font-semibold tracking-[0.18em] uppercase text-xs mb-3">
+            <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs mb-3">
               Personal, Ongoing Coordination
             </p>
             <h2 className="text-3xl md:text-4xl font-serif text-white max-w-2xl leading-tight">
@@ -247,9 +262,9 @@ export default function MembershipPage() {
       </section>
 
       {/* PACKAGES */}
-      <section id="packages" className="py-24 px-6 max-w-6xl mx-auto">
-        <div className="max-w-2xl mx-auto text-center mb-14 space-y-3">
-          <p className="text-gold font-semibold tracking-[0.18em] uppercase text-xs">
+      <section id="packages" className="py-16 px-6 max-w-6xl mx-auto">
+        <div className="max-w-2xl mx-auto text-center mb-10 space-y-3">
+          <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">
             Membership Packages
           </p>
           <h2 className="text-3xl md:text-4xl font-serif text-midnight">
@@ -309,9 +324,9 @@ export default function MembershipPage() {
       <MemberPortalComingSoon />
 
       {/* FAQ */}
-      <section className="py-24 px-6 max-w-3xl mx-auto">
-        <div className="text-center mb-14 space-y-3">
-          <p className="text-gold font-semibold tracking-[0.18em] uppercase text-xs">
+      <section className="py-16 px-6 max-w-3xl mx-auto">
+        <div className="text-center mb-10 space-y-3">
+          <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">
             Membership Questions
           </p>
           <h2 className="text-3xl md:text-4xl font-serif text-midnight">Frequently Asked Questions</h2>
@@ -330,7 +345,7 @@ export default function MembershipPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-6 bg-midnight text-white">
+      <section className="py-14 px-6 bg-midnight text-white">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <h2 className="text-3xl md:text-4xl font-serif leading-tight">
             Let’s Build a Better Healthcare Experience Together

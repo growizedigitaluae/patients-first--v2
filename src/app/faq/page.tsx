@@ -12,14 +12,29 @@ export default function FaqPage() {
 
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: faqs.map((faq) => ({
+              "@type": "Question",
+              name: faq.q,
+              acceptedAnswer: { "@type": "Answer", text: faq.a },
+            })),
+          }),
+        }}
+      />
       <PageHero
         eyebrow="Common Inquiries"
         title="Frequently Asked Questions"
         description="Straight answers about what we do, what we don't, and how we handle your information. If your question isn't here, just ask us directly."
         image="/support-background.webp"
+        compact
       />
 
-      <section className="py-20 px-6 max-w-3xl mx-auto">
+      <section className="pt-8 pb-14 px-6 max-w-3xl mx-auto">
         <div className="space-y-4">
           {faqs.map((faq, index) => {
             const open = openIndex === index;
@@ -46,7 +61,7 @@ export default function FaqPage() {
           })}
         </div>
 
-        <div className="relative h-56 md:h-64 rounded-3xl overflow-hidden my-12 shadow-xl">
+        <div className="relative h-56 md:h-64 rounded-3xl overflow-hidden my-10 shadow-xl">
           <Image src="/appointment.webp" alt="Discuss your healthcare journey" fill className="object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-royal/85 to-royal/30" />
           <p className="absolute inset-0 flex items-center justify-center text-white font-serif text-2xl md:text-3xl px-8 text-center leading-snug">
@@ -54,7 +69,7 @@ export default function FaqPage() {
           </p>
         </div>
 
-        <div className="mt-12 bg-royal rounded-3xl p-10 text-center text-white">
+        <div className="mt-10 bg-royal rounded-3xl p-10 text-center text-white">
           <h2 className="font-serif text-2xl mb-3">Still Have a Question?</h2>
           <p className="text-sm text-slate-300 leading-relaxed max-w-md mx-auto mb-6">
             Ask us anything about coordinating your healthcare journey. A real coordinator
@@ -78,7 +93,7 @@ export default function FaqPage() {
           </div>
         </div>
 
-        <div className="mt-12">
+        <div className="mt-10">
           <Disclaimer />
         </div>
       </section>

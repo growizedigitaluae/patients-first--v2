@@ -17,9 +17,10 @@ export default function GuidesPage() {
         title="Practical Guides for Your Healthcare Journey"
         description="Honest, plain-language guides about the coordination side of receiving care — records, travel, second opinions and family support. We don't provide medical advice, only practical guidance."
         image="/bg-01.webp"
+        compact
       />
 
-      <section className="py-24 px-6 max-w-7xl mx-auto">
+      <section className="pt-8 pb-16 px-6 max-w-7xl mx-auto">
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {guides.map((guide) => (
             <Link
@@ -29,7 +30,7 @@ export default function GuidesPage() {
             >
               <div className="relative h-52 w-full bg-slate-100">
                 <Image src={guide.image} alt={guide.title} fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover group-hover:scale-105 transition-transform duration-500" />
-                <span className="absolute top-4 left-4 bg-royal text-gold text-[10px] uppercase tracking-wider px-3 py-1 rounded-full font-bold">
+                <span className="absolute top-4 left-4 bg-royal text-gold text-[11px] uppercase tracking-wider px-3 py-1 rounded-full font-bold">
                   {guide.category}
                 </span>
               </div>

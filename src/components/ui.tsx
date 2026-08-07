@@ -8,15 +8,17 @@ export function PageHero({
   description,
   image,
   children,
+  compact = false,
 }: {
   eyebrow: string;
   title: React.ReactNode;
   description?: string;
   image: string;
   children?: React.ReactNode;
+  compact?: boolean;
 }) {
   return (
-    <section className="relative pt-36 pb-28 px-6 overflow-hidden bg-ivory">
+    <section className={`relative pt-36 ${compact ? "pb-4" : "pb-20"} px-6 overflow-hidden bg-ivory`}>
       <div className="absolute inset-x-0 top-16 sm:top-20 bottom-0 z-0">
         <Image src={image} alt="" fill className="object-cover object-top opacity-95" priority />
         <div className="absolute inset-0 bg-gradient-to-b from-white/75 via-ivory/85 to-ivory" />
@@ -48,7 +50,7 @@ export function SectionHeading({
   return (
     <div className={`${centered ? "text-center mx-auto" : "text-left"} max-w-2xl mb-12 space-y-3`}>
       {eyebrow && (
-        <p className="text-gold font-semibold tracking-[0.18em] uppercase text-xs">{eyebrow}</p>
+        <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">{eyebrow}</p>
       )}
       <h2 className="text-3xl md:text-4xl font-serif text-midnight leading-tight">{title}</h2>
       {description && <p className="text-navy leading-relaxed">{description}</p>}
@@ -66,7 +68,7 @@ export function CtaBand({
   ctaLabel?: string;
 }) {
   return (
-    <section className="py-20 px-6 bg-midnight text-white">
+    <section className="py-14 px-6 bg-midnight text-white">
       <div className="max-w-4xl mx-auto text-center space-y-8">
         <h2 className="text-3xl md:text-4xl font-serif leading-tight">{title}</h2>
         <p className="text-slate-300 leading-relaxed max-w-2xl mx-auto">{subtitle}</p>

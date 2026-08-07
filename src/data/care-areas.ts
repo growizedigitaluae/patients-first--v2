@@ -91,18 +91,18 @@ export const careAreas: CareArea[] = [
       "We coordinate dental and oral surgery care — from consultations and treatment planning to implant and maxillofacial procedures — across our partner clinics and hospitals.",
   },
   {
-    slug: "bariatric-metabolic-care",
-    title: "Bariatric & Metabolic Care",
-    short: "Weight management and metabolic programs.",
+    slug: "pulmonology",
+    title: "Pulmonology",
+    short: "Respiratory and lung health care.",
     coordination:
-      "We coordinate bariatric and metabolic care, connecting you with specialist teams for evaluation, treatment planning and long-term follow-up support.",
+      "We coordinate access to pulmonology and respiratory teams, arranging consultations, breathing and lung diagnostics, treatment planning and ongoing follow-up for conditions affecting the airways, lungs and sleep.",
   },
   {
-    slug: "aesthetic-reconstructive",
-    title: "Aesthetic & Reconstructive Surgery",
-    short: "Reconstructive and aesthetic procedures.",
+    slug: "endocrinology-diabetes",
+    title: "Endocrinology & Diabetes Care",
+    short: "Hormonal, metabolic and diabetes care.",
     coordination:
-      "We coordinate access to plastic, reconstructive and aesthetic specialists, managing consultations, treatment planning and recovery coordination in complete confidence.",
+      "We coordinate access to endocrinology and diabetes teams, arranging consultations, metabolic and diagnostic evaluation, treatment planning and ongoing follow-up for hormonal and blood-sugar related conditions.",
   },
   {
     slug: "executive-health-screening",

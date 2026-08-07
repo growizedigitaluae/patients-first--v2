@@ -9,12 +9,12 @@ import { countries, defaultCountryCode } from "@/data/countries";
 const initialState: ContactState = { status: "idle" };
 
 const inputClass =
-  "w-full border border-navy/20 rounded-xl px-3.5 py-3 text-[14.5px] text-navy bg-white placeholder:text-slate-400 focus:outline-none focus:border-gold transition";
+  "w-full border border-navy/20 rounded-xl px-3.5 py-3 text-[16px] text-navy bg-white placeholder:text-slate-400 focus:outline-none focus:border-gold transition";
 
 const selectClass =
-  "flex-shrink-0 w-[150px] sm:w-[190px] border border-navy/20 rounded-xl px-3 py-3 text-[13.5px] text-navy bg-white focus:outline-none focus:border-gold transition cursor-pointer";
+  "flex-shrink-0 w-[150px] sm:w-[190px] border border-navy/20 rounded-xl px-3 py-3 text-[15px] text-navy bg-white focus:outline-none focus:border-gold transition cursor-pointer";
 
-const labelClass = "block text-[12.5px] text-navy tracking-[0.03em] mb-1.5";
+const labelClass = "block text-sm text-navy tracking-[0.02em] mb-1.5";
 
 const fieldNoteClass = "block text-xs text-navy mt-1 leading-snug";
 
@@ -150,7 +150,7 @@ export function ContactForm() {
 
       <label className="flex gap-3 items-start my-[22px] mb-[26px] py-4 px-4 bg-ivory rounded-2xl cursor-pointer">
         <input type="checkbox" name="consent" required className="mt-1 accent-gold" />
-        <span className="text-[13px] text-navy leading-[1.55]">
+        <span className="text-sm text-navy leading-[1.55]">
           I agree to Patient First Worldwide contacting me about my enquiry using the details
           provided, and I’ve read the <span className="text-gold-dark underline">Privacy Policy</span>,
           which explains how my information is stored and protected. I understand I can withdraw this
@@ -174,7 +174,7 @@ export function ContactForm() {
         {isPending ? "Sending…" : "Request Consultation"}
       </button>
 
-      <p className="text-[11.5px] text-navy mt-[18px] leading-[1.6] max-w-[460px]">
+      <p className="text-[14px] text-navy mt-[18px] leading-relaxed max-w-[460px]">
         Submitting this form does not create a doctor-patient relationship and is not a request for
         medical advice or treatment. Your information is used solely to respond to your enquiry and
         is handled in accordance with applicable data protection law and our Privacy Policy.

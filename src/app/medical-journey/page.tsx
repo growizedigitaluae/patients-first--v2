@@ -17,6 +17,7 @@ export default function MedicalJourneyPage() {
         title="Your Journey Starts Here"
         description="Knowing what happens next can make all the difference. Navigating healthcare can involve many decisions, questions, and practical arrangements. At Patients First Worldwide, we’ve created a clear and structured process to help you understand what to expect from the moment you contact us."
         image="/journey.webp"
+        compact
       >
         <Link
           href="/contact"
@@ -26,9 +27,9 @@ export default function MedicalJourneyPage() {
         </Link>
       </PageHero>
 
-      <section className="py-20 px-6 max-w-6xl mx-auto">
-        <div className="max-w-3xl mx-auto text-center mb-16 space-y-3">
-          <p className="text-gold font-semibold tracking-[0.18em] uppercase text-xs">
+      <section className="pt-8 pb-14 px-6 max-w-6xl mx-auto">
+        <div className="max-w-3xl mx-auto text-center mb-12 space-y-3">
+          <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">
             How Your Healthcare Journey Works
           </p>
           <h2 className="text-3xl md:text-4xl font-serif text-midnight">
@@ -44,13 +45,13 @@ export default function MedicalJourneyPage() {
       </section>
 
       {/* UNDERSTANDING THE PROCESS */}
-      <section className="py-20 px-6 bg-white border-y border-slate-100">
+      <section className="py-14 px-6 bg-white border-y border-slate-100">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <div className="relative h-80 rounded-3xl overflow-hidden shadow-xl">
             <Image src="/during.webp" alt="Coordinating your healthcare journey with patient support" fill className="object-cover" />
           </div>
           <div className="space-y-4">
-            <p className="text-gold font-semibold tracking-[0.18em] uppercase text-xs">
+            <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">
               Understanding the Process
             </p>
             <h2 className="text-3xl font-serif text-midnight">Every Healthcare Journey Is Different</h2>
@@ -66,7 +67,7 @@ export default function MedicalJourneyPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-6 bg-midnight text-white">
+      <section className="py-14 px-6 bg-midnight text-white">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <h2 className="text-3xl md:text-4xl font-serif leading-tight">
             Ready to Take the First Step?

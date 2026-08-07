@@ -18,7 +18,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "How quickly will someone respond to me?",
-    a: "We aim to respond to every enquiry within 4 business hours. Once you are with us, you have a dedicated care coordinator as a single point of contact — someone who knows your case and who you can reach directly.",
+    a: "Once you are with us, you have a dedicated care coordinator as a single point of contact — someone who knows your case and who you can reach directly.",
   },
   {
     q: "Which countries do you coordinate care in?",

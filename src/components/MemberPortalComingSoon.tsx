@@ -21,11 +21,11 @@ const portalFeatures = [
 
 export function MemberPortalComingSoon() {
   return (
-    <section className="py-24 px-6">
+    <section className="py-16 px-6">
       <div className="max-w-7xl mx-auto bg-[#FAF8F5] rounded-3xl border border-slate-200/60 shadow-sm p-8 md:p-14">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-center">
           <div className="space-y-6">
-            <span className="inline-block bg-slate-900 text-[#C5A059] text-[11px] font-semibold tracking-[0.18em] uppercase px-4 py-1.5 rounded-full">
+            <span className="inline-block bg-slate-900 text-[#C5A059] text-xs font-semibold tracking-[0.18em] uppercase px-4 py-1.5 rounded-full">
               Coming Soon
             </span>
             <h2 className="font-serif text-3xl md:text-4xl text-midnight leading-tight">

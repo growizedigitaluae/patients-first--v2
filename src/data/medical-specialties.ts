@@ -66,14 +66,14 @@ export const medicalSpecialties: MedicalSpecialty[] = [
     text: "Supporting access to general, restorative, surgical, and specialist dental services through our healthcare network.",
   },
   {
-    slug: "bariatrics",
-    title: "Bariatrics",
-    text: "Helping patients explore specialist services related to obesity management and bariatric surgery provided by licensed healthcare professionals.",
+    slug: "pulmonology",
+    title: "Pulmonology",
+    text: "Helping patients access specialist care for respiratory and lung conditions — including asthma, chronic obstructive pulmonary disease (COPD), sleep-disordered breathing, and advanced pulmonary services provided by licensed healthcare professionals.",
   },
   {
-    slug: "plastic-surgery",
-    title: "Plastic Surgery",
-    text: "Supporting patients seeking reconstructive or aesthetic surgical consultations with appropriately qualified healthcare providers.",
+    slug: "endocrinology-diabetes",
+    title: "Endocrinology & Diabetes Care",
+    text: "Helping patients access specialist care for hormonal and metabolic conditions — including diabetes management, thyroid, adrenal, and endocrine evaluation provided by licensed healthcare professionals.",
   },
   {
     slug: "executive-health-screening",

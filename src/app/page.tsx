@@ -7,11 +7,11 @@ import {
   Globe2,
   UserCheck,
   Handshake,
-  Accessibility,
+  Network,
   ShieldCheck,
   Award,
   Stethoscope,
-  ClipboardList,
+  IdCard,
 } from "lucide-react";
 import { site } from "@/lib/site";
 
@@ -135,7 +135,7 @@ const differences = [
 const values = [
   { icon: HeartHandshake, title: "Humanity First", text: "Because every patient deserves to be treated with dignity and compassion." },
   { icon: Handshake, title: "Partnership", text: "Working alongside you throughout your healthcare journey." },
-  { icon: Accessibility, title: "Accessibility", text: "Helping connect patients with healthcare opportunities across borders." },
+  { icon: Network, title: "Accessibility", text: "Helping connect patients with healthcare opportunities across borders." },
   { icon: MessageCircle, title: "Transparency", text: "Clear communication. Honest expectations. No unnecessary complexity." },
   { icon: ShieldCheck, title: "Trust", text: "Protecting your privacy and acting with professionalism and integrity." },
   { icon: Award, title: "Excellence", text: "Striving to deliver an exceptional patient experience in every interaction." },
@@ -209,7 +209,7 @@ export default function HomePage() {
   return (
     <main>
       {/* HERO */}
-      <section className="relative pt-40 pb-32 px-6 overflow-hidden bg-ivory">
+      <section className="relative pt-40 pb-24 px-6 overflow-hidden bg-ivory">
         <div className="absolute inset-x-0 top-16 sm:top-20 bottom-0 z-0">
           <Image src="/hero-01.webp" alt="" fill className="object-cover object-top opacity-95" priority />
           <div className="absolute inset-0 bg-gradient-to-b from-white/75 via-ivory/85 to-ivory" />
@@ -243,7 +243,6 @@ export default function HomePage() {
               See How the Journey Works
             </Link>
           </div>
-          <p className="text-xs text-navy mt-6">{site.responsePromise}</p>
         </div>
       </section>
 
@@ -273,30 +272,22 @@ export default function HomePage() {
       </section>
 
       {/* ABOUT US */}
-      <section className="py-24 px-6 max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-14 items-center">
+      <section className="py-16 px-6 max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-10 items-center">
           <div className="relative h-[440px] rounded-3xl overflow-hidden shadow-xl">
             <Image src="/about-us.webp" alt="Compassionate patient support" fill className="object-cover" />
           </div>
           <div className="space-y-6">
-            <p className="text-gold font-semibold tracking-[0.18em] uppercase text-xs">About Us</p>
+            <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">About Us</p>
             <h2 className="text-3xl md:text-4xl font-serif text-midnight leading-tight">
               Putting Patients First, Every Step of the Journey
             </h2>
             <p className="text-navy leading-relaxed">
-              At Patients First Worldwide, we believe that behind every patient is a life, a
-              family, and a future. Accessing healthcare can be complex, whether you’re seeking
-              treatment close to home or abroad. No one should have to navigate that journey alone.
-            </p>
-            <p className="text-navy leading-relaxed">
-              We exist to make the healthcare journey more informed, organised, and less
-              overwhelming. As your trusted patient support and healthcare coordination partner,
-              we help you navigate the process by facilitating communication, coordinating
-              logistics, and connecting you with appropriate healthcare providers based on your
-              individual needs and preferences. From your first enquiry to the completion of your
-              healthcare journey, we are committed to providing compassionate support, clear
-              communication, and personalised guidance — so you can focus on what matters most:
-              your health and the people who matter to you.
+              Patients First Worldwide is an independent patient support and healthcare
+              coordination company based in the UAE. We help patients access appropriate
+              healthcare providers — close to home or abroad — by facilitating communication,
+              coordinating logistics, and offering compassionate guidance, so no one navigates
+              their healthcare journey alone.
             </p>
             <p className="text-xs text-navy leading-relaxed border-l-4 border-gold pl-4">
               {site.legalName} does not provide medical advice, medical diagnoses, or medical
@@ -314,10 +305,10 @@ export default function HomePage() {
       </section>
 
       {/* THREE STEPS */}
-      <section className="py-20 px-6 bg-white border-y border-slate-100">
+      <section className="py-14 px-6 bg-white border-y border-slate-100">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
-            <p className="text-gold font-semibold tracking-[0.18em] uppercase text-xs">How We Begin</p>
+          <div className="text-center max-w-2xl mx-auto mb-10 space-y-3">
+            <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">How We Begin</p>
             <h2 className="text-3xl md:text-4xl font-serif text-midnight">Three Simple Steps to Start</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -333,9 +324,9 @@ export default function HomePage() {
       </section>
 
       {/* SUPPORTING YOU THROUGHOUT */}
-      <section className="py-24 px-6 max-w-7xl mx-auto">
-        <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
-          <p className="text-gold font-semibold tracking-[0.18em] uppercase text-xs">
+      <section className="py-16 px-6 max-w-7xl mx-auto">
+        <div className="text-center max-w-3xl mx-auto mb-10 space-y-3">
+          <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">
             Our Role
           </p>
           <h2 className="text-3xl md:text-4xl font-serif text-midnight">
@@ -372,10 +363,10 @@ export default function HomePage() {
       </section>
 
       {/* OUR DIFFERENCE */}
-      <section className="py-24 px-6 bg-white border-y border-slate-100">
+      <section className="py-16 px-6 bg-white border-y border-slate-100">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
-            <p className="text-gold font-semibold tracking-[0.18em] uppercase text-xs">Our Difference</p>
+          <div className="text-center max-w-2xl mx-auto mb-10 space-y-3">
+            <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">Our Difference</p>
             <h2 className="text-3xl md:text-4xl font-serif text-midnight">Our Approach</h2>
             <p className="text-navy leading-relaxed">
               Patients First Worldwide is an independent patient support and healthcare
@@ -392,30 +383,19 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-
-          <div className="mt-12 max-w-3xl mx-auto bg-slate-50 border-l-4 border-gold border-y border-r border-slate-200 p-6 rounded-2xl">
-            <p className="font-serif text-midnight font-bold text-xs uppercase tracking-widest mb-2">Important Legal Notice</p>
-            <p className="text-navy text-sm leading-relaxed">
-              {site.legalName} is an independent patient support and healthcare coordination
-              company. We do not provide medical advice, medical diagnoses, or medical treatment.
-              Clinical decisions, treatment recommendations, and medical care remain the sole
-              responsibility of licensed healthcare professionals and healthcare providers chosen
-              by the patient.
-            </p>
-          </div>
         </div>
       </section>
 
       {/* VALUES */}
-      <section className="py-24 px-6 max-w-7xl mx-auto">
-        <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
-          <p className="text-gold font-semibold tracking-[0.18em] uppercase text-xs">Our Values</p>
+      <section className="py-16 px-6 max-w-7xl mx-auto">
+        <div className="text-center max-w-2xl mx-auto mb-10 space-y-3">
+          <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">Our Values</p>
           <h2 className="text-3xl md:text-4xl font-serif text-midnight">The Principles Behind Everything We Do</h2>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
           {values.map((value) => (
             <div key={value.title} className="bg-ivory rounded-3xl p-8 border border-slate-100 text-center flex flex-col items-center hover:shadow-lg transition">
-              <value.icon className="w-9 h-9 brand-gold-icon mb-5" />
+              <value.icon className="w-9 h-9 text-midnight mb-5" />
               <h4 className="text-midnight font-bold mb-3">{value.title}</h4>
               <p className="text-navy text-sm leading-relaxed">{value.text}</p>
             </div>
@@ -424,10 +404,10 @@ export default function HomePage() {
       </section>
 
       {/* EXPLORE OUR SERVICES */}
-      <section className="py-20 px-6 bg-white border-y border-slate-100">
+      <section className="py-14 px-6 bg-white border-y border-slate-100">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
-            <p className="text-gold font-semibold tracking-[0.18em] uppercase text-xs">Explore</p>
+          <div className="text-center max-w-2xl mx-auto mb-10 space-y-3">
+            <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">Explore</p>
             <h2 className="text-3xl md:text-4xl font-serif text-midnight">How We Can Support You</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -457,7 +437,7 @@ export default function HomePage() {
               href="/membership"
               className="group bg-royal rounded-3xl p-8 text-white hover:-translate-y-1 transition-all duration-300"
             >
-              <ClipboardList className="w-9 h-9 brand-gold-icon mb-5" />
+              <IdCard className="w-9 h-9 brand-gold-icon mb-5" />
               <h3 className="font-serif text-xl mb-2">Patients First Membership</h3>
               <p className="text-sm text-slate-300 leading-relaxed mb-6">
                 Ongoing healthcare coordination and personalised patient support, whenever you need it.
@@ -469,10 +449,10 @@ export default function HomePage() {
       </section>
 
       {/* SUPPORTING YOU BEYOND HEALTHCARE */}
-      <section className="py-24 px-6 max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-14 items-center">
+      <section className="py-16 px-6 max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-10 items-center">
           <div className="space-y-6">
-            <p className="text-gold font-semibold tracking-[0.18em] uppercase text-xs">
+            <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">
               Beyond Healthcare
             </p>
             <h2 className="text-3xl md:text-4xl font-serif text-midnight">
@@ -498,10 +478,10 @@ export default function HomePage() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section className="py-24 px-6 bg-white border-y border-slate-100">
+      <section className="py-16 px-6 bg-white border-y border-slate-100">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
-            <p className="text-gold font-semibold tracking-[0.18em] uppercase text-xs">
+          <div className="text-center max-w-2xl mx-auto mb-10 space-y-3">
+            <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">
               Patient Testimonials
             </p>
             <h2 className="text-3xl md:text-4xl font-serif text-midnight">
@@ -540,10 +520,10 @@ export default function HomePage() {
       </section>
 
       {/* GOOGLE REVIEWS */}
-      <section className="py-24 px-6 bg-ivory">
+      <section className="py-16 px-6 bg-ivory">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
-            <p className="text-gold font-semibold tracking-[0.18em] uppercase text-xs">
+          <div className="text-center max-w-2xl mx-auto mb-10 space-y-3">
+            <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">
               Google Reviews
             </p>
             <h2 className="text-3xl md:text-4xl font-serif text-midnight">
@@ -597,7 +577,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-6 bg-midnight text-white">
+      <section className="py-14 px-6 bg-midnight text-white">
         <div className="max-w-4xl mx-auto text-center space-y-8">
           <h2 className="text-3xl md:text-4xl font-serif leading-tight">
             Every Journey Begins with a Conversation

@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import { ContactForm } from "@/components/ContactForm";
+import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
 import { site } from "@/lib/site";
 
 export const metadata = {
@@ -10,31 +11,31 @@ export const metadata = {
 
 const infoItems = [
   {
-    icon: "◎",
+    icon: MapPin,
     title: "Office Location",
     body: <p>{site.office}</p>,
     fine: null,
   },
   {
-    icon: "☎",
+    icon: Phone,
     title: "Phone",
     body: <a href={site.phoneHref}>{site.phone}</a>,
     fine: "Business hours below. Outside these hours, leave a message and we'll return your call the next business day.",
   },
   {
-    icon: "✆",
+    icon: MessageCircle,
     title: "WhatsApp",
     body: <p>Speak directly with a coordinator for quick, general questions.</p>,
     fine: "For your privacy, please don't send medical records, test results, or sensitive health details over WhatsApp. Your coordinator will move to a secure channel for anything personal.",
   },
   {
-    icon: "✉",
+    icon: Mail,
     title: "Email",
     body: <a href={`mailto:${site.email}`}>{site.email}</a>,
     fine: "Please avoid sending sensitive medical documents by email until a secure link has been shared with you.",
   },
   {
-    icon: "⏱",
+    icon: Clock,
     title: "Working Hours",
     body: <p>{site.hours}</p>,
     fine: null,
@@ -51,7 +52,7 @@ export default function ContactPage() {
             <span className="inline-block w-[22px] h-px bg-gold" />
             We&rsquo;re here for you
           </p>
-          <h1 className="font-serif text-[28px] md:text-[40px] leading-tight text-midnight mt-4 mb-3.5">
+          <h1 className="font-serif text-[32px] md:text-[44px] leading-tight text-midnight mt-4 mb-3.5">
             How Can We Help You?
           </h1>
           <p className="text-navy text-base leading-relaxed max-w-[560px]">
@@ -76,18 +77,18 @@ export default function ContactPage() {
                 key={item.title}
                 className="flex gap-[18px] py-[22px] border-b border-navy/10 first:pt-0"
               >
-                <div className="w-[38px] h-[38px] rounded-full border-[1.5px] border-gold flex-none flex items-center justify-center text-gold-dark text-[15px]">
-                  {item.icon}
+                <div className="w-[38px] h-[38px] rounded-full border-[1.5px] border-gold flex-none flex items-center justify-center">
+                  <item.icon className="w-5 h-5 brand-gold-icon" />
                 </div>
                 <div>
                   <h4 className="font-serif text-base font-medium text-midnight mb-1">
                     {item.title}
                   </h4>
-                  <div className="text-[14.5px] text-navy [&_a]:text-navy [&_a:hover]:text-gold-dark [&_a:hover]:underline">
+                  <div className="text-base text-navy [&_a]:text-navy [&_a:hover]:text-gold-dark [&_a:hover]:underline">
                     {item.body}
                   </div>
                   {item.fine && (
-                    <p className="text-[12.5px] text-navy mt-1.5 max-w-[320px] leading-relaxed">
+                    <p className="text-[15px] text-navy mt-1.5 max-w-[320px] leading-relaxed">
                       {item.fine}
                     </p>
                   )}
@@ -98,10 +99,10 @@ export default function ContactPage() {
 
           {/* FORM */}
           <div className="bg-white border border-navy/10 rounded-3xl px-6 py-10 md:px-10 shadow-sm">
-            <h2 className="font-serif text-[22px] font-medium text-midnight mb-2">
+            <h2 className="font-serif text-2xl font-medium text-midnight mb-2">
               Request a Personalized Consultation
             </h2>
-            <p className="text-navy text-[14.5px] leading-relaxed mb-7">
+            <p className="text-navy text-base leading-relaxed mb-7">
               Tell us a little about your situation. There&rsquo;s no obligation — this simply
               starts a conversation with someone who can help.
             </p>

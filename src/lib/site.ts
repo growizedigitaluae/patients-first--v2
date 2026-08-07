@@ -9,5 +9,4 @@ export const site = {
   whatsapp: "https://wa.me/971566960486",
   office: "Dubai, United Arab Emirates",
   hours: "Mon–Fri: 9:00 AM – 6:00 PM (GST)",
-  responsePromise: "We respond to every enquiry within 4 business hours.",
 } as const;

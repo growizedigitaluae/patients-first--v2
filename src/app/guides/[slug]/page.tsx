@@ -26,7 +26,7 @@ export default async function GuidePage(props: PageProps<"/guides/[slug]">) {
 
   return (
     <main>
-      <section className="relative pt-40 pb-24 px-6 overflow-hidden bg-ivory">
+      <section className="relative pt-40 pb-4 px-6 overflow-hidden bg-ivory">
         <div className="absolute inset-x-0 top-16 sm:top-20 bottom-0 z-0">
           <Image src={guide.image} alt="" fill className="object-cover object-top opacity-95" priority />
           <div className="absolute inset-0 bg-gradient-to-b from-white/75 via-ivory/85 to-ivory" />
@@ -40,7 +40,7 @@ export default async function GuidePage(props: PageProps<"/guides/[slug]">) {
         </div>
       </section>
 
-      <article className="py-20 px-6 max-w-3xl mx-auto">
+      <article className="pt-8 pb-14 px-6 max-w-3xl mx-auto">
         <div className="space-y-12">
           {guide.sections.map((section) => (
             <section key={section.heading}>
@@ -54,7 +54,7 @@ export default async function GuidePage(props: PageProps<"/guides/[slug]">) {
           ))}
         </div>
 
-        <div className="mt-16 bg-royal rounded-3xl p-8 text-white text-center">
+        <div className="mt-12 bg-royal rounded-3xl p-8 text-white text-center">
           <h2 className="font-serif text-2xl mb-3">Need a Hand with the Practical Side?</h2>
           <p className="text-sm text-slate-300 leading-relaxed mb-6 max-w-lg mx-auto">
             This is exactly the kind of thing our coordinators handle every day. Start a
