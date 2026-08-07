@@ -275,7 +275,7 @@ export default function HomePage() {
       <section className="py-16 px-6 max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-10 items-center">
           <div className="relative h-[440px] rounded-3xl overflow-hidden shadow-xl">
-            <Image src="/about-us.webp" alt="Compassionate patient support" fill className="object-cover" />
+            <Image src="/about-us-2a.webp" alt="Compassionate patient support" fill className="object-cover" />
           </div>
           <div className="space-y-6">
             <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">About Us</p>
