@@ -9,7 +9,7 @@ import {
   Plane,
   HeartHandshake,
   Compass,
-  Stethoscope,
+  FileSearch,
   Award,
   Star,
   CheckCircle2,
@@ -139,6 +139,7 @@ export default function MembershipPage() {
         description="Stay connected with ongoing healthcare coordination, personalised support, and easier access to trusted healthcare services whenever you need them."
         image="/support-background.webp"
         compact
+        titleClass="text-2xl lg:text-3xl md:whitespace-nowrap"
       >
         <p className="text-xs text-navy mt-4 max-w-xl mx-auto">
           Receive ongoing healthcare coordination and patient support — not medical care.
@@ -168,7 +169,7 @@ export default function MembershipPage() {
             <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">
               Membership Benefits
             </p>
-            <h2 className="text-3xl md:text-4xl font-serif text-midnight">
+            <h2 className="text-2xl lg:text-3xl font-serif text-midnight md:whitespace-nowrap">
               Supporting Your Healthcare Journey
             </h2>
             <p className="text-navy leading-relaxed">
@@ -187,24 +188,24 @@ export default function MembershipPage() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
-          <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm">
-            <HeartHandshake className="w-8 h-8 brand-gold-icon mb-5" />
+          <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm flex flex-col items-center text-center">
+            <HeartHandshake className="w-8 h-8 text-royal mb-5" />
             <h3 className="font-serif text-lg text-midnight font-bold mb-2">Ongoing Healthcare Support</h3>
             <p className="text-sm text-navy leading-relaxed">
               Continuous patient support and coordination, helping you stay organised across
               every stage of your healthcare journey.
             </p>
           </div>
-          <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm">
-            <Stethoscope className="w-8 h-8 brand-gold-icon mb-5" />
+          <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm flex flex-col items-center text-center">
+            <FileSearch className="w-8 h-8 text-royal mb-5" />
             <h3 className="font-serif text-lg text-midnight font-bold mb-2">Second Opinion Coordination</h3>
             <p className="text-sm text-navy leading-relaxed">
               Support coordinating additional specialist opinions when you or your healthcare
               provider request them.
             </p>
           </div>
-          <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm">
-            <Compass className="w-8 h-8 brand-gold-icon mb-5" />
+          <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm flex flex-col items-center text-center">
+            <Compass className="w-8 h-8 text-royal mb-5" />
             <h3 className="font-serif text-lg text-midnight font-bold mb-2">Healthcare Navigation</h3>
             <p className="text-sm text-navy leading-relaxed">
               Personalised patient support to help you understand your options and coordinate
@@ -227,9 +228,9 @@ export default function MembershipPage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {membershipIncludes.map((item) => (
-              <div key={item.title} className="bg-ivory rounded-3xl p-8 border border-slate-100 hover:shadow-lg hover:border-gold transition-all duration-300">
-                <div className="w-12 h-12 bg-royal rounded-2xl flex items-center justify-center mb-5">
-                  <item.icon className="w-6 h-6 brand-gold-icon" />
+              <div key={item.title} className="bg-ivory rounded-3xl p-8 border border-slate-100 hover:shadow-lg hover:border-gold transition-all duration-300 flex flex-col items-center text-center">
+                <div className="w-12 h-12 bg-white rounded-2xl border border-slate-100 flex items-center justify-center mb-5">
+                  <item.icon className="w-6 h-6 text-royal" />
                 </div>
                 <h3 className="font-serif text-lg text-midnight font-bold mb-2">{item.title}</h3>
                 <p className="text-sm text-navy leading-relaxed">{item.text}</p>

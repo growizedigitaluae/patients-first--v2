@@ -1,25 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import {
-  Bone,
-  HeartPulse,
-  Activity,
-  Brain,
-  Flower2,
-  Baby,
-  Eye,
-  Droplets,
-  UtensilsCrossed,
-  HandHeart,
-  Accessibility,
-  Smile,
-  AirVent,
-  Gauge,
-  ClipboardCheck,
-  Microscope,
-  HeartHandshake,
-  CheckCircle2,
-} from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import { PageHero } from "@/components/ui";
 import { medicalSpecialties } from "@/data/medical-specialties";
 
@@ -28,25 +9,6 @@ export const metadata = {
   description:
     "Patients First Worldwide helps patients navigate access to healthcare providers across a broad range of medical specialties. We support the non-clinical aspects of the healthcare journey.",
 };
-
-const specialtyIcons = [
-  Bone,
-  HeartPulse,
-  Activity,
-  Brain,
-  Flower2,
-  Baby,
-  Eye,
-  Droplets,
-  UtensilsCrossed,
-  HandHeart,
-  Accessibility,
-  Smile,
-  AirVent,
-  Gauge,
-  ClipboardCheck,
-  Microscope,
-];
 
 const expectations = [
   "Dedicated Patient Journey Coordinator",
@@ -85,6 +47,7 @@ export default function MedicalSpecialtiesPage() {
         description="Whether you’re seeking a second opinion, specialist care, or treatment closer to home or abroad, Patients First Worldwide helps you navigate your healthcare journey by connecting you with appropriate healthcare providers across a wide range of medical specialties."
         image="/feture-blog.webp"
         compact
+        titleClass="text-3xl md:text-4xl lg:text-5xl md:whitespace-nowrap"
       >
         <p className="text-xs text-navy mt-4 max-w-xl mx-auto">
           Medical advice, diagnosis, and treatment are provided exclusively by licensed
@@ -116,39 +79,33 @@ export default function MedicalSpecialtiesPage() {
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {medicalSpecialties.map((specialty, index) => {
-            const Icon = specialtyIcons[index] ?? HeartHandshake;
-            return (
-              <Link
-                key={specialty.slug}
-                href={`/contact?careArea=${encodeURIComponent(specialty.title)}`}
-                className="group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
-              >
-                <div className="relative aspect-[9/16] w-full overflow-hidden">
-                  <Image
-                    src={specialtyImages[specialty.slug] ?? specialtyImages["rare-diseases"]}
-                    alt=""
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-royal/80 via-royal/25 to-transparent" />
-                  <div className="absolute bottom-4 left-5 w-12 h-12 bg-white/95 rounded-xl flex items-center justify-center shadow-lg">
-                    <Icon className="w-6 h-6 text-midnight" />
-                  </div>
-                </div>
-                <div className="p-7 flex flex-col flex-1">
-                  <h3 className="font-serif text-xl text-midnight font-bold mb-3 leading-snug group-hover:text-gold-dark transition">
-                    {specialty.title}
-                  </h3>
-                  <p className="text-sm text-navy leading-relaxed flex-1">{specialty.text}</p>
-                  <span className="mt-6 inline-flex items-center gap-2 text-gold-dark text-sm font-semibold group-hover:underline">
-                    Discuss your case <span aria-hidden>→</span>
-                  </span>
-                </div>
-              </Link>
-            );
-          })}
+          {medicalSpecialties.map((specialty) => (
+            <Link
+              key={specialty.slug}
+              href={`/contact?careArea=${encodeURIComponent(specialty.title)}`}
+              className="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col"
+            >
+              <div className="relative w-full overflow-hidden bg-white">
+                <Image
+                  src={specialtyImages[specialty.slug] ?? specialtyImages["rare-diseases"]}
+                  alt=""
+                  width={1200}
+                  height={675}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+              <div className="p-7 flex flex-col flex-1">
+                <h3 className="font-serif text-xl text-midnight font-bold mb-3 leading-snug group-hover:text-gold-dark transition">
+                  {specialty.title}
+                </h3>
+                <p className="text-sm text-navy leading-relaxed flex-1">{specialty.text}</p>
+                <span className="mt-6 inline-flex items-center gap-2 text-gold-dark text-sm font-semibold group-hover:underline">
+                  Discuss your case <span aria-hidden>→</span>
+                </span>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 

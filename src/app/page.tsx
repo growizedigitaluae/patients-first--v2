@@ -1,17 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
 import {
-  MessageCircle,
+  Eye,
   HeartHandshake,
   Users,
-  Globe2,
+  Globe,
   UserCheck,
   Handshake,
   Network,
   ShieldCheck,
   Award,
-  Stethoscope,
-  IdCard,
 } from "lucide-react";
 import { site } from "@/lib/site";
 
@@ -27,7 +25,7 @@ const pillars = [
     text: "Your wellbeing, peace of mind, and informed decision-making are at the heart of everything we do — because every patient deserves to feel heard, supported, and respected.",
   },
   {
-    icon: Globe2,
+    icon: Globe,
     title: "Trusted Healthcare Connections",
     text: "We connect patients with carefully selected healthcare providers and experienced medical professionals, helping you make informed decisions with confidence.",
     href: "/destinations",
@@ -136,7 +134,7 @@ const values = [
   { icon: HeartHandshake, title: "Humanity First", text: "Because every patient deserves to be treated with dignity and compassion." },
   { icon: Handshake, title: "Partnership", text: "Working alongside you throughout your healthcare journey." },
   { icon: Network, title: "Accessibility", text: "Helping connect patients with healthcare opportunities across borders." },
-  { icon: MessageCircle, title: "Transparency", text: "Clear communication. Honest expectations. No unnecessary complexity." },
+  { icon: Eye, title: "Transparency", text: "Clear communication. Honest expectations. No unnecessary complexity." },
   { icon: ShieldCheck, title: "Trust", text: "Protecting your privacy and acting with professionalism and integrity." },
   { icon: Award, title: "Excellence", text: "Striving to deliver an exceptional patient experience in every interaction." },
 ];
@@ -219,9 +217,8 @@ export default function HomePage() {
           <p className="text-gold-dark font-semibold tracking-[0.24em] uppercase text-xs mb-6">
             Compassionate Care
           </p>
-          <h1 className="text-4xl md:text-6xl font-serif leading-[1.12] max-w-4xl mx-auto text-midnight">
-            Because Every Patient Deserves{" "}
-            <span className="text-gold-dark">Someone by Their Side.</span>
+          <h1 className="text-3xl md:text-5xl font-serif leading-[1.15] max-w-4xl mx-auto text-midnight">
+            Because Every Patient Deserves Someone by Their Side.
           </h1>
           <p className="mt-7 text-lg text-navy leading-relaxed max-w-2xl mx-auto">
             A medical journey can feel overwhelming, but you should never have to face it alone.
@@ -251,9 +248,9 @@ export default function HomePage() {
         <div className="bg-midnight rounded-3xl shadow-2xl p-8 md:p-10">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {pillars.map((pillar) => (
-              <div key={pillar.title} className="flex flex-col">
-                <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mb-4">
-                  <pillar.icon className="w-6 h-6 brand-gold-icon" />
+              <div key={pillar.title} className="flex flex-col items-center text-center">
+                <div className="w-12 h-12 flex items-center justify-center mb-4">
+                  <pillar.icon className="w-6 h-6 text-white" strokeWidth={1.75} />
                 </div>
                 <h3 className="font-serif text-lg text-white font-bold mb-2">{pillar.title}</h3>
                 <p className="text-sm text-slate-300 leading-relaxed flex-1">{pillar.text}</p>
@@ -415,7 +412,6 @@ export default function HomePage() {
               href="/medical-specialties"
               className="group bg-royal rounded-3xl p-8 text-white hover:-translate-y-1 transition-all duration-300"
             >
-              <Stethoscope className="w-9 h-9 brand-gold-icon mb-5" />
               <h3 className="font-serif text-xl mb-2">Medical Specialties</h3>
               <p className="text-sm text-slate-300 leading-relaxed mb-6">
                 Explore the wide range of medical specialties we help patients navigate access to.
@@ -426,7 +422,6 @@ export default function HomePage() {
               href="/destinations"
               className="group bg-royal rounded-3xl p-8 text-white hover:-translate-y-1 transition-all duration-300"
             >
-              <Globe2 className="w-9 h-9 brand-gold-icon mb-5" />
               <h3 className="font-serif text-xl mb-2">Our Global Healthcare Network</h3>
               <p className="text-sm text-slate-300 leading-relaxed mb-6">
                 Explore healthcare options across our international network of trusted healthcare providers.
@@ -437,7 +432,6 @@ export default function HomePage() {
               href="/membership"
               className="group bg-royal rounded-3xl p-8 text-white hover:-translate-y-1 transition-all duration-300"
             >
-              <IdCard className="w-9 h-9 brand-gold-icon mb-5" />
               <h3 className="font-serif text-xl mb-2">Patients First Membership</h3>
               <p className="text-sm text-slate-300 leading-relaxed mb-6">
                 Ongoing healthcare coordination and personalised patient support, whenever you need it.

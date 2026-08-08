@@ -18,6 +18,7 @@ export default function MedicalJourneyPage() {
         description="Knowing what happens next can make all the difference. Navigating healthcare can involve many decisions, questions, and practical arrangements. At Patients First Worldwide, we’ve created a clear and structured process to help you understand what to expect from the moment you contact us."
         image="/journey.webp"
         compact
+        titleClass="text-3xl md:text-4xl lg:text-5xl"
       >
         <Link
           href="/contact"
@@ -32,7 +33,7 @@ export default function MedicalJourneyPage() {
           <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">
             How Your Healthcare Journey Works
           </p>
-          <h2 className="text-3xl md:text-4xl font-serif text-midnight">
+          <h2 className="text-2xl md:text-3xl font-serif text-midnight whitespace-nowrap">
             A Clear Process, Every Step of the Way
           </h2>
           <p className="text-navy leading-relaxed">
