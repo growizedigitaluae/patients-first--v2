@@ -54,7 +54,7 @@ export function MemberPortalComingSoon() {
 
           <div className="bg-white rounded-2xl p-8 shadow-sm border border-slate-100">
             <div className="w-14 h-14 bg-[#0B132B] rounded-2xl flex items-center justify-center ring-1 ring-[#C5A059]/40 shadow-md">
-              <Lock className="w-6 h-6 text-[#C5A059]" />
+              <Lock className="w-6 h-6 brand-gold-icon" />
             </div>
             <h3 className="font-serif text-xl text-midnight mt-6">Member Portal Access</h3>
             <p className="text-navy text-sm mt-3 leading-relaxed">

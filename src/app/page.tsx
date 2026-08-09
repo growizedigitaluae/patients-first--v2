@@ -213,18 +213,26 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-b from-white/75 via-ivory/85 to-ivory" />
         </div>
 
-        <div className="relative z-10 max-w-5xl mx-auto text-center">
+        <div className="relative z-10 max-w-6xl mx-auto text-center">
           <p className="text-gold-dark font-semibold tracking-[0.24em] uppercase text-xs mb-6">
             Compassionate Care
           </p>
-          <h1 className="text-3xl md:text-5xl font-serif leading-[1.15] max-w-4xl mx-auto text-midnight">
+          <h1 className="text-3xl md:text-4xl font-serif leading-[1.15] max-w-6xl mx-auto text-midnight md:whitespace-nowrap">
             Because Every Patient Deserves Someone by Their Side.
           </h1>
-          <p className="mt-7 text-lg text-navy leading-relaxed max-w-2xl mx-auto">
-            A medical journey can feel overwhelming, but you should never have to face it alone.
-            From your very first conversation with us, we stand beside you — helping you
-            understand your options, coordinating every step of your care, and supporting both
-            you and your loved ones throughout the journey.
+          <p className="mt-7 text-xl text-navy leading-relaxed max-w-5xl mx-auto">
+            <span className="block md:whitespace-nowrap">
+              A medical journey can feel overwhelming, but you should never have to face it alone.
+            </span>
+            <span className="block md:whitespace-nowrap">
+              From your very first conversation with us, we stand beside you,
+            </span>
+            <span className="block md:whitespace-nowrap">
+              helping you understand your options, coordinating every step of your care,
+            </span>
+            <span className="block md:whitespace-nowrap">
+              and supporting both you and your loved ones throughout the journey.
+            </span>
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 mt-9">
             <Link
@@ -250,7 +258,7 @@ export default function HomePage() {
             {pillars.map((pillar) => (
               <div key={pillar.title} className="flex flex-col items-center text-center">
                 <div className="w-12 h-12 flex items-center justify-center mb-4">
-                  <pillar.icon className="w-6 h-6 text-white" strokeWidth={1.75} />
+                  <pillar.icon className="w-6 h-6 brand-gold-icon" strokeWidth={1.75} />
                 </div>
                 <h3 className="font-serif text-lg text-white font-bold mb-2">{pillar.title}</h3>
                 <p className="text-sm text-slate-300 leading-relaxed flex-1">{pillar.text}</p>
@@ -326,7 +334,7 @@ export default function HomePage() {
           <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">
             Our Role
           </p>
-          <h2 className="text-3xl md:text-4xl font-serif text-midnight">
+          <h2 className="text-2xl lg:text-3xl font-serif text-midnight md:whitespace-nowrap">
             Supporting You Throughout Your Healthcare Journey
           </h2>
           <p className="text-navy leading-relaxed">
@@ -384,19 +392,21 @@ export default function HomePage() {
       </section>
 
       {/* VALUES */}
-      <section className="py-16 px-6 max-w-7xl mx-auto">
-        <div className="text-center max-w-2xl mx-auto mb-10 space-y-3">
-          <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">Our Values</p>
-          <h2 className="text-3xl md:text-4xl font-serif text-midnight">The Principles Behind Everything We Do</h2>
-        </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-          {values.map((value) => (
-            <div key={value.title} className="bg-ivory rounded-3xl p-8 border border-slate-100 text-center flex flex-col items-center hover:shadow-lg transition">
-              <value.icon className="w-9 h-9 text-midnight mb-5" />
-              <h4 className="text-midnight font-bold mb-3">{value.title}</h4>
-              <p className="text-navy text-sm leading-relaxed">{value.text}</p>
-            </div>
-          ))}
+      <section className="py-16 px-6 bg-midnight">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center max-w-2xl mx-auto mb-10 space-y-3">
+            <p className="text-gold font-semibold tracking-[0.18em] uppercase text-xs">Our Values</p>
+            <h2 className="text-2xl md:text-3xl font-serif text-white md:whitespace-nowrap">The Principles Behind Everything We Do</h2>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            {values.map((value) => (
+              <div key={value.title} className="bg-white/5 rounded-3xl p-8 border border-white/10 text-center flex flex-col items-center hover:bg-white/10 transition">
+                <value.icon className="w-8 h-8 brand-gold-icon mb-5" />
+                <h4 className="text-white font-bold mb-3">{value.title}</h4>
+                <p className="text-slate-300 text-sm leading-relaxed">{value.text}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 

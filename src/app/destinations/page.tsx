@@ -122,16 +122,24 @@ export default function DestinationsPage() {
     <main>
       <PageHero
         eyebrow="Our Global Healthcare Network"
-        title={
+        title="Medical Tourism Destination We Coordinate"
+        description={
           <>
-            Medical Tourism Destination
-            <span className="block">We coordinate</span>
+            <span className="block md:whitespace-nowrap">
+              From the UAE to the USA, we help patients explore trusted healthcare options
+            </span>
+            <span className="block md:whitespace-nowrap">
+              across five leading medical tourism destinations —
+            </span>
+            <span className="block md:whitespace-nowrap">
+              with independent, patient-focused coordination and no bias toward any particular country.
+            </span>
           </>
         }
-        description="From the UAE to the USA, we help patients explore trusted healthcare options across five leading medical tourism destinations — with independent, patient-focused coordination and no bias toward any particular country."
         image="/hero-destination.webp"
         compact
-        titleClass="text-3xl md:text-4xl lg:text-5xl md:whitespace-nowrap"
+        wide
+        titleClass="text-3xl md:text-4xl md:whitespace-nowrap"
       >
         <p className="text-sm text-navy/90 leading-relaxed mt-5 max-w-2xl mx-auto border-l-4 border-gold pl-4 text-left">
           Patients First Worldwide is an independent patient support and healthcare coordination

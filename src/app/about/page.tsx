@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
 import {
-  UserCheck,
   Globe2,
 } from "lucide-react";
 import { PageHero, CtaBand } from "@/components/ui";
@@ -22,6 +21,7 @@ export default function AboutPage() {
         description="We believe exceptional healthcare extends beyond medical treatment — it is about feeling understood, supported, and cared for throughout every stage of your journey."
         image="/about-hero-bg.webp"
         compact
+        titleClass="text-2xl lg:text-3xl md:whitespace-nowrap"
       />
 
       {/* STORY */}
@@ -106,7 +106,6 @@ export default function AboutPage() {
                 href="/contact"
                 className="inline-flex items-center gap-2 bg-gradient-to-r from-[#C88A2B] to-[#fCDA7B] hover:opacity-95 text-royal px-6 py-3 rounded-full font-semibold transition"
               >
-                <UserCheck className="w-4 h-4" />
                 Speak with Our Team
               </Link>
               <a

@@ -33,7 +33,7 @@ export function ContactForm() {
   if (state.status === "success") {
     return (
       <div className="bg-white border border-navy/10 rounded-3xl p-8 text-center space-y-4">
-        <CheckCircle2 className="w-14 h-14 brand-gold-icon mx-auto" />
+        <CheckCircle2 className="w-10 h-10 brand-gold-icon mx-auto" />
         <h3 className="text-2xl font-serif text-midnight">
           Thank You — We’ve Received Your Enquiry
         </h3>

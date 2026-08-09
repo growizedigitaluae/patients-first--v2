@@ -118,7 +118,7 @@ const faqs = [
 
 export default function MembershipPage() {
   return (
-    <main>
+    <main className="bg-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -189,7 +189,7 @@ export default function MembershipPage() {
 
         <div className="grid md:grid-cols-3 gap-6">
           <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm flex flex-col items-center text-center">
-            <HeartHandshake className="w-8 h-8 text-royal mb-5" />
+            <HeartHandshake className="w-7 h-7 brand-gold-icon mb-5" />
             <h3 className="font-serif text-lg text-midnight font-bold mb-2">Ongoing Healthcare Support</h3>
             <p className="text-sm text-navy leading-relaxed">
               Continuous patient support and coordination, helping you stay organised across
@@ -197,7 +197,7 @@ export default function MembershipPage() {
             </p>
           </div>
           <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm flex flex-col items-center text-center">
-            <FileSearch className="w-8 h-8 text-royal mb-5" />
+            <FileSearch className="w-7 h-7 brand-gold-icon mb-5" />
             <h3 className="font-serif text-lg text-midnight font-bold mb-2">Second Opinion Coordination</h3>
             <p className="text-sm text-navy leading-relaxed">
               Support coordinating additional specialist opinions when you or your healthcare
@@ -205,7 +205,7 @@ export default function MembershipPage() {
             </p>
           </div>
           <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm flex flex-col items-center text-center">
-            <Compass className="w-8 h-8 text-royal mb-5" />
+            <Compass className="w-7 h-7 brand-gold-icon mb-5" />
             <h3 className="font-serif text-lg text-midnight font-bold mb-2">Healthcare Navigation</h3>
             <p className="text-sm text-navy leading-relaxed">
               Personalised patient support to help you understand your options and coordinate
@@ -216,7 +216,7 @@ export default function MembershipPage() {
       </section>
 
       {/* MEMBERSHIP INCLUDES */}
-      <section className="py-16 px-6 bg-white border-y border-slate-100">
+      <section className="py-16 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-2xl mx-auto text-center mb-10 space-y-3">
             <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">
@@ -228,9 +228,9 @@ export default function MembershipPage() {
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {membershipIncludes.map((item) => (
-              <div key={item.title} className="bg-ivory rounded-3xl p-8 border border-slate-100 hover:shadow-lg hover:border-gold transition-all duration-300 flex flex-col items-center text-center">
-                <div className="w-12 h-12 bg-white rounded-2xl border border-slate-100 flex items-center justify-center mb-5">
-                  <item.icon className="w-6 h-6 text-royal" />
+              <div key={item.title} className="bg-white rounded-3xl p-8 border border-slate-100 hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center">
+                <div className="w-12 h-12 bg-royal rounded-2xl flex items-center justify-center mb-5">
+                  <item.icon className="w-6 h-6 brand-gold-icon" />
                 </div>
                 <h3 className="font-serif text-lg text-midnight font-bold mb-2">{item.title}</h3>
                 <p className="text-sm text-navy leading-relaxed">{item.text}</p>

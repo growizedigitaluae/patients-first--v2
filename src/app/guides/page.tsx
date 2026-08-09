@@ -18,6 +18,7 @@ export default function GuidesPage() {
         description="Honest, plain-language guides about the coordination side of receiving care — records, travel, second opinions and family support. We don't provide medical advice, only practical guidance."
         image="/bg-01.webp"
         compact
+        titleClass="text-2xl lg:text-3xl md:whitespace-nowrap"
       />
 
       <section className="pt-8 pb-16 px-6 max-w-7xl mx-auto">
