@@ -131,12 +131,13 @@ export function ContactForm() {
 
       <div className="mb-[6px]">
         <label htmlFor="message" className={labelClass}>
-          How can we help? (optional)
+          How can we help? *
         </label>
         <textarea
           id="message"
           name="message"
           rows={5}
+          required
           placeholder="Please share as much detail as you can about your situation, including any medical reports or test results you have."
           className={`${inputClass} resize-y`}
           defaultValue={state.values?.message}

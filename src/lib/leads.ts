@@ -11,8 +11,7 @@ export const contactSchema = z.object({
   message: z
     .string()
     .trim()
-    .optional()
-    .refine((value) => !value || value.length >= 10, "Please tell us a little more about your situation."),
+    .min(10, "Please tell us a little more about your situation."),
 });
 
 export type ContactLead = z.infer<typeof contactSchema>;

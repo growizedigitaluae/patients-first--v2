@@ -103,8 +103,8 @@ export default function ContactPage() {
               Request a Personalized Consultation
             </h2>
             <p className="text-navy text-base leading-relaxed mb-7">
-              Tell us a little about your situation. There&rsquo;s no obligation — this simply
-              starts a conversation with someone who can help.
+              Tell us what you&rsquo;re looking for, and our team will connect with you to
+              understand your needs and guide you through the available options.
             </p>
             <Suspense fallback={<div className="h-96 bg-ivory rounded-2xl animate-pulse" />}>
               <ContactForm />
