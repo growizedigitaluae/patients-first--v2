@@ -152,8 +152,10 @@ export default function DestinationsPage() {
           <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">Explore by Country</p>
           <h2 className="text-3xl md:text-4xl font-serif text-midnight">Select a Destination</h2>
           <p className="text-navy leading-relaxed">
-            No single country is right for every patient. We present balanced information to help
-            you explore your options — without bias toward any particular destination.
+            Patients First Worldwide helps you explore carefully selected healthcare destinations
+            based on your medical needs, preferences, and treatment requirements. With the UAE as
+            our primary healthcare destination, we also coordinate access to trusted international
+            options when appropriate.
           </p>
         </div>
         <NetworkMap />

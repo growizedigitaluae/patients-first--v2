@@ -149,12 +149,6 @@ export function ContactForm() {
         {state.errors?.message && <p className="mt-1.5 text-xs text-red-600">{state.errors.message[0]}</p>}
       </div>
 
-      <p className="my-[22px] mb-[26px] py-4 px-4 bg-ivory rounded-2xl text-sm text-navy leading-[1.55]">
-        Please share all the details you have about your situation, including any medical reports
-        or test results &mdash; our team will use them to coordinate with the appropriate medical
-        facility on your behalf.
-      </p>
-
       {state.status === "error" && !Object.keys(state.errors ?? {}).length && (
         <p className="text-xs text-red-600 mb-4">
           Something went wrong. Please try again, or contact us directly on WhatsApp.
@@ -167,7 +161,7 @@ export function ContactForm() {
         className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-[#C88A2B] to-[#fCDA7B] hover:opacity-95 text-royal py-4 rounded-full font-semibold transition shadow-lg disabled:opacity-60"
       >
         <Send className="w-5 h-5" />
-        {isPending ? "Sending…" : "Request Consultation"}
+        {isPending ? "Sending…" : "Speak to Our Team"}
       </button>
 
       <p className="text-[14px] text-navy mt-[18px] leading-relaxed max-w-[460px]">
