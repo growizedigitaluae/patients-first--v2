@@ -137,7 +137,7 @@ export function ContactForm() {
           id="message"
           name="message"
           rows={5}
-          placeholder="Share as much or as little as you're comfortable with — no medical detail is required to get started."
+          placeholder="Please share as much detail as you can about your situation, including any medical reports or test results you have."
           className={`${inputClass} resize-y`}
           defaultValue={state.values?.message}
         />

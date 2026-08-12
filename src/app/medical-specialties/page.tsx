@@ -47,7 +47,6 @@ export default function MedicalSpecialtiesPage() {
         description="Whether you’re seeking a second opinion, specialist care, or treatment closer to home or abroad, Patients First Worldwide helps you navigate your healthcare journey by connecting you with appropriate healthcare providers across a wide range of medical specialties."
         image="/feture-blog.webp"
         compact
-        titleClass="text-3xl md:text-4xl lg:text-5xl md:whitespace-nowrap"
       >
         <p className="text-xs text-navy mt-4 max-w-xl mx-auto">
           Medical advice, diagnosis, and treatment are provided exclusively by licensed

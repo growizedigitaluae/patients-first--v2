@@ -139,7 +139,6 @@ export default function MembershipPage() {
         description="Stay connected with ongoing healthcare coordination, personalised support, and easier access to trusted healthcare services whenever you need them."
         image="/support-background.webp"
         compact
-        titleClass="text-2xl lg:text-3xl md:whitespace-nowrap"
       >
         <p className="text-xs text-navy mt-4 max-w-xl mx-auto">
           Receive ongoing healthcare coordination and patient support — not medical care.

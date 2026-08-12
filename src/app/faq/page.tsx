@@ -32,7 +32,6 @@ export default function FaqPage() {
         description="Straight answers about what we do, what we don't, and how we handle your information. If your question isn't here, just ask us directly."
         image="/support-background.webp"
         compact
-        titleClass="text-4xl md:text-5xl lg:text-6xl md:whitespace-nowrap"
       />
 
       <section className="pt-8 pb-14 px-6 max-w-3xl mx-auto">
