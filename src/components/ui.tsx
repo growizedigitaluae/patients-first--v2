@@ -9,8 +9,6 @@ export function PageHero({
   image,
   children,
   compact = false,
-  wide = false,
-  titleClass = "text-4xl md:text-5xl lg:text-6xl",
 }: {
   eyebrow: string;
   title: React.ReactNode;
@@ -18,8 +16,6 @@ export function PageHero({
   image: string;
   children?: React.ReactNode;
   compact?: boolean;
-  wide?: boolean;
-  titleClass?: string;
 }) {
   return (
     <section className={`relative pt-36 ${compact ? "pb-4" : "pb-20"} px-6 overflow-hidden bg-ivory`}>
@@ -27,11 +23,11 @@ export function PageHero({
         <Image src={image} alt="" fill className="object-cover object-top opacity-95" priority />
         <div className="absolute inset-0 bg-gradient-to-b from-white/75 via-ivory/85 to-ivory" />
       </div>
-      <div className={`relative z-10 ${wide ? "max-w-6xl" : "max-w-4xl"} mx-auto text-center`}>
+      <div className="relative z-10 max-w-6xl mx-auto text-center">
         <p className="text-gold-dark font-semibold tracking-[0.2em] uppercase text-xs mb-4">{eyebrow}</p>
-        <h1 className={`${titleClass} font-serif leading-tight text-midnight`}>{title}</h1>
+        <h1 className="text-3xl md:text-4xl font-serif leading-[1.15] text-midnight md:whitespace-nowrap">{title}</h1>
         {description && (
-          <p className="mt-6 text-lg text-navy leading-relaxed mx-auto">{description}</p>
+          <p className="mt-6 text-lg text-navy leading-relaxed max-w-2xl mx-auto">{description}</p>
         )}
         {children && <div className="mt-8">{children}</div>}
       </div>

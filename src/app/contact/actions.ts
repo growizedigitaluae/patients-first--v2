@@ -21,7 +21,6 @@ export async function submitLead(_prev: ContactState, formData: FormData): Promi
     contactMethod: String(formData.get("contactMethod") ?? ""),
     careArea: String(formData.get("careArea") ?? ""),
     message: String(formData.get("message") ?? ""),
-    consent: formData.get("consent") === "on",
   };
 
   const values = {

@@ -26,13 +26,13 @@ const infoItems = [
     icon: MessageCircle,
     title: "WhatsApp",
     body: <p>Speak directly with a coordinator for quick, general questions.</p>,
-    fine: "For your privacy, please don't send medical records, test results, or sensitive health details over WhatsApp. Your coordinator will move to a secure channel for anything personal.",
+    fine: "Feel free to share the details of your condition and any reports you have — your coordinator will use them to understand your needs and arrange the right care for you.",
   },
   {
     icon: Mail,
     title: "Email",
     body: <a href={`mailto:${site.email}`}>{site.email}</a>,
-    fine: "Please avoid sending sensitive medical documents by email until a secure link has been shared with you.",
+    fine: "You can include relevant medical reports and documents with your email — our team will use them to coordinate with the appropriate medical facility for your condition.",
   },
   {
     icon: Clock,

@@ -13,7 +13,6 @@ export const contactSchema = z.object({
     .trim()
     .optional()
     .refine((value) => !value || value.length >= 10, "Please tell us a little more about your situation."),
-  consent: z.literal(true, { message: "Please agree to be contacted about your enquiry." }),
 });
 
 export type ContactLead = z.infer<typeof contactSchema>;

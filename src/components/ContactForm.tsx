@@ -142,22 +142,18 @@ export function ContactForm() {
           defaultValue={state.values?.message}
         />
         <span className={fieldNoteClass}>
-          Please don’t include sensitive medical details in this field; a coordinator will ask for
-          anything needed through a secure channel.
+          Share as much detail as you&rsquo;re comfortable with &mdash; the more our team knows,
+          the better we can match you with the right care and coordinate with the relevant
+          medical facility.
         </span>
         {state.errors?.message && <p className="mt-1.5 text-xs text-red-600">{state.errors.message[0]}</p>}
       </div>
 
-      <label className="flex gap-3 items-start my-[22px] mb-[26px] py-4 px-4 bg-ivory rounded-2xl cursor-pointer">
-        <input type="checkbox" name="consent" required className="mt-1 accent-gold" />
-        <span className="text-sm text-navy leading-[1.55]">
-          I agree to Patient First Worldwide contacting me about my enquiry using the details
-          provided, and I’ve read the <span className="text-gold-dark underline">Privacy Policy</span>,
-          which explains how my information is stored and protected. I understand I can withdraw this
-          consent at any time by contacting <span className="text-gold-dark underline">info@patientsfirstworldwide.com</span>. *
-        </span>
-      </label>
-      {state.errors?.consent && <p className="text-xs text-red-600 -mt-4 mb-3">{state.errors.consent[0]}</p>}
+      <p className="my-[22px] mb-[26px] py-4 px-4 bg-ivory rounded-2xl text-sm text-navy leading-[1.55]">
+        Please share all the details you have about your situation, including any medical reports
+        or test results &mdash; our team will use them to coordinate with the appropriate medical
+        facility on your behalf.
+      </p>
 
       {state.status === "error" && !Object.keys(state.errors ?? {}).length && (
         <p className="text-xs text-red-600 mb-4">
