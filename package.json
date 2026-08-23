@@ -2,15 +2,22 @@
   "name": "patient-first-worldwide-v2",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "seed": "tsx --env-file=.env src/scripts/seed.ts",
+    "generate:types": "payload generate:types"
   },
   "dependencies": {
+    "@payloadcms/db-sqlite": "^3.88.0",
+    "@payloadcms/next": "^3.88.0",
+    "graphql": "^16.14.2",
     "lucide-react": "^1.28.0",
     "next": "16.2.12",
+    "payload": "^3.88.0",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "zod": "^4.4.3"
@@ -23,6 +30,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.12",
     "tailwindcss": "^4",
+    "tsx": "^4.19.2",
     "typescript": "^5"
   }
 }

@@ -3,7 +3,7 @@
 import { useActionState, useEffect, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 import { CheckCircle2, Send } from "lucide-react";
-import { submitLead, type ContactState } from "@/app/contact/actions";
+import { submitLead, type ContactState } from "@/app/(site)/contact/actions";
 import { countries, defaultCountryCode } from "@/data/countries";
 
 const initialState: ContactState = { status: "idle" };

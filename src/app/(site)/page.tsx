@@ -214,13 +214,13 @@ export default function HomePage() {
         </div>
 
         <div className="relative z-10 max-w-6xl mx-auto text-center">
-          <p className="text-gold-dark font-semibold tracking-[0.24em] uppercase text-xs mb-6">
+          <p className="text-gold-dark font-semibold tracking-[0.24em] uppercase text-sm md:text-base mb-6">
             Compassionate Care
           </p>
           <h1 className="text-3xl md:text-4xl font-serif leading-[1.15] max-w-6xl mx-auto text-midnight md:whitespace-nowrap">
             Because Every Patient Deserves Someone by Their Side.
           </h1>
-          <p className="mt-7 text-xl text-navy leading-relaxed max-w-5xl mx-auto">
+          <p className="mt-7 text-lg text-navy leading-relaxed max-w-5xl mx-auto">
             <span className="block md:whitespace-nowrap">
               A medical journey can feel overwhelming, but you should never have to face it alone.
             </span>

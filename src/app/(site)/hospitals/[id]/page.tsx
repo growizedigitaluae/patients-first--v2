@@ -35,11 +35,11 @@ export default async function HospitalPage(props: PageProps<"/hospitals/[id]">) 
           <div className="absolute inset-0 bg-gradient-to-b from-white/75 via-ivory/85 to-ivory" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <p className="text-gold-dark uppercase tracking-widest text-xs font-bold mb-3">
+          <p className="text-gold-dark uppercase tracking-widest text-sm md:text-base font-bold mb-3">
             {hospital.country} · Our Healthcare Network
           </p>
           <h1 className="text-4xl md:text-5xl font-serif mb-4 text-midnight">{hospital.name}</h1>
-          <p className="text-navy flex items-center justify-center gap-2">
+          <p className="text-navy text-lg flex items-center justify-center gap-2">
             <MapPin className="w-4 h-4 brand-gold-icon" />
             {hospital.location}
           </p>

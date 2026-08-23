@@ -138,6 +138,7 @@ export default function DestinationsPage() {
         }
         image="/hero-destination.webp"
         compact
+        descriptionClass="md:max-w-4xl"
       >
         <p className="text-sm text-navy/90 leading-relaxed mt-5 max-w-2xl mx-auto border-l-4 border-gold pl-4 text-left">
           Patients First Worldwide is an independent patient support and healthcare coordination

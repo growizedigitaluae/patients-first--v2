@@ -32,7 +32,7 @@ export default async function GuidePage(props: PageProps<"/guides/[slug]">) {
           <div className="absolute inset-0 bg-gradient-to-b from-white/75 via-ivory/85 to-ivory" />
         </div>
         <div className="relative z-10 max-w-3xl mx-auto text-center">
-          <p className="text-gold-dark uppercase tracking-widest text-xs font-bold mb-4">
+          <p className="text-gold-dark uppercase tracking-widest text-sm md:text-base font-bold mb-4">
             {guide.category} · {guide.readTime}
           </p>
           <h1 className="text-4xl md:text-5xl font-serif leading-tight text-midnight">{guide.title}</h1>
