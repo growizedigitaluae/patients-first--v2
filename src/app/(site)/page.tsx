@@ -1,37 +1,22 @@
 import Link from "next/link";
 import Image from "next/image";
-import {
-  Eye,
-  HeartHandshake,
-  Users,
-  Globe,
-  UserCheck,
-  Handshake,
-  Network,
-  ShieldCheck,
-  Award,
-} from "lucide-react";
 import { site } from "@/lib/site";
 
 const pillars = [
   {
-    icon: UserCheck,
     title: "Personalised Guidance",
     text: "Every healthcare journey is different. We listen first, understand your priorities, and help coordinate the next steps with clarity, care, and confidence.",
   },
   {
-    icon: HeartHandshake,
     title: "Patients Always Come First",
     text: "Your wellbeing, peace of mind, and informed decision-making are at the heart of everything we do — because every patient deserves to feel heard, supported, and respected.",
   },
   {
-    icon: Globe,
     title: "Trusted Healthcare Connections",
     text: "We connect patients with carefully selected healthcare providers and experienced medical professionals, helping you make informed decisions with confidence.",
     href: "/destinations",
   },
   {
-    icon: Users,
     title: "Your Dedicated Patient Companion",
     text: "From your first enquiry until your healthcare journey is complete, you’ll have a dedicated coordinator by your side to facilitate communication, organise the process, and support you every step of the way.",
     href: "/medical-journey",
@@ -131,12 +116,12 @@ const differences = [
 ];
 
 const values = [
-  { icon: HeartHandshake, title: "Humanity First", text: "Because every patient deserves to be treated with dignity and compassion." },
-  { icon: Handshake, title: "Partnership", text: "Working alongside you throughout your healthcare journey." },
-  { icon: Network, title: "Accessibility", text: "Helping connect patients with healthcare opportunities across borders." },
-  { icon: Eye, title: "Transparency", text: "Clear communication. Honest expectations. No unnecessary complexity." },
-  { icon: ShieldCheck, title: "Trust", text: "Protecting your privacy and acting with professionalism and integrity." },
-  { icon: Award, title: "Excellence", text: "Striving to deliver an exceptional patient experience in every interaction." },
+  { title: "Humanity First", text: "Because every patient deserves to be treated with dignity and compassion." },
+  { title: "Partnership", text: "Working alongside you throughout your healthcare journey." },
+  { title: "Accessibility", text: "Helping connect patients with healthcare opportunities across borders." },
+  { title: "Transparency", text: "Clear communication. Honest expectations. No unnecessary complexity." },
+  { title: "Trust", text: "Protecting your privacy and acting with professionalism and integrity." },
+  { title: "Excellence", text: "Striving to deliver an exceptional patient experience in every interaction." },
 ];
 
 const beyondSupport = [
@@ -257,9 +242,6 @@ export default function HomePage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {pillars.map((pillar) => (
               <div key={pillar.title} className="flex flex-col items-center text-center">
-                <div className="w-12 h-12 flex items-center justify-center mb-4">
-                  <pillar.icon className="w-6 h-6 brand-gold-icon" strokeWidth={1.75} />
-                </div>
                 <h3 className="font-serif text-lg text-white font-bold mb-2">{pillar.title}</h3>
                 <p className="text-sm text-slate-300 leading-relaxed flex-1">{pillar.text}</p>
                 {pillar.href && (
@@ -401,7 +383,6 @@ export default function HomePage() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             {values.map((value) => (
               <div key={value.title} className="bg-white/5 rounded-3xl p-8 border border-white/10 text-center flex flex-col items-center hover:bg-white/10 transition">
-                <value.icon className="w-8 h-8 brand-gold-icon mb-5" />
                 <h4 className="text-white font-bold mb-3">{value.title}</h4>
                 <p className="text-slate-300 text-sm leading-relaxed">{value.text}</p>
               </div>

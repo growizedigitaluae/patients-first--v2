@@ -1,16 +1,8 @@
 import { sqliteAdapter } from "@payloadcms/db-sqlite";
 import { buildConfig } from "payload";
 
-import { Appointments } from "./collections/Appointments";
-import { Members } from "./collections/Members";
 import { MembershipFeatures } from "./collections/MembershipFeatures";
 import { MembershipPlans } from "./collections/MembershipPlans";
-import { Memberships } from "./collections/Memberships";
-import { FamilyMembers } from "./collections/FamilyMembers";
-import { FollowUps } from "./collections/FollowUps";
-import { HealthcareRoadmaps } from "./collections/HealthcareRoadmaps";
-import { MedicalDocuments } from "./collections/MedicalDocuments";
-import { Providers } from "./collections/Providers";
 import { Users } from "./collections/Users";
 
 export default buildConfig({
@@ -25,16 +17,8 @@ export default buildConfig({
   },
   collections: [
     Users,
-    Members,
     MembershipPlans,
     MembershipFeatures,
-    Memberships,
-    FamilyMembers,
-    Appointments,
-    FollowUps,
-    HealthcareRoadmaps,
-    Providers,
-    MedicalDocuments,
   ],
   endpoints: [],
   db: sqliteAdapter({

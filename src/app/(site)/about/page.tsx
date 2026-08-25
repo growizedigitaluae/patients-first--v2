@@ -138,7 +138,6 @@ export default function AboutPage() {
               href="/destinations"
               className="inline-flex items-center gap-2 text-gold-dark font-semibold hover:underline"
             >
-              <Globe2 className="w-5 h-5" />
               Explore Our Global Healthcare Network →
             </Link>
           </div>

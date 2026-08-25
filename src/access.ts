@@ -47,14 +47,3 @@ export const staffOnlyFieldAccess: FieldAccess = ({ req }) => isStaff({ req });
  * True when the requesting user is the given member document's owner.
  * Used inside access functions that receive an already-fetched doc.
  */
-export function memberOwnsDoc(
-  user: unknown,
-  memberId: number | string | null | undefined,
-): boolean {
-  const safe = asSafeUser(user);
-  return (
-    safe?.collection === "members" &&
-    memberId != null &&
-    String(safe.id) === String(memberId)
-  );
-}

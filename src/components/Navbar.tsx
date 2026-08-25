@@ -45,12 +45,7 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/member"
-              className="ml-2 rounded-full border border-gold/60 px-5 py-2 font-medium text-[#fCDA7B] transition hover:bg-white/10"
-            >
-              Member Portal
-            </Link>
+            
             <Link
               href="/contact"
               className="bg-gradient-to-r from-[#C88A2B] to-[#fCDA7B] hover:opacity-95 text-royal px-5 py-2.5 rounded-full font-semibold transition"
@@ -88,13 +83,7 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/member"
-              onClick={() => setOpen(false)}
-              className="block mt-3 text-center rounded-full border border-gold/60 px-5 py-3 font-medium text-[#fCDA7B] transition hover:bg-white/10"
-            >
-              Member Portal
-            </Link>
+            
             <Link
               href="/contact"
               onClick={() => setOpen(false)}

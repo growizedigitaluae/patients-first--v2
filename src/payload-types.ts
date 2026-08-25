@@ -64,21 +64,12 @@ export type SupportedTimezones =
 export interface Config {
   auth: {
     users: UserAuthOperations;
-    members: MemberAuthOperations;
   };
   blocks: {};
   collections: {
     users: User;
-    members: Member;
     'membership-plans': MembershipPlan;
     'membership-features': MembershipFeature;
-    memberships: Membership;
-    'family-members': FamilyMember;
-    appointments: Appointment;
-    'follow-ups': FollowUp;
-    'healthcare-roadmaps': HealthcareRoadmap;
-    providers: Provider;
-    'medical-documents': MedicalDocument;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
@@ -87,16 +78,8 @@ export interface Config {
   collectionsJoins: {};
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
-    members: MembersSelect<false> | MembersSelect<true>;
     'membership-plans': MembershipPlansSelect<false> | MembershipPlansSelect<true>;
     'membership-features': MembershipFeaturesSelect<false> | MembershipFeaturesSelect<true>;
-    memberships: MembershipsSelect<false> | MembershipsSelect<true>;
-    'family-members': FamilyMembersSelect<false> | FamilyMembersSelect<true>;
-    appointments: AppointmentsSelect<false> | AppointmentsSelect<true>;
-    'follow-ups': FollowUpsSelect<false> | FollowUpsSelect<true>;
-    'healthcare-roadmaps': HealthcareRoadmapsSelect<false> | HealthcareRoadmapsSelect<true>;
-    providers: ProvidersSelect<false> | ProvidersSelect<true>;
-    'medical-documents': MedicalDocumentsSelect<false> | MedicalDocumentsSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
@@ -112,31 +95,13 @@ export interface Config {
   widgets: {
     collections: CollectionsWidget;
   };
-  user: User | Member;
+  user: User;
   jobs: {
     tasks: unknown;
     workflows: unknown;
   };
 }
 export interface UserAuthOperations {
-  forgotPassword: {
-    email: string;
-    password: string;
-  };
-  login: {
-    email: string;
-    password: string;
-  };
-  registerFirstUser: {
-    email: string;
-    password: string;
-  };
-  unlock: {
-    email: string;
-    password: string;
-  };
-}
-export interface MemberAuthOperations {
   forgotPassword: {
     email: string;
     password: string;
@@ -182,40 +147,6 @@ export interface User {
     | null;
   password?: string | null;
   collection: 'users';
-}
-/**
- * Members of the PFW Private Health Management portal.
- *
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "members".
- */
-export interface Member {
-  id: number;
-  firstName: string;
-  lastName: string;
-  phone?: string | null;
-  /**
-   * Invited: account created, portal not activated yet. Active: member may sign in. Suspended: portal access blocked.
-   */
-  accountStatus: 'invited' | 'active' | 'suspended';
-  updatedAt: string;
-  createdAt: string;
-  email: string;
-  resetPasswordToken?: string | null;
-  resetPasswordExpiration?: string | null;
-  salt?: string | null;
-  hash?: string | null;
-  loginAttempts?: number | null;
-  lockUntil?: string | null;
-  sessions?:
-    | {
-        id: string;
-        createdAt?: string | null;
-        expiresAt: string;
-      }[]
-    | null;
-  password?: string | null;
-  collection: 'members';
 }
 /**
  * PFW membership packages shown in the Member Portal. Values for each feature row support quantities and descriptions (e.g. '2/year', 'Add-on').
@@ -274,212 +205,6 @@ export interface MembershipFeature {
   createdAt: string;
 }
 /**
- * A member's subscription to a PFW plan. Use “Activate Membership” once the dates are correct.
- *
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "memberships".
- */
-export interface Membership {
-  id: number;
-  member: number | Member;
-  plan: number | MembershipPlan;
-  /**
-   * Past its end date, a membership is treated as inactive automatically — no need to edit it here.
-   */
-  status: 'pending' | 'active' | 'expired' | 'suspended' | 'cancelled';
-  startDate: string;
-  endDate: string;
-  /**
-   * Internal notes. Never shown to members.
-   */
-  notes?: string | null;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * Family member profiles added by PFW staff on a member's behalf.
- *
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "family-members".
- */
-export interface FamilyMember {
-  id: number;
-  member: number | Member;
-  firstName: string;
-  lastName?: string | null;
-  relationship?: ('spouse' | 'partner' | 'son' | 'daughter' | 'mother' | 'father' | 'other') | null;
-  dateOfBirth?: string | null;
-  /**
-   * Optional context shared with the PFW care team.
-   */
-  notes?: string | null;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * Appointments arranged by PFW coordinators. Members see their own appointments in the portal.
- *
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "appointments".
- */
-export interface Appointment {
-  id: number;
-  member: number | Member;
-  title: string;
-  /**
-   * e.g. the doctor or clinic name.
-   */
-  provider?: string | null;
-  specialty?: string | null;
-  /**
-   * Optionally link this appointment to the member's Provider Directory entry. The plain-text provider above remains the member-facing source.
-   */
-  providerRecord?: (number | null) | Provider;
-  date: string;
-  /**
-   * e.g. 10:30 AM — stored as plain text to keep it simple.
-   */
-  time?: string | null;
-  location?: string | null;
-  status: 'scheduled' | 'confirmed' | 'completed' | 'cancelled';
-  /**
-   * Visible to the member in the portal. Keep it patient-friendly.
-   */
-  memberNotes?: string | null;
-  /**
-   * Internal PFW notes. Never shown to members or returned by member requests.
-   */
-  internalNotes?: string | null;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * Healthcare providers organised for a member. Members see their own providers in their Health Passport.
- *
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "providers".
- */
-export interface Provider {
-  id: number;
-  member: number | Member;
-  providerName: string;
-  specialty?: string | null;
-  organisation?: string | null;
-  location?: string | null;
-  phone?: string | null;
-  email?: string | null;
-  /**
-   * Visible to the member in their Health Passport. Keep it patient-friendly.
-   */
-  notes?: string | null;
-  /**
-   * Archived providers are kept as history but hidden from the member's directory.
-   */
-  status: 'active' | 'archived';
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * Follow-ups tracked by PFW coordinators. Members see their own follow-ups in the portal.
- *
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "follow-ups".
- */
-export interface FollowUp {
-  id: number;
-  member: number | Member;
-  title: string;
-  /**
-   * Short, member-friendly summary of this follow-up.
-   */
-  description?: string | null;
-  dueDate?: string | null;
-  status: 'pending' | 'in_progress' | 'completed' | 'cancelled';
-  relatedAppointment?: (number | null) | Appointment;
-  /**
-   * Visible to the member in the portal. Keep it patient-friendly.
-   */
-  memberNotes?: string | null;
-  /**
-   * Internal PFW notes. Never shown to members or returned by member requests.
-   */
-  internalNotes?: string | null;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * A member's personal healthcare roadmap. One roadmap per member keeps the portal view simple.
- *
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "healthcare-roadmaps".
- */
-export interface HealthcareRoadmap {
-  id: number;
-  member: number | Member;
-  title: string;
-  /**
-   * Optional member-friendly context for the whole journey.
-   */
-  description?: string | null;
-  /**
-   * Archived roadmaps are kept as history but no longer highlighted.
-   */
-  status?: ('active' | 'archived') | null;
-  /**
-   * Internal PFW notes. Never shown to members or returned by member requests.
-   */
-  internalNotes?: string | null;
-  /**
-   * Shown top-to-bottom in the portal exactly as ordered here (drag to reorder).
-   */
-  steps?:
-    | {
-        title: string;
-        description?: string | null;
-        status: 'upcoming' | 'current' | 'completed';
-        targetDate?: string | null;
-        id?: string | null;
-      }[]
-    | null;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * A member's healthcare document index. Members see their own documents in their Health Passport.
- *
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "medical-documents".
- */
-export interface MedicalDocument {
-  id: number;
-  member: number | Member;
-  title: string;
-  documentType?: ('laboratory' | 'imaging' | 'specialist-report' | 'consultation' | 'discharge' | 'other') | null;
-  date?: string | null;
-  /**
-   * Optionally link to an entry in the member's Provider Directory.
-   */
-  providerRecord?: (number | null) | Provider;
-  /**
-   * Short, factual summary of what this document covers.
-   */
-  description?: string | null;
-  /**
-   * Visible to the member in their Health Passport. Keep it patient-friendly.
-   */
-  memberNotes?: string | null;
-  /**
-   * Internal PFW notes. Never shown to members or returned by member requests.
-   */
-  internalNotes?: string | null;
-  /**
-   * Archived documents are kept as history but hidden from the member's document list.
-   */
-  status: 'active' | 'archived';
-  updatedAt: string;
-  createdAt: string;
-}
-/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "payload-kv".
  */
@@ -508,55 +233,18 @@ export interface PayloadLockedDocument {
         value: number | User;
       } | null)
     | ({
-        relationTo: 'members';
-        value: number | Member;
-      } | null)
-    | ({
         relationTo: 'membership-plans';
         value: number | MembershipPlan;
       } | null)
     | ({
         relationTo: 'membership-features';
         value: number | MembershipFeature;
-      } | null)
-    | ({
-        relationTo: 'memberships';
-        value: number | Membership;
-      } | null)
-    | ({
-        relationTo: 'family-members';
-        value: number | FamilyMember;
-      } | null)
-    | ({
-        relationTo: 'appointments';
-        value: number | Appointment;
-      } | null)
-    | ({
-        relationTo: 'follow-ups';
-        value: number | FollowUp;
-      } | null)
-    | ({
-        relationTo: 'healthcare-roadmaps';
-        value: number | HealthcareRoadmap;
-      } | null)
-    | ({
-        relationTo: 'providers';
-        value: number | Provider;
-      } | null)
-    | ({
-        relationTo: 'medical-documents';
-        value: number | MedicalDocument;
       } | null);
   globalSlug?: string | null;
-  user:
-    | {
-        relationTo: 'users';
-        value: number | User;
-      }
-    | {
-        relationTo: 'members';
-        value: number | Member;
-      };
+  user: {
+    relationTo: 'users';
+    value: number | User;
+  };
   updatedAt: string;
   createdAt: string;
 }
@@ -566,15 +254,10 @@ export interface PayloadLockedDocument {
  */
 export interface PayloadPreference {
   id: number;
-  user:
-    | {
-        relationTo: 'users';
-        value: number | User;
-      }
-    | {
-        relationTo: 'members';
-        value: number | Member;
-      };
+  user: {
+    relationTo: 'users';
+    value: number | User;
+  };
   key?: string | null;
   value?:
     | {
@@ -606,32 +289,6 @@ export interface PayloadMigration {
 export interface UsersSelect<T extends boolean = true> {
   name?: T;
   role?: T;
-  updatedAt?: T;
-  createdAt?: T;
-  email?: T;
-  resetPasswordToken?: T;
-  resetPasswordExpiration?: T;
-  salt?: T;
-  hash?: T;
-  loginAttempts?: T;
-  lockUntil?: T;
-  sessions?:
-    | T
-    | {
-        id?: T;
-        createdAt?: T;
-        expiresAt?: T;
-      };
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "members_select".
- */
-export interface MembersSelect<T extends boolean = true> {
-  firstName?: T;
-  lastName?: T;
-  phone?: T;
-  accountStatus?: T;
   updatedAt?: T;
   createdAt?: T;
   email?: T;
@@ -684,125 +341,6 @@ export interface MembershipFeaturesSelect<T extends boolean = true> {
   category?: T;
   description?: T;
   displayOrder?: T;
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "memberships_select".
- */
-export interface MembershipsSelect<T extends boolean = true> {
-  member?: T;
-  plan?: T;
-  status?: T;
-  startDate?: T;
-  endDate?: T;
-  notes?: T;
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "family-members_select".
- */
-export interface FamilyMembersSelect<T extends boolean = true> {
-  member?: T;
-  firstName?: T;
-  lastName?: T;
-  relationship?: T;
-  dateOfBirth?: T;
-  notes?: T;
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "appointments_select".
- */
-export interface AppointmentsSelect<T extends boolean = true> {
-  member?: T;
-  title?: T;
-  provider?: T;
-  specialty?: T;
-  providerRecord?: T;
-  date?: T;
-  time?: T;
-  location?: T;
-  status?: T;
-  memberNotes?: T;
-  internalNotes?: T;
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "follow-ups_select".
- */
-export interface FollowUpsSelect<T extends boolean = true> {
-  member?: T;
-  title?: T;
-  description?: T;
-  dueDate?: T;
-  status?: T;
-  relatedAppointment?: T;
-  memberNotes?: T;
-  internalNotes?: T;
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "healthcare-roadmaps_select".
- */
-export interface HealthcareRoadmapsSelect<T extends boolean = true> {
-  member?: T;
-  title?: T;
-  description?: T;
-  status?: T;
-  internalNotes?: T;
-  steps?:
-    | T
-    | {
-        title?: T;
-        description?: T;
-        status?: T;
-        targetDate?: T;
-        id?: T;
-      };
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "providers_select".
- */
-export interface ProvidersSelect<T extends boolean = true> {
-  member?: T;
-  providerName?: T;
-  specialty?: T;
-  organisation?: T;
-  location?: T;
-  phone?: T;
-  email?: T;
-  notes?: T;
-  status?: T;
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "medical-documents_select".
- */
-export interface MedicalDocumentsSelect<T extends boolean = true> {
-  member?: T;
-  title?: T;
-  documentType?: T;
-  date?: T;
-  providerRecord?: T;
-  description?: T;
-  memberNotes?: T;
-  internalNotes?: T;
-  status?: T;
   updatedAt?: T;
   createdAt?: T;
 }

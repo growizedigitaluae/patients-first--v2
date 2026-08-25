@@ -70,7 +70,6 @@ export function NetworkMap() {
               aria-label="Close"
               className="absolute top-4 right-4 z-10 w-9 h-9 bg-white rounded-full shadow-lg border border-slate-200 flex items-center justify-center transition"
             >
-              <X className="w-4 h-4 brand-gold-icon" />
             </button>
 
             <div className="bg-royal text-white px-8 pt-8 pb-6 rounded-t-3xl">
@@ -101,7 +100,6 @@ export function NetworkMap() {
               </div>
 
               <div className="flex items-center gap-2 text-sm text-navy">
-                <Languages className="w-4 h-4 brand-gold-icon shrink-0" />
                 <span className="font-semibold text-navy mr-1">Languages:</span>
                 {selected.languages.join(" · ")}
               </div>
@@ -113,7 +111,6 @@ export function NetworkMap() {
                 <ul className="space-y-2">
                   {selected.assist.map((item) => (
                     <li key={item} className="flex items-start gap-2 text-sm text-navy">
-                      <CheckCircle2 className="w-4 h-4 brand-gold-icon shrink-0 mt-0.5" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -127,7 +124,6 @@ export function NetworkMap() {
                 Speak with Our Team
               </Link>
               <p className="text-xs text-navy leading-relaxed">
-                <Globe2 className="inline w-3.5 h-3.5 mr-1 brand-gold-icon" />
                 Patients First Worldwide is an independent patient support and healthcare
                 coordination company. We do not provide medical advice, diagnosis, or treatment.
               </p>

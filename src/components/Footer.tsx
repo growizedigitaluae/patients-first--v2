@@ -32,7 +32,7 @@ export default function Footer() {
               className="h-12 w-auto object-contain"
             />
           </Link>
-          <p className="text-xs text-slate-500 leading-relaxed max-w-md">
+          <p className="text-xs text-slate-500 leading-relaxed max-w-md text-justify">
             {site.legalName} is an independent patient support and healthcare coordination
             company. We help patients navigate their healthcare journey by facilitating
             communication and coordinating non-clinical services with healthcare providers.
@@ -106,17 +106,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
           <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
-          <p>
-            Crafted by{" "}
-            <a
-              href="https://gro-wize.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-slate-400 hover:text-white transition"
-            >
-              Growize
-            </a>
-          </p>
+        
         </div>
       </div>
 

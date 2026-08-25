@@ -60,9 +60,7 @@ export default function MedicalSpecialtiesPage() {
         </Link>
       </PageHero>
 
-      {/* BRAND SEPARATOR */}
-      <div className="h-2 w-1/2 mx-auto rounded-full bg-royal" aria-hidden />
-
+     
       {/* SPECIALTIES */}
       <section className="pt-8 pb-16 px-6 max-w-7xl mx-auto">
         <div className="max-w-3xl mx-auto text-center mb-10 space-y-3">
@@ -158,7 +156,6 @@ export default function MedicalSpecialtiesPage() {
                   key={item}
                   className="bg-ivory rounded-2xl px-5 py-4 border border-slate-100 flex items-start gap-3"
                 >
-                  <CheckCircle2 className="w-5 h-5 brand-gold-icon shrink-0 mt-0.5" />
                   <p className="text-sm font-semibold text-midnight">{item}</p>
                 </div>
               ))}

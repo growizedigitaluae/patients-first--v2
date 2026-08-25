@@ -13,9 +13,17 @@ import {
   CheckCircle2,
   AlertTriangle,
 } from "lucide-react";
-import { processSteps } from "@/data/process";
 
-const stepIcons = [MessageCircle, FileText, Building2, ListChecks, CalendarCheck, Users, RefreshCw];
+const stepIcons = [
+  MessageCircle,
+  FileText,
+  Building2,
+  ListChecks,
+  CalendarCheck,
+  Users,
+  RefreshCw,
+];import { processSteps } from "@/data/process";
+
 
 export function JourneyTimeline() {
   const [active, setActive] = useState(0);
@@ -85,7 +93,7 @@ export function JourneyTimeline() {
 
                 {step.important && (
                   <div className="mt-6 flex items-start gap-3 bg-amber-50 border-l-4 border-gold rounded-xl p-5 max-w-3xl">
-                    <AlertTriangle className="w-5 h-5 brand-gold-icon shrink-0 mt-0.5" />
+                    
                     <div>
                       <p className="text-xs font-bold uppercase tracking-widest text-gold-dark mb-1">Important</p>
                       <p className="text-sm text-navy leading-relaxed">{step.important}</p>
@@ -101,7 +109,6 @@ export function JourneyTimeline() {
                     <div className="grid sm:grid-cols-2 gap-3 max-w-3xl">
                       {step.items.map((item) => (
                         <div key={item} className="flex items-start gap-2 bg-ivory rounded-xl px-4 py-3 border border-slate-100">
-                          <CheckCircle2 className="w-4 h-4 brand-gold-icon shrink-0 mt-0.5" />
                           <span className="text-sm text-navy">{item}</span>
                         </div>
                       ))}

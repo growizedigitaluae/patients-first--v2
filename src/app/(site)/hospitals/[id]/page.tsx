@@ -40,7 +40,6 @@ export default async function HospitalPage(props: PageProps<"/hospitals/[id]">) 
           </p>
           <h1 className="text-4xl md:text-5xl font-serif mb-4 text-midnight">{hospital.name}</h1>
           <p className="text-navy text-lg flex items-center justify-center gap-2">
-            <MapPin className="w-4 h-4 brand-gold-icon" />
             {hospital.location}
           </p>
         </div>
@@ -55,7 +54,6 @@ export default async function HospitalPage(props: PageProps<"/hospitals/[id]">) 
 
           <div>
             <h2 className="text-xl font-serif text-midnight mb-3 flex items-center gap-2">
-              <Award className="w-5 h-5 brand-gold-icon" />
               Clinical Strengths
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -75,7 +73,6 @@ export default async function HospitalPage(props: PageProps<"/hospitals/[id]">) 
 
           <div>
             <h2 className="text-xl font-serif text-midnight mb-2 flex items-center gap-2">
-              <Globe2 className="w-5 h-5 brand-gold-icon" />
               International Patient Access
             </h2>
             <p className="text-navy leading-relaxed">{hospital.patientAccess}</p>

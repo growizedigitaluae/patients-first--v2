@@ -33,7 +33,6 @@ export function ContactForm() {
   if (state.status === "success") {
     return (
       <div className="bg-white border border-navy/10 rounded-3xl p-8 text-center space-y-4">
-        <CheckCircle2 className="w-10 h-10 brand-gold-icon mx-auto" />
         <h3 className="text-2xl font-serif text-midnight">
           Thank You — We’ve Received Your Enquiry
         </h3>
@@ -161,7 +160,6 @@ export function ContactForm() {
         disabled={isPending}
         className="w-full flex items-center justify-center gap-2 bg-gradient-to-r from-[#C88A2B] to-[#fCDA7B] hover:opacity-95 text-royal py-4 rounded-full font-semibold transition shadow-lg disabled:opacity-60"
       >
-        <Send className="w-5 h-5" />
         {isPending ? "Sending…" : "Speak to Our Team"}
       </button>
 

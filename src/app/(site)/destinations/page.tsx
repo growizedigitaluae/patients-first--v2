@@ -28,6 +28,7 @@ const medicalTourismCountries = [
     flag: "/flags/uae.png",
     eyebrow: "Medical Tourism in UAE",
     cta: "Discuss Your Care in the UAE",
+languageSupport: "Language support available",
     description:
       "The UAE — and Dubai and Abu Dhabi in particular — has grown into one of the leading medical tourism destinations in the Gulf region. The country is home to internationally accredited hospitals that combine advanced medical technology with multilingual, multicultural care teams. For patients across the GCC and beyond, medical tourism in the UAE means internationally recognised specialists, English-speaking coordination, and world-class healthcare close to home — without long-haul travel.",
     services: [
@@ -65,6 +66,7 @@ const medicalTourismCountries = [
     flag: "/flags/turkey.png",
     eyebrow: "Elective & Specialty Treatments",
     cta: "Plan Your Care in Turkey",
+    languageSupport: "Language support available",
     description:
       "Turkey is a preferred medical tourism destination for aesthetic surgery, dentistry, ophthalmology, bariatric and fertility programmes. Its internationally accredited hospitals in Istanbul and Ankara are well connected from the GCC, Europe and Central Asia — offering modern facilities, experienced specialists, and structured treatment packages with strong value.",
     services: [
@@ -83,6 +85,7 @@ const medicalTourismCountries = [
     flag: "/flags/saudi-arabia.png",
     eyebrow: "Regional Specialist Care",
     cta: "Plan Your Care in Saudi Arabia",
+    languageSupport: "Language support available",
     description:
       "Saudi Arabia is rapidly expanding specialist tertiary and quaternary healthcare across the Kingdom. For patients seeking regional proximity and cultural alignment, Saudi Arabia offers recognised public and private institutions in Riyadh and Jeddah for oncology, cardiovascular care, neurosciences, fertility and paediatric medicine.",
     services: [
@@ -101,6 +104,7 @@ const medicalTourismCountries = [
     flag: "/flags/united-states.png",
     eyebrow: "Rare & Complex Conditions",
     cta: "Explore Treatment in the USA",
+    languageSupport: "Language support available",
     description:
       "The United States is a destination of choice for rare and complex conditions that are not readily treatable elsewhere. Leading academic medical centres and clinical research institutions offer precision medicine, clinical trials, complex surgery and comprehensive second opinions — often with multidisciplinary care teams.",
     services: [
@@ -126,11 +130,14 @@ export default function DestinationsPage() {
         description={
           <>
             <span className="block md:whitespace-nowrap">
-              From the UAE to the USA, we help patients explore trusted healthcare options
+              Medical Tourism, Connected Worldwide.
             </span>
             <span className="block md:whitespace-nowrap">
-              across five leading medical tourism destinations —
+              Wherever you are and wherever your healthcare journey takes you, 
             </span>
+            <span className="block md:whitespace-nowrap">Patients First Worldwide helps 
+              you explore trusted medical options across the world
+              </span>
             <span className="block md:whitespace-nowrap">
               with independent, patient-focused coordination and no bias toward any particular country.
             </span>
@@ -166,16 +173,16 @@ export default function DestinationsPage() {
       <section className="pt-10 pb-14 px-6 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-8 space-y-3">
           <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">
-            Medical Tourism Destinations
+           OUR GLOBAL STANDARD
           </p>
           <h2 className="text-3xl md:text-4xl font-serif text-midnight">
-            Five Destinations. One Trusted Coordinator.
+            Healthcare Without Borders. Quality Without Compromise.
           </h2>
           <p className="text-navy leading-relaxed">
-            Whether you’re considering medical tourism in the UAE or exploring treatment options
-            further afield, we coordinate access to internationally accredited hospitals and
-            specialists across the United Arab Emirates, India, Turkey, Saudi Arabia and the
-            United States — helping you find the right pathway for your case.
+            For Patients First Worldwide, global access does not mean unlimited choice — it means carefully selected choice.
+            We build our network around trusted healthcare institutions and specialists that meet the standards we believe our patients deserve. Every potential collaboration is considered with one principle in mind: quality comes first.
+
+Because wherever in the world your medical journey takes you, our commitment remains the same trusted care, responsible coordination, and patients first.
           </p>
         </div>
 
@@ -206,16 +213,26 @@ export default function DestinationsPage() {
                 Specialties We Help You Access
               </p>
               <div className="flex flex-wrap gap-2">
-                {featured.services.map((service) => (
-                  <span
-                    key={service}
-                    className="bg-white/10 border border-white/15 text-white rounded-full px-3.5 py-1.5 text-sm"
-                  >
-                    {service}
-                  </span>
-                ))}
-              </div>
-              <p className="text-sm text-slate-400 mt-5 leading-relaxed">
+  {featured.services.map((service) => (
+    <span
+      key={service}
+      className="bg-white/10 border border-white/15 text-white rounded-full px-3.5 py-1.5 text-sm"
+    >
+      {service}
+    </span>
+  ))}
+</div>
+
+<div className="mt-5 pt-4 border-t border-white/10">
+  <p className="text-gold text-xs font-bold uppercase tracking-widest mb-1.5">
+    Language Support
+  </p>
+  <p className="text-slate-200 text-sm">
+    {featured.languageSupport}
+  </p>
+</div>
+
+<p className="text-sm text-slate-400 mt-5 leading-relaxed">
                 All medical advice, diagnosis, and treatment are provided exclusively by licensed
                 healthcare professionals.
               </p>
@@ -247,21 +264,31 @@ export default function DestinationsPage() {
               </div>
               <p className="text-navy text-sm leading-relaxed flex-1">{country.description}</p>
               <div className="flex flex-wrap gap-2 mt-5">
-                {country.services.map((service) => (
-                  <span
-                    key={service}
-                    className="bg-ivory border border-slate-100 text-navy rounded-full px-3.5 py-1.5 text-sm"
-                  >
-                    {service}
-                  </span>
-                ))}
-              </div>
-              <Link
-                href="/contact"
+  {country.services.map((service) => (
+    <span
+      key={service}
+      className="bg-ivory border border-slate-100 text-navy rounded-full px-3.5 py-1.5 text-sm"
+    >
+      {service}
+    </span>
+  ))}
+</div>
+
+<div className="mt-5 pt-4 border-t border-slate-100">
+  <p className="text-gold-dark text-xs font-bold uppercase tracking-widest mb-1.5">
+    Language Support
+  </p>
+  <p className="text-navy text-sm">
+    {country.languageSupport}
+  </p>
+</div>
+
+<Link
+  href="/contact"
                 className="mt-6 inline-flex items-center gap-2 text-gold-dark font-semibold text-sm hover:underline"
               >
                 {country.cta}
-                <ArrowRight className="w-4 h-4" />
+
               </Link>
             </div>
           ))}
