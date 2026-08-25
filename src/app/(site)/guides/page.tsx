@@ -37,7 +37,7 @@ export default function GuidesPage() {
               </div>
               <div className="p-8 flex flex-col flex-1">
                 <p className="text-xs text-navy mb-2">
-                  {guide.date} · {guide.readTime}
+                  {guide.date}
                 </p>
                 <h2 className="font-serif font-bold text-midnight text-xl mb-3 leading-snug">{guide.title}</h2>
                 <p className="text-sm text-navy leading-relaxed mb-6 flex-1">{guide.excerpt}</p>

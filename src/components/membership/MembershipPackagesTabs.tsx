@@ -31,7 +31,7 @@ const plans: Record<PlanKey, Plan> = {
 
     features: [
       {
-        name: "Dedicated PFW Care Coordinator",
+        name: "Dedicated Care Coordinator",
         value: "Included",
       },
       {
@@ -39,7 +39,7 @@ const plans: Record<PlanKey, Plan> = {
         value: "Included",
       },
       {
-        name: "PFW Health Passport",
+        name: "Health Passport",
         value: "Not included",
       },
       {
@@ -135,7 +135,7 @@ const plans: Record<PlanKey, Plan> = {
         value: "Not included",
       },
       {
-        name: "Regular PFW Check-In",
+        name: "Regular Patients First Worldwide Check-In",
         value: "Quarterly",
       },
       {
@@ -143,7 +143,7 @@ const plans: Record<PlanKey, Plan> = {
         value: "Included",
       },
       {
-        name: "PFW Service Access",
+        name: "Patients First Worldwide Service Access",
         value: "Business hours",
       },
     ],
@@ -159,7 +159,7 @@ const plans: Record<PlanKey, Plan> = {
 
     features: [
       {
-        name: "Dedicated PFW Care Coordinator",
+        name: "DedicatedCare Coordinator",
         value: "Included",
       },
       {
@@ -167,7 +167,7 @@ const plans: Record<PlanKey, Plan> = {
         value: "Comprehensive",
       },
       {
-        name: "PFW Health Passport",
+        name: "Health Passport",
         value: "Included",
       },
       {
@@ -263,7 +263,7 @@ const plans: Record<PlanKey, Plan> = {
         value: "As required",
       },
       {
-        name: "Regular PFW Check-In",
+        name: "Regular Patient First Worldwide Check-In",
         value: "Monthly",
       },
       {
@@ -271,7 +271,7 @@ const plans: Record<PlanKey, Plan> = {
         value: "Included",
       },
       {
-        name: "PFW Service Access",
+        name: "Patients First Worldwide Service Access",
         value: "Priority business hours",
       },
     ],
@@ -287,7 +287,7 @@ const plans: Record<PlanKey, Plan> = {
 
     features: [
       {
-        name: "Dedicated PFW Care Coordinator",
+        name: "Dedicated Patients First Worldwide Care Coordinator",
         value: "Senior dedicated coordinator",
       },
       {
@@ -295,7 +295,7 @@ const plans: Record<PlanKey, Plan> = {
         value: "Enhanced",
       },
       {
-        name: "PFW Health Passport",
+        name: "Health Passport",
         value: "Enhanced",
       },
       {
@@ -391,7 +391,7 @@ const plans: Record<PlanKey, Plan> = {
         value: "Enhanced",
       },
       {
-        name: "Regular PFW Check-In",
+        name: "Regular Patients First Worldwide Check-In",
         value: "Personalised frequency",
       },
       {
@@ -399,7 +399,7 @@ const plans: Record<PlanKey, Plan> = {
         value: "Executive review",
       },
       {
-        name: "PFW Service Access",
+        name: "Patients First Worldwide Service Access",
         value: "Extended priority coordination",
       },
     ],
@@ -434,19 +434,19 @@ export default function MembershipPackagesTabs() {
     >
       <div className="mx-auto w-full max-w-5xl">
         {/* Section Heading */}
-        <div className="mx-auto mb-10 max-w-2xl text-center">
+        <div className="mx-auto mb-10 w-full max-w-5xl text-center">
           <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-gold-dark">
             Membership Packages
           </p>
 
           <h2
             id="membership-packages-heading"
-            className="font-serif text-3xl leading-tight text-midnight md:text-4xl"
+            className="whitespace-nowrap font-serif text-[clamp(1.35rem,4vw,2.25rem)] leading-tight text-midnight"
           >
             Choose the Level of Support That Fits
           </h2>
 
-          <p className="mt-4 leading-relaxed text-navy">
+          <p className="mx-auto mt-4 max-w-2xl leading-relaxed text-navy">
             Membership tiers are designed around different levels of
             coordination and support. Speak with our membership team to
             understand which is right for you and your family.

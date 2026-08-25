@@ -52,7 +52,7 @@ export const medicalSpecialties: MedicalSpecialty[] = [
   },
   {
     slug: "paediatrics",
-    title: "Paediatrics",
+    title: "Paediatrics & Paediatric subspecialties",
     text: "Supporting families seeking specialist healthcare services for infants, children, and adolescents across a wide range of paediatric specialties.",
   },
   {
@@ -62,7 +62,7 @@ export const medicalSpecialties: MedicalSpecialty[] = [
   },
   {
     slug: "rare-diseases",
-    title: "Rare Diseases",
+    title: "Genetics & Rare Diseases",
     text: "Supporting patients with rare or complex medical conditions by helping coordinate access to appropriate specialist healthcare providers and multidisciplinary services where available.",
   },
   {
@@ -72,7 +72,7 @@ export const medicalSpecialties: MedicalSpecialty[] = [
   },
   {
     slug: "transplantation",
-    title: "Transplantation",
+    title: "Muliti Organ Transplantation",
     text: "Supporting patients who are exploring transplant services by facilitating communication and coordination with appropriate transplant centres where suitable. Eligibility, assessments, and all clinical decisions remain the responsibility of the treating healthcare providers.",
   },
   {
@@ -82,7 +82,7 @@ export const medicalSpecialties: MedicalSpecialty[] = [
   },
   {
     slug: "womens-health-fertility",
-    title: "Women's Health & Fertility",
+    title: "Women's Health & IVF",
     text: "Supporting women seeking specialist care across reproductive health, fertility, pregnancy, and gynaecological services by helping coordinate their healthcare journey.",
   },
 ];

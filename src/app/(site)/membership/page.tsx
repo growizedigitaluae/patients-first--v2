@@ -18,9 +18,6 @@ import { PageHero } from "@/components/ui";
 import { MemberPortalComingSoon } from "@/components/MemberPortalComingSoon";
 import MembershipPackagesTabs from "@/components/membership/MembershipPackagesTabs";
 
-const px = (id: number) =>
-  `https://images.pexels.com/photos/${id}/pexels-photo-${id}.jpeg?auto=compress&cs=tinysrgb&w=1200`;
-
 export const metadata = {
   title: "Membership",
   description:
@@ -244,8 +241,8 @@ export default function MembershipPage() {
       {/* IMAGE BAND */}
       <section className="relative h-[320px] lg:h-[420px] overflow-hidden">
         <Image
-          src={px(8413217)}
-          alt="Member consulting with a healthcare professional"
+          src="https://images.pexels.com/photos/7551677/pexels-photo-7551677.jpeg?auto=compress&cs=tinysrgb&w=1600"
+          alt="Family providing supportive care and companionship"
           fill
           sizes="100vw"
           className="object-cover"
@@ -269,7 +266,6 @@ export default function MembershipPage() {
 
       {/* PACKAGES */}
       <MembershipPackagesTabs />
-
 
       {/* FAQ */}
       <section className="py-16 px-6 max-w-3xl mx-auto">
@@ -311,9 +307,9 @@ export default function MembershipPage() {
           </h2>
 
           <p className="text-slate-300 leading-relaxed max-w-2xl mx-auto">
-            Ready to become a member? Speak with our membership team and we’ll
-            help you understand how ongoing patient support and healthcare
-            coordination can help you and your family.
+            Ready to become a member? Speak with our team and we’ll help you
+            understand how ongoing patient support and healthcare coordination
+            can help you and your family.
           </p>
 
           <div className="flex flex-col sm:flex-row justify-center gap-4">
@@ -321,7 +317,7 @@ export default function MembershipPage() {
               href="/contact"
               className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#C88A2B] to-[#fCDA7B] hover:opacity-95 text-royal px-8 py-4 rounded-full font-semibold transition shadow-lg"
             >
-              Speak with Our Membership Team
+              Speak with Our Team
             </Link>
 
             <Link
