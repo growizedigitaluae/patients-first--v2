@@ -11,6 +11,7 @@ export function PageHero({
   compact = false,
   titleClass = "",
   descriptionClass = "",
+  contentClassName = "",
 }: {
   eyebrow: string;
   title: React.ReactNode;
@@ -20,19 +21,51 @@ export function PageHero({
   compact?: boolean;
   titleClass?: string;
   descriptionClass?: string;
+  contentClassName?: string;
 }) {
   return (
-    <section className={`relative pt-36 ${compact ? "pb-4" : "pb-20"} px-6 overflow-hidden bg-ivory`}>
+    <section
+      className={`relative pt-36 ${
+        compact ? "pb-4" : "pb-20"
+      } px-6 overflow-hidden bg-ivory`}
+    >
       <div className="absolute inset-x-0 top-16 sm:top-20 bottom-0 z-0">
-        <Image src={image} alt="" fill className="object-cover object-top opacity-95" priority />
+        <Image
+          src={image}
+          alt=""
+          fill
+          className="object-cover object-top opacity-95"
+          priority
+        />
+
         <div className="absolute inset-0 bg-gradient-to-b from-white/75 via-ivory/85 to-ivory" />
       </div>
-      <div className="relative z-10 max-w-6xl mx-auto text-center">
-        <p className="text-gold-dark font-semibold tracking-[0.2em] uppercase text-sm md:text-base mb-4">{eyebrow}</p>
-        <h1 className={`text-3xl md:text-4xl font-serif leading-[1.15] text-midnight md:whitespace-nowrap ${titleClass}`}>{title}</h1>
+
+      <div
+        className={`relative z-10 w-full mx-auto text-center ${
+          contentClassName || "max-w-6xl"
+        }`}
+      >
+        <p className="text-gold-dark font-semibold tracking-[0.2em] uppercase text-sm md:text-base mb-4">
+          {eyebrow}
+        </p>
+
+        <h1
+          className={`text-3xl md:text-4xl font-serif leading-[1.15] text-midnight md:whitespace-nowrap ${titleClass}`}
+        >
+          {title}
+        </h1>
+
         {description && (
-          <p className={`mt-6 text-lg text-navy leading-relaxed max-w-2xl mx-auto ${descriptionClass}`}>{description}</p>
+          <p
+            className={`mt-6 text-lg text-navy leading-relaxed mx-auto ${
+              descriptionClass || "max-w-2xl"
+            }`}
+          >
+            {description}
+          </p>
         )}
+
         {children && <div className="mt-8">{children}</div>}
       </div>
     </section>
@@ -51,13 +84,28 @@ export function SectionHeading({
   align?: "center" | "left";
 }) {
   const centered = align === "center";
+
   return (
-    <div className={`${centered ? "text-center mx-auto" : "text-left"} max-w-2xl mb-12 space-y-3`}>
+    <div
+      className={`${
+        centered ? "text-center mx-auto" : "text-left"
+      } max-w-2xl mb-12 space-y-3`}
+    >
       {eyebrow && (
-        <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">{eyebrow}</p>
+        <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">
+          {eyebrow}
+        </p>
       )}
-      <h2 className="text-3xl md:text-4xl font-serif text-midnight leading-tight">{title}</h2>
-      {description && <p className="text-navy leading-relaxed">{description}</p>}
+
+      <h2 className="text-3xl md:text-4xl font-serif text-midnight leading-tight">
+        {title}
+      </h2>
+
+      {description && (
+        <p className="text-navy leading-relaxed">
+          {description}
+        </p>
+      )}
     </div>
   );
 }
@@ -74,8 +122,14 @@ export function CtaBand({
   return (
     <section className="py-14 px-6 bg-midnight text-white">
       <div className="max-w-4xl mx-auto text-center space-y-8">
-        <h2 className="text-3xl md:text-4xl font-serif leading-tight">{title}</h2>
-        <p className="text-slate-300 leading-relaxed max-w-2xl mx-auto">{subtitle}</p>
+        <h2 className="text-3xl md:text-4xl font-serif leading-tight">
+          {title}
+        </h2>
+
+        <p className="text-slate-300 leading-relaxed max-w-2xl mx-auto">
+          {subtitle}
+        </p>
+
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Link
             href="/contact"
@@ -83,6 +137,7 @@ export function CtaBand({
           >
             {ctaLabel}
           </Link>
+
           <a
             href={site.whatsapp}
             target="_blank"
@@ -99,10 +154,13 @@ export function CtaBand({
 
 export function Disclaimer({ className = "" }: { className?: string }) {
   return (
-    <div className={`bg-slate-50 border-l-4 border-gold border-y border-r border-slate-200 p-6 rounded-2xl ${className}`}>
+    <div
+      className={`bg-slate-50 border-l-4 border-gold border-y border-r border-slate-200 p-6 rounded-2xl ${className}`}
+    >
       <p className="font-serif text-midnight font-bold text-xs uppercase tracking-widest mb-2">
         Important Legal Notice
       </p>
+
       <p className="text-navy text-sm leading-relaxed">
         Patients First Worldwide is an independent patient support and healthcare coordination
         company. We do not provide medical advice, medical diagnoses, or medical treatment.

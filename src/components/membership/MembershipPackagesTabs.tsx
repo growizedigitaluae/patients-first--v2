@@ -621,7 +621,7 @@ export default function MembershipPackagesTabs() {
 
           {activeTab === "prestige" && (
             <p className="text-sm leading-relaxed text-slate-600">
-              PFW's most comprehensive level for members who want enhanced
+              PFW&apos;s most comprehensive level for members who want enhanced
               oversight across multiple providers, specialties, complex
               journeys or international care.
             </p>

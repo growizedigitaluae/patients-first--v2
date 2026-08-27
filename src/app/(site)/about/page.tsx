@@ -97,95 +97,96 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* FOUNDER */}
-      <section className="py-16 px-6 max-w-6xl mx-auto bg-white border-y border-slate-100">
-        <div className="grid md:grid-cols-[1fr_1.4fr] gap-10 items-center">
-          {/* Founder Image */}
-          <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-xl">
-            <Image
-              src="/ceo-profile.webp"
-              alt="Akhdiya Mirzokarimova, Founder of Patients First Worldwide"
-              fill
-              className="object-cover"
-            />
-          </div>
+{/* FOUNDER */}
+<section className="py-16 px-6 max-w-6xl mx-auto bg-white border-y border-slate-100">
+  {/* Founder Image + Content */}
+  <div className="grid md:grid-cols-[1fr_1.4fr] gap-10 items-start">
+    {/* Founder Image */}
+    <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-xl md:mt-8">
+      <Image
+        src="/ceo-profile.webp"
+        alt="Akhdiya Mirzokarimova, Founder of Patients First Worldwide"
+        fill
+        className="object-cover"
+      />
+    </div>
 
-          {/* Founder Content */}
-          <div className="space-y-7">
-            <div>
-              <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs mb-2">
-                Our Founder
-              </p>
+    {/* Founder Content */}
+    <div className="space-y-7">
+      <div>
+        <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs mb-2">
+          Our Founder
+        </p>
 
-              <h2 className="text-4xl font-serif text-midnight">
-                Akhdiya Mirzokarimova
-              </h2>
+        <h2 className="text-4xl font-serif text-midnight">
+          Akhdiya Mirzokarimova
+        </h2>
 
-              <p className="text-midnight font-medium text-lg mt-1">
-                Founder, Patients First Worldwide
-              </p>
-            </div>
+        <p className="text-midnight font-medium text-lg mt-1">
+          Founder, Patients First Worldwide
+        </p>
+      </div>
 
-            <div className="space-y-4 text-navy leading-relaxed">
-              <p>
-                Patients First Worldwide was founded by Akhdiya Mirzokarimova with a clear
-                belief: behind every patient there is a life, a family, and a future.
-              </p>
+      <div className="space-y-4 text-navy leading-relaxed">
+        <p>
+          Patients First Worldwide was founded by Akhdiya Mirzokarimova with a clear
+          belief: behind every patient there is a life, a family, and a future.
+        </p>
 
-              <p>
-                Through her experience working closely with patients, physicians and healthcare
-                organisations, she saw how difficult healthcare can become when people are left
-                to navigate complex systems, multiple providers and important decisions on their
-                own.
-              </p>
+        <p>
+          Through her experience working closely with patients, physicians and healthcare
+          organisations, she saw how difficult healthcare can become when people are left
+          to navigate complex systems, multiple providers and important decisions on their
+          own.
+        </p>
 
-              <p>
-                She created Patients First Worldwide to bring something more human to that
-                experience — clarity, trusted connections and thoughtful coordination, with the
-                individual always at the centre.
-              </p>
+        <p>
+          She created Patients First Worldwide to bring something more human to that
+          experience — clarity, trusted connections and thoughtful coordination, with the
+          individual always at the centre.
+        </p>
 
-              <p>
-                Her vision extends beyond borders: to build Patients First Worldwide into a
-                trusted global healthcare partner for patients and families seeking the right
-                care, wherever their journey may take them.
-              </p>
-            </div>
+        <p>
+          Her vision extends beyond borders: to build Patients First Worldwide into a
+          trusted global healthcare partner for patients and families seeking the right
+          care, wherever their journey may take them.
+        </p>
+      </div>
+    </div>
+  </div>
 
-            {/* Founder Quote */}
-            <div className="bg-royal p-8 rounded-2xl border-l-4 border-gold">
-              <p className="font-serif italic text-white text-xl leading-relaxed">
-                &ldquo;Healthcare will always be about people first. My vision for PFW is to
-                make sure that, no matter how complex the journey becomes, we never lose sight
-                of the person at the heart of it.&rdquo;
-              </p>
+  {/* Founder Quote — Full Width */}
+<div className="mt-10 bg-royal p-7 md:p-8 rounded-2xl border-l-4 border-gold">
+  <p className="font-serif italic text-white text-base md:text-lg leading-relaxed">
+    &ldquo;Healthcare will always be about people first. My vision for PFW is to
+    make sure that, no matter how complex the journey becomes, we never lose sight
+    of the person at the heart of it.&rdquo;
+  </p>
 
-              <p className="text-gold text-sm font-semibold mt-4">
-                — Akhdiya Mirzokarimova
-              </p>
-            </div>
+  <p className="text-gold text-sm font-semibold mt-4">
+    — Akhdiya Mirzokarimova
+  </p>
+</div>
 
-            {/* Contact CTAs */}
-            <div className="flex flex-wrap gap-4 pt-2">
-              <Link
-                href="/contact"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-[#C88A2B] to-[#fCDA7B] hover:opacity-95 text-royal px-6 py-3 rounded-full font-semibold transition"
-              >
-                Speak with Our Team
-              </Link>
+  {/* Contact CTAs — Full Width */}
+  <div className="flex flex-col sm:flex-row justify-center gap-4 pt-8">
+    <Link
+      href="/contact"
+      className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#C88A2B] to-[#fCDA7B] hover:opacity-95 text-royal px-6 py-3 rounded-full font-semibold transition"
+    >
+      Speak with Our Team
+    </Link>
 
-              <a
-                href={site.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-gradient-to-r from-[#C88A2B] to-[#fCDA7B] hover:opacity-95 text-royal px-6 py-3 rounded-full font-semibold transition"
-              >
-                WhatsApp Us
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+    <a
+      href={site.whatsapp}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#C88A2B] to-[#fCDA7B] hover:opacity-95 text-royal px-6 py-3 rounded-full font-semibold transition"
+    >
+      WhatsApp Us
+    </a>
+  </div>
+</section>
 
       {/* GLOBAL NETWORK STRIP */}
       <section className="py-14 px-6 max-w-6xl mx-auto">
@@ -200,12 +201,14 @@ export default function AboutPage() {
             </h2>
 
             <p className="text-navy leading-relaxed">
-              Patients First Worldwide is developing a carefully selected international network of hospitals, 
-              medical centres, specialist physicians and healthcare partners across leading healthcare destinations.
-              Our featured destinations include the United Arab Emirates, India, Saudi Arabia, Türkiye and the United States, 
-              with access extending beyond these markets through our wider international network.
-              From established centres of medical excellence to highly specialised expertise across different regions, 
-              our network is designed to give patients broader access to healthcare across the world — through one global platform.
+              Patients First Worldwide is developing a carefully selected international
+              network of hospitals, medical centres, specialist physicians and healthcare
+              partners across leading healthcare destinations. Our featured destinations
+              include the United Arab Emirates, India, Saudi Arabia, Türkiye and the United
+              States, with access extending beyond these markets through our wider
+              international network. From established centres of medical excellence to highly
+              specialised expertise across different regions, our network is designed to give
+              patients broader access to healthcare across the world — through one global platform.
             </p>
 
             <Link

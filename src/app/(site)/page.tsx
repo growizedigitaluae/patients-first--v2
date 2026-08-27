@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { site } from "@/lib/site";
 
+
 const pillars = [
   {
     title: "Personalised Guidance",
@@ -236,27 +237,56 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FOUR PILLARS */}
-      <section className="relative z-10 -mt-10 px-6 max-w-7xl mx-auto">
-        <div className="bg-midnight rounded-3xl shadow-2xl p-8 md:p-10">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {pillars.map((pillar) => (
-              <div key={pillar.title} className="flex flex-col items-center text-center">
-                <h3 className="font-serif text-lg text-white font-bold mb-2">{pillar.title}</h3>
-                <p className="text-sm text-slate-300 leading-relaxed flex-1">{pillar.text}</p>
-                {pillar.href && (
-                  <Link
-                    href={pillar.href}
-                    className="mt-4 text-gold text-xs font-semibold hover:underline inline-flex items-center gap-1"
-                  >
-                    Learn more <span aria-hidden>→</span>
-                  </Link>
-                )}
-              </div>
-            ))}
+     {/* FOUR PILLARS */}
+<section className="relative z-10 -mt-10 px-6 max-w-7xl mx-auto">
+  <div className="bg-midnight rounded-3xl shadow-2xl p-8 md:p-10">
+    <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {pillars.map((pillar) => {
+        const pillarIcon =
+          {
+            "Personalised Guidance": "/icons/pfw/001-patient-concierge.svg",
+            "Patients Always Come First": "/icons/pfw/081-patient-first-support.svg",
+            "Trusted Healthcare Connections": "/icons/pfw/021-global-medical-journey.svg",
+            "Your Dedicated Patient Companion": "/icons/pfw/002-dedicated-coordinator.svg",
+          }[pillar.title] ?? "/icons/pfw/001-patient-concierge.svg";
+
+        return (
+          <div
+            key={pillar.title}
+            className="flex flex-col items-center text-center"
+          >
+            <div className="mb-5 flex items-center justify-center">
+              <Image
+                src={pillarIcon}
+                alt=""
+                width={52}
+                height={52}
+                className="w-11 h-11 sm:w-12 sm:h-12 object-contain"
+              />
+            </div>
+
+            <h3 className="font-serif text-lg text-white font-bold mb-2">
+              {pillar.title}
+            </h3>
+
+            <p className="text-sm text-slate-300 leading-relaxed flex-1">
+              {pillar.text}
+            </p>
+
+            {pillar.href && (
+              <Link
+                href={pillar.href}
+                className="mt-4 text-gold text-xs font-semibold hover:underline inline-flex items-center gap-1"
+              >
+                Learn more <span aria-hidden>→</span>
+              </Link>
+            )}
           </div>
-        </div>
-      </section>
+        );
+      })}
+    </div>
+  </div>
+</section>
 
       {/* ABOUT US */}
       <section className="py-16 px-6 max-w-7xl mx-auto">
@@ -291,24 +321,59 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* THREE STEPS */}
-      <section className="py-14 px-6 bg-white border-y border-slate-100">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-10 space-y-3">
-            <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">How We Begin</p>
-            <h2 className="text-3xl md:text-4xl font-serif text-midnight">Three Simple Steps to Start</h2>
+   {/* THREE STEPS */}
+<section className="py-14 px-6 bg-white border-y border-slate-100">
+  <div className="max-w-7xl mx-auto">
+    <div className="text-center max-w-2xl mx-auto mb-10 space-y-3">
+      <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">
+        How We Begin
+      </p>
+
+      <h2 className="text-3xl md:text-4xl font-serif text-midnight">
+        Three Simple Steps to Start
+      </h2>
+    </div>
+
+    <div className="grid md:grid-cols-3 gap-6">
+      {journeySteps.map((item) => {
+        const stepIcon = {
+          "01": "/icons/pfw/003-initial-enquiry.svg",
+          "02": "/icons/pfw/004-needs-assessment.svg",
+          "03": "/icons/pfw/006-care-planning.svg",
+        }[item.step];
+
+        return (
+          <div
+            key={item.step}
+            className="relative bg-ivory rounded-3xl p-8 border border-slate-100"
+          >
+            {stepIcon && (
+              <Image
+                src={stepIcon}
+                alt=""
+                width={48}
+                height={48}
+                className="w-12 h-12 object-contain mb-4"
+              />
+            )}
+
+            <span className="text-gold font-serif text-5xl">
+              {item.step}
+            </span>
+
+            <h3 className="font-serif text-xl text-midnight mt-4 mb-2">
+              {item.title}
+            </h3>
+
+            <p className="text-sm text-navy leading-relaxed">
+              {item.text}
+            </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {journeySteps.map((item) => (
-              <div key={item.step} className="relative bg-ivory rounded-3xl p-8 border border-slate-100">
-                <span className="text-gold font-serif text-5xl">{item.step}</span>
-                <h3 className="font-serif text-xl text-midnight mt-4 mb-2">{item.title}</h3>
-                <p className="text-sm text-navy leading-relaxed">{item.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+        );
+      })}
+    </div>
+  </div>
+</section>
 
       {/* SUPPORTING YOU THROUGHOUT */}
       <section className="py-16 px-6 max-w-7xl mx-auto">
@@ -374,22 +439,58 @@ export default function HomePage() {
       </section>
 
       {/* VALUES */}
-      <section className="py-16 px-6 bg-midnight">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-10 space-y-3">
-            <p className="text-gold font-semibold tracking-[0.18em] uppercase text-xs">Our Values</p>
-            <h2 className="text-2xl md:text-3xl font-serif text-white md:whitespace-nowrap">The Principles Behind Everything We Do</h2>
+<section className="py-16 px-6 bg-midnight">
+  <div className="max-w-7xl mx-auto">
+    <div className="text-center max-w-2xl mx-auto mb-10 space-y-3">
+      <p className="text-gold font-semibold tracking-[0.18em] uppercase text-xs">
+        Our Values
+      </p>
+
+      <h2 className="text-2xl md:text-3xl font-serif text-white md:whitespace-nowrap">
+        The Principles Behind Everything We Do
+      </h2>
+    </div>
+
+    <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+      {values.map((value) => {
+        const valueIcon =
+          {
+            "Humanity First": "/icons/pfw/001-patient-concierge.svg",
+            Partnership: "/icons/pfw/002-dedicated-coordinator.svg",
+            Accessibility: "/icons/pfw/010-family-support.svg",
+            Transparency: "/icons/pfw/041-hospital-selection.svg",
+            Trust: "/icons/pfw/021-global-medical-journey.svg",
+            Excellence: "/icons/pfw/100-service-excellence.svg",
+          }[value.title] ?? "/icons/pfw/001-patient-concierge.svg";
+
+        return (
+          <div
+            key={value.title}
+            className="bg-white/5 rounded-3xl p-8 border border-white/10 text-center flex flex-col items-center hover:bg-white/10 transition"
+          >
+            <div className="mb-5 flex items-center justify-center">
+              <Image
+                src={valueIcon}
+                alt=""
+                width={52}
+                height={52}
+                className="w-11 h-11 sm:w-12 sm:h-12 object-contain"
+              />
+            </div>
+
+            <h4 className="text-white font-bold mb-3">
+              {value.title}
+            </h4>
+
+            <p className="text-slate-300 text-sm leading-relaxed">
+              {value.text}
+            </p>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            {values.map((value) => (
-              <div key={value.title} className="bg-white/5 rounded-3xl p-8 border border-white/10 text-center flex flex-col items-center hover:bg-white/10 transition">
-                <h4 className="text-white font-bold mb-3">{value.title}</h4>
-                <p className="text-slate-300 text-sm leading-relaxed">{value.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+        );
+      })}
+    </div>
+  </div>
+</section>
 
       {/* EXPLORE OUR SERVICES */}
       <section className="py-14 px-6 bg-white border-y border-slate-100">

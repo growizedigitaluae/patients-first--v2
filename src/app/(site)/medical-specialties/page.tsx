@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { CheckCircle2 } from "lucide-react";
 import { PageHero } from "@/components/ui";
 import { medicalSpecialties } from "@/data/medical-specialties";
 
@@ -41,33 +40,40 @@ const specialtyImages: Record<string, string> = {
 export default function MedicalSpecialtiesPage() {
   return (
     <main>
+      {/* HERO */}
       <PageHero
-        eyebrow="Our Global Healthcare Network"
-        title="Medical Specialties We Support"
-        description="Whether you’re seeking a second opinion, specialist care, or treatment closer to home or abroad, Patients First Worldwide helps you navigate your healthcare journey by connecting you with appropriate healthcare providers across a wide range of medical specialties."
-        image="/feture-blog.webp"
-        compact
-      >
-        <p className="text-xs text-navy mt-4 max-w-xl mx-auto">
-          Medical advice, diagnosis, and treatment are provided exclusively by licensed
-          healthcare professionals.
-        </p>
-        <Link
-          href="/contact"
-          className="mt-6 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#C88A2B] to-[#fCDA7B] hover:opacity-95 text-royal px-8 py-4 rounded-full font-semibold transition shadow-lg"
-        >
-          Speak with Our Team
-        </Link>
-      </PageHero>
+  eyebrow="Our Global Healthcare Network"
+  title="Medical Specialties We Support"
+  description="Whether you’re seeking a second opinion, specialist care, or treatment closer to home or abroad, Patients First Worldwide helps you navigate your healthcare journey by connecting you with appropriate healthcare providers across a wide range of medical specialties."
+  image="/feture-blog.webp"
+  compact
+  titleClass="!whitespace-normal"
+  descriptionClass="!max-w-5xl"
+>
+  <p className="text-xs text-navy mt-4 max-w-3xl mx-auto">
+    Medical advice, diagnosis, and treatment are provided exclusively by licensed
+    healthcare professionals.
+  </p>
 
-     
+  <Link
+    href="/contact"
+    className="mt-6 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-[#C88A2B] to-[#fCDA7B] hover:opacity-95 text-royal px-8 py-4 rounded-full font-semibold transition shadow-lg"
+  >
+    Speak with Our Team
+  </Link>
+</PageHero>
+
       {/* SPECIALTIES */}
       <section className="pt-8 pb-16 px-6 max-w-7xl mx-auto">
         <div className="max-w-3xl mx-auto text-center mb-10 space-y-3">
           <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">
             Healthcare Coordination Across Multiple Specialties
           </p>
-          <h2 className="text-3xl md:text-4xl font-serif text-midnight">Medical Specialties</h2>
+
+          <h2 className="text-3xl md:text-4xl font-serif text-midnight">
+            Medical Specialties
+          </h2>
+
           <p className="text-navy leading-relaxed">
             Select a specialty to see how we support patients seeking appropriate care — close
             to home or abroad. Our team coordinates the non-clinical side of your journey:
@@ -84,7 +90,10 @@ export default function MedicalSpecialtiesPage() {
             >
               <div className="relative w-full overflow-hidden bg-white">
                 <Image
-                  src={specialtyImages[specialty.slug] ?? specialtyImages["rare-diseases"]}
+                  src={
+                    specialtyImages[specialty.slug] ??
+                    specialtyImages["rare-diseases"]
+                  }
                   alt=""
                   width={1200}
                   height={675}
@@ -92,11 +101,16 @@ export default function MedicalSpecialtiesPage() {
                   className="w-full h-auto object-contain"
                 />
               </div>
+
               <div className="p-7 flex flex-col flex-1">
                 <h3 className="font-serif text-xl text-midnight font-bold mb-3 leading-snug group-hover:text-gold-dark transition">
                   {specialty.title}
                 </h3>
-                <p className="text-sm text-navy leading-relaxed flex-1">{specialty.text}</p>
+
+                <p className="text-sm text-navy leading-relaxed flex-1">
+                  {specialty.text}
+                </p>
+
                 <span className="mt-6 inline-flex items-center gap-2 text-gold-dark text-sm font-semibold group-hover:underline">
                   Discuss your case <span aria-hidden>→</span>
                 </span>
@@ -109,12 +123,25 @@ export default function MedicalSpecialtiesPage() {
       {/* OUR ROLE */}
       <section className="relative py-14 px-6 bg-royal text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image src="/care.webp" alt="" fill className="object-cover opacity-20" />
+          <Image
+            src="/care.webp"
+            alt=""
+            fill
+            className="object-cover opacity-20"
+          />
+
           <div className="absolute inset-0 bg-gradient-to-r from-royal via-royal/90 to-royal" />
         </div>
+
         <div className="relative z-10 max-w-4xl mx-auto text-center space-y-6">
-          <p className="text-gold font-semibold tracking-[0.18em] uppercase text-xs">Our Role</p>
-          <h2 className="text-3xl md:text-4xl font-serif">Coordinating Your Journey, Never Your Care</h2>
+          <p className="text-gold font-semibold tracking-[0.18em] uppercase text-xs">
+            Our Role
+          </p>
+
+          <h2 className="text-3xl md:text-4xl font-serif">
+            Coordinating Your Journey, Never Your Care
+          </h2>
+
           <p className="text-slate-300 leading-relaxed max-w-2xl mx-auto">
             Patients First Worldwide is an independent patient support and healthcare
             coordination company. We help patients navigate the healthcare journey by
@@ -137,26 +164,32 @@ export default function MedicalSpecialtiesPage() {
               className="object-cover"
             />
           </div>
+
           <div className="space-y-6">
             <div className="space-y-3">
               <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">
                 What You Can Expect
               </p>
+
               <h2 className="text-3xl md:text-4xl font-serif text-midnight">
                 How We Support You
               </h2>
+
               <p className="text-navy leading-relaxed">
                 Throughout your healthcare journey, you’ll always know who is coordinating your
                 next steps — and who to turn to when questions come up.
               </p>
             </div>
+
             <div className="grid sm:grid-cols-2 gap-4">
               {expectations.map((item) => (
                 <div
                   key={item}
                   className="bg-ivory rounded-2xl px-5 py-4 border border-slate-100 flex items-start gap-3"
                 >
-                  <p className="text-sm font-semibold text-midnight">{item}</p>
+                  <p className="text-sm font-semibold text-midnight">
+                    {item}
+                  </p>
                 </div>
               ))}
             </div>
@@ -170,10 +203,12 @@ export default function MedicalSpecialtiesPage() {
           <h2 className="text-3xl md:text-4xl font-serif leading-tight">
             Let’s Start with a Conversation
           </h2>
+
           <p className="text-slate-300 leading-relaxed max-w-2xl mx-auto">
             Tell us about your healthcare needs, and our team will help you understand the next
             steps — no obligation, and no pressure.
           </p>
+
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Link
               href="/contact"
@@ -181,6 +216,7 @@ export default function MedicalSpecialtiesPage() {
             >
               Speak with Our Team
             </Link>
+
             <Link
               href="/medical-journey"
               className="inline-flex items-center justify-center bg-gradient-to-r from-[#C88A2B] to-[#fCDA7B] hover:opacity-95 text-royal px-8 py-4 rounded-full font-semibold transition"
