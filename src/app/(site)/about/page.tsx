@@ -158,7 +158,7 @@ export default function AboutPage() {
   {/* Founder Quote — Full Width */}
 <div className="mt-10 bg-royal p-7 md:p-8 rounded-2xl border-l-4 border-gold">
   <p className="font-serif italic text-white text-base md:text-lg leading-relaxed">
-    &ldquo;Healthcare will always be about people first. My vision for PFW is to
+    &ldquo;Healthcare will always be about people first. My vision for Patients First Worldwide is to
     make sure that, no matter how complex the journey becomes, we never lose sight
     of the person at the heart of it.&rdquo;
   </p>

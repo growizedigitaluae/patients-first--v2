@@ -47,6 +47,7 @@ const medicalTourismCountries = [
     flag: "/flags/india.png",
     eyebrow: "Complex & High-Acuity Care",
     cta: "Plan Your Care in India",
+     languageSupport: "Language support available",
     description:
       "India is one of the world's most established medical tourism destinations, known for complex and high-acuity treatment at internationally accredited hospitals. Patients travel to India for cardiac surgery, oncology, organ transplantation, neurosurgery and orthopaedic procedures — supported by experienced specialists and mature international patient services across Chennai, Mumbai, Delhi and Bengaluru.",
     services: [

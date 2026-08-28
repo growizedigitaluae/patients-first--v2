@@ -295,12 +295,12 @@ export default function MembershipPage() {
   <div className="absolute inset-0 bg-gradient-to-r from-royal/90 via-royal/60 to-royal/20" />
 
   <div className="absolute inset-0 flex items-center">
-    <div className="max-w-7xl mx-auto px-6 w-full">
+    <div className="max-w-7xl mx-auto px-6 w-full text-center">
       <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs mb-3">
         Personal, Ongoing Coordination
       </p>
 
-      <h2 className="text-3xl md:text-4xl font-serif text-white max-w-2xl leading-tight">
+      <h2 className="text-3xl md:text-4xl font-serif text-white max-w-3xl mx-auto leading-tight">
         A dedicated coordinator beside you at every step of your
         healthcare journey.
       </h2>
@@ -312,36 +312,50 @@ export default function MembershipPage() {
       <MembershipPackagesTabs />
 
       {/* FAQ */}
-      <section className="py-16 px-6 max-w-3xl mx-auto">
-        <div className="text-center mb-10 space-y-3">
-          <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">
-            Membership Questions
-          </p>
+<section className="py-16 px-6 max-w-3xl mx-auto">
+  <div className="text-center mb-10 space-y-3">
+    <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">
+      Membership Questions
+    </p>
 
-          <h2 className="text-3xl md:text-4xl font-serif text-midnight">
-            Frequently Asked Questions
-          </h2>
-        </div>
+    <h2 className="text-3xl md:text-4xl font-serif text-midnight">
+      Frequently Asked Questions
+    </h2>
+  </div>
 
-        <div className="space-y-4">
-          {faqs.map((faq) => (
-            <details
-              key={faq.q}
-              className="group bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden"
+  <div className="space-y-4">
+    {faqs.map((faq) => (
+      <details
+        key={faq.q}
+        className="group bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden"
+      >
+        <summary className="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none font-serif font-bold text-midnight leading-snug">
+          {faq.q}
+
+          <ChevronDown className="w-5 h-5 brand-gold-icon shrink-0 transition-transform group-open:rotate-180" />
+        </summary>
+
+        {faq.q === "What about my privacy?" ? (
+          <p className="px-6 pb-6 text-navy leading-relaxed text-sm">
+            Your privacy is important to us. We handle your personal information
+            with care and confidentiality. Please read our{" "}
+            <Link
+              href="/faq"
+              className="text-gold-dark font-semibold hover:underline"
             >
-              <summary className="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none font-serif font-bold text-midnight leading-snug">
-                {faq.q}
-
-                <ChevronDown className="w-5 h-5 brand-gold-icon shrink-0 transition-transform group-open:rotate-180" />
-              </summary>
-
-              <p className="px-6 pb-6 text-navy leading-relaxed text-sm">
-                {faq.a}
-              </p>
-            </details>
-          ))}
-        </div>
-      </section>
+              Privacy Statement
+            </Link>{" "}
+            to learn more about how we handle your information.
+          </p>
+        ) : (
+          <p className="px-6 pb-6 text-navy leading-relaxed text-sm">
+            {faq.a}
+          </p>
+        )}
+      </details>
+    ))}
+  </div>
+</section>
 
       {/* CTA */}
       <section className="py-14 px-6 bg-midnight text-white">
