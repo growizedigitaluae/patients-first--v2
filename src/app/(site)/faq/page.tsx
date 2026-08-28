@@ -59,7 +59,7 @@ export default function FaqPage() {
             </h1>
 
             <p className="text-white/90 text-base md:text-lg leading-relaxed max-w-3xl mx-auto mb-5">
-              At <em>Patients First Worldwide (PFW)</em>, we understand that
+              At <em>Patients First Worldwide </em>, we understand that
               the information you share with us may be personal and sensitive,
               particularly when it relates to your health.
             </p>
@@ -72,7 +72,7 @@ export default function FaqPage() {
 
             <p className="mt-4 text-white/80 text-sm md:text-base leading-relaxed max-w-3xl mx-auto">
               <em>
-                Privacy is not an afterthought at PFW. It is part of how we
+                Privacy is not an afterthought at Patients First Worldwide. It is part of how we
                 work.
               </em>
             </p>
