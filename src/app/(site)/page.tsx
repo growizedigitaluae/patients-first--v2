@@ -244,11 +244,11 @@ export default function HomePage() {
       {pillars.map((pillar) => {
         const pillarIcon =
           {
-            "Personalised Guidance": "/icons/pfw/001-patient-concierge.svg",
-            "Patients Always Come First": "/icons/pfw/081-patient-first-support.svg",
-            "Trusted Healthcare Connections": "/icons/pfw/021-global-medical-journey.svg",
-            "Your Dedicated Patient Companion": "/icons/pfw/002-dedicated-coordinator.svg",
-          }[pillar.title] ?? "/icons/pfw/001-patient-concierge.svg";
+            "Personalised Guidance": "/icons/pfw/01-personalised-guidance.svg",
+            "Patients Always Come First": "/icons/pfw/02-patient-always-1st.svg",
+            "Trusted Healthcare Connections": "/icons/pfw/03-trusted-healthcare-connections.svg",
+            "Your Dedicated Patient Companion": "/icons/pfw/04-dedicated-patient-companion.svg",
+          }[pillar.title] ?? "/icons/pfw/01-personalised-guidance.svg";
 
         return (
           <div
@@ -321,7 +321,7 @@ export default function HomePage() {
         </div>
       </section>
 
-   {/* THREE STEPS */}
+  {/* THREE STEPS */}
 <section className="py-14 px-6 bg-white border-y border-slate-100">
   <div className="max-w-7xl mx-auto">
     <div className="text-center max-w-2xl mx-auto mb-10 space-y-3">
@@ -335,42 +335,24 @@ export default function HomePage() {
     </div>
 
     <div className="grid md:grid-cols-3 gap-6">
-      {journeySteps.map((item) => {
-        const stepIcon = {
-          "01": "/icons/pfw/003-initial-enquiry.svg",
-          "02": "/icons/pfw/004-needs-assessment.svg",
-          "03": "/icons/pfw/006-care-planning.svg",
-        }[item.step];
+      {journeySteps.map((item) => (
+        <div
+          key={item.step}
+          className="relative bg-ivory rounded-3xl p-8 border border-slate-100"
+        >
+          <span className="text-gold font-serif text-5xl">
+            {item.step}
+          </span>
 
-        return (
-          <div
-            key={item.step}
-            className="relative bg-ivory rounded-3xl p-8 border border-slate-100"
-          >
-            {stepIcon && (
-              <Image
-                src={stepIcon}
-                alt=""
-                width={48}
-                height={48}
-                className="w-12 h-12 object-contain mb-4"
-              />
-            )}
+          <h3 className="font-serif text-xl text-midnight mt-4 mb-2">
+            {item.title}
+          </h3>
 
-            <span className="text-gold font-serif text-5xl">
-              {item.step}
-            </span>
-
-            <h3 className="font-serif text-xl text-midnight mt-4 mb-2">
-              {item.title}
-            </h3>
-
-            <p className="text-sm text-navy leading-relaxed">
-              {item.text}
-            </p>
-          </div>
-        );
-      })}
+          <p className="text-sm text-navy leading-relaxed">
+            {item.text}
+          </p>
+        </div>
+      ))}
     </div>
   </div>
 </section>
@@ -455,13 +437,13 @@ export default function HomePage() {
       {values.map((value) => {
         const valueIcon =
           {
-            "Humanity First": "/icons/pfw/001-patient-concierge.svg",
-            Partnership: "/icons/pfw/002-dedicated-coordinator.svg",
-            Accessibility: "/icons/pfw/010-family-support.svg",
-            Transparency: "/icons/pfw/041-hospital-selection.svg",
-            Trust: "/icons/pfw/021-global-medical-journey.svg",
-            Excellence: "/icons/pfw/100-service-excellence.svg",
-          }[value.title] ?? "/icons/pfw/001-patient-concierge.svg";
+            "Humanity First": "/icons/pfw/05-humanity-first.svg",
+            Partnership: "/icons/pfw/06-partnership.svg",
+            Accessibility: "/icons/pfw/07-accessibility.svg",
+            Transparency: "/icons/pfw/08-transparency.svg",
+            Trust: "/icons/pfw/09-trust.svg",
+            Excellence: "/icons/pfw/10-excellence.svg",
+          }[value.title] ?? "/icons/pfw/05-humanity-first.svg";
 
         return (
           <div

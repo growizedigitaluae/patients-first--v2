@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 512 512">
+  <!-- Generator: Adobe Illustrator 30.7.0, SVG Export Plug-In . SVG Version: 2.1.4 Build 114)  -->
+  <defs>
+    <style>
+      .st0 {
+        stroke: url(#linear-gradient);
+      }
+
+      .st0, .st1 {
+        stroke-width: 20px;
+      }
+
+      .st0, .st1, .st2 {
+        fill: none;
+        stroke-linecap: round;
+        stroke-miterlimit: 10;
+      }
+
+      .st1 {
+        stroke: url(#linear-gradient1);
+      }
+
+      .st2 {
+        stroke: url(#linear-gradient2);
+        stroke-width: 17px;
+      }
+
+      .st3 {
+        fill: #052138;
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="77.55" y1="201.45" x2="224.14" y2="201.45" gradientTransform="translate(0 512) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b87d2b"/>
+      <stop offset=".14" stop-color="#d3a452"/>
+      <stop offset=".29" stop-color="#eeca78"/>
+      <stop offset=".37" stop-color="#f9d987"/>
+      <stop offset=".47" stop-color="#eac46b"/>
+      <stop offset=".58" stop-color="#dcb051"/>
+      <stop offset=".7" stop-color="#d2a23e"/>
+      <stop offset=".83" stop-color="#cb9932"/>
+      <stop offset=".96" stop-color="#ca972f"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient1" x1="333.02" y1="201.45" x2="479.61" y2="201.45" gradientTransform="translate(767.47 512) rotate(-180)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b87d2b"/>
+      <stop offset=".14" stop-color="#d3a452"/>
+      <stop offset=".29" stop-color="#eeca78"/>
+      <stop offset=".37" stop-color="#f9d987"/>
+      <stop offset=".47" stop-color="#eac46b"/>
+      <stop offset=".58" stop-color="#dcb051"/>
+      <stop offset=".7" stop-color="#d2a23e"/>
+      <stop offset=".83" stop-color="#cb9932"/>
+      <stop offset=".96" stop-color="#ca972f"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient2" x1="152.11" y1="332.09" x2="367.35" y2="332.09" gradientTransform="translate(0 512) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b87d2b"/>
+      <stop offset=".14" stop-color="#d3a452"/>
+      <stop offset=".29" stop-color="#eeca78"/>
+      <stop offset=".37" stop-color="#f9d987"/>
+      <stop offset=".47" stop-color="#eac46b"/>
+      <stop offset=".58" stop-color="#dcb051"/>
+      <stop offset=".7" stop-color="#d2a23e"/>
+      <stop offset=".83" stop-color="#cb9932"/>
+      <stop offset=".96" stop-color="#ca972f"/>
+    </linearGradient>
+  </defs>
+  <rect class="st3" width="512" height="512" rx="100" ry="100"/>
+  <g>
+    <path class="st0" d="M214.14,441.21h-54.06l-.68-32.03-64.92-95.2c-4.48-6.57-6.93-14.87-6.93-23.44v-88.2c0-12.39,8.16-22.44,18.21-22.44h0c10,0,18.12,9.93,18.21,22.24l.52,73.86,42.42,57.32M211.86,433.46l.23-103.67-50.77-56.31c-5.98-6.62-15.76-6.76-21.91-.31h0c-6.02,6.33-5.47,16.5.16,23.24l22.16,29.42"/>
+    <path class="st1" d="M345.09,333.31l42.42-57.32.52-73.86c.09-12.32,8.21-22.24,18.21-22.24h0c10.06,0,18.21,10.04,18.21,22.44v88.2c0,8.58-2.45,16.88-6.93,23.44l-64.92,95.2-.68,32.03h-54.06M350.3,325.82l22.16-29.42c5.63-6.74,6.18-16.91.16-23.24h0c-6.14-6.45-15.92-6.31-21.91.31l-50.77,56.31.23,103.67"/>
+    <path class="st2" d="M244.22,112.6c0,23.09-18.72,41.8-41.8,41.8s-41.8-18.72-41.8-41.8,18.72-41.8,41.8-41.8,41.8,18.72,41.8,41.8h0ZM314.93,72.41c-23.09,0-41.8,18.72-41.8,41.8s18.72,41.8,41.8,41.8,41.8-18.72,41.8-41.8-18.72-41.8-41.8-41.8h0ZM358.85,195.54v-81.92c0-21.82-17.68-39.51-39.51-39.51h-6.58c-21.82,0-39.5,17.69-39.5,39.51v46.1M163.57,89.95c3.27,5.91,9.56,9.91,16.8,9.91,10.6,0,19.2-8.6,19.2-19.2M241.35,90.86c-3.36,5.56-9.47,9.29-16.45,9.29-10.6,0-19.2-8.59-19.2-19.19M276.61,92c3.27,5.91,9.56,9.91,16.8,9.91,10.6,0,19.2-8.6,19.2-19.2M354.38,92.91c-3.36,5.56-9.47,9.29-16.45,9.29-10.6,0-19.2-8.59-19.2-19.19M284.48,243.98h67.33v-39.24c0-15.21-6.17-28.98-16.13-38.95-4.14-4.14-8.93-7.62-14.22-10.27M255.5,154.15c-17.14,0-31.04,13.9-31.04,31.04s13.9,31.04,31.04,31.04,31.04-13.9,31.04-31.04-13.9-31.04-31.04-31.04h0ZM228.03,243.16h-66.27v-39.24c0-15.21,6.17-28.98,16.13-38.95,4.14-4.14,8.93-7.62,14.22-10.27M232.54,171.37c1.97,3.56,5.78,5.98,10.14,5.98,6.4,0,11.6-5.19,11.6-11.6M279.5,171.92c-2.03,3.36-5.72,5.61-9.94,5.61-6.4,0-11.6-5.19-11.6-11.59M284.53,245.52c0-15.63-12.67-28.29-28.29-28.29h0c-15.63,0-28.29,12.67-28.29,28.29v43.5h56.59v-43.5Z"/>
+  </g>
+</svg>

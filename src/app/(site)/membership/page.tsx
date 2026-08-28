@@ -120,149 +120,193 @@ export default function MembershipPage() {
       </PageHero>
 
       {/* MEMBERSHIP BENEFITS */}
-      <section className="pt-8 pb-16 px-6 max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
-          <div className="relative h-[300px] lg:h-[440px] rounded-3xl overflow-hidden shadow-xl">
-            <Image
-              src="https://images.pexels.com/photos/7551677/pexels-photo-7551677.jpeg?auto=compress&cs=tinysrgb&w=1600"
-              alt="Close-up of a young person's hand gently holding an elderly person's hand"
-              fill
-              sizes="(max-width: 1024px) 100vw, 50vw"
-              className="object-cover"
-            />
+     <section className="pt-8 pb-16 px-6 max-w-7xl mx-auto">
+  <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
+    <div className="relative h-[300px] lg:h-[440px] rounded-3xl overflow-hidden shadow-xl">
+      <Image
+        src="https://images.pexels.com/photos/7551677/pexels-photo-7551677.jpeg?auto=compress&cs=tinysrgb&w=1600"
+        alt="Close-up of a young person's hand gently holding an elderly person's hand"
+        fill
+        sizes="(max-width: 1024px) 100vw, 50vw"
+        className="object-cover"
+      />
 
-            <div className="absolute inset-0 bg-gradient-to-t from-royal/25 to-transparent" />
-          </div>
+      <div className="absolute inset-0 bg-gradient-to-t from-royal/25 to-transparent" />
+    </div>
 
-          <div className="space-y-6">
-            <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">
-              Membership Benefits
-            </p>
+    <div className="space-y-6">
+      <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">
+        Membership Benefits
+      </p>
 
-            <h2 className="text-2xl lg:text-3xl font-serif text-midnight md:whitespace-nowrap">
-              Supporting Your Healthcare Journey
-            </h2>
+      <h2 className="text-2xl lg:text-3xl font-serif text-midnight md:whitespace-nowrap">
+        Supporting Your Healthcare Journey
+      </h2>
 
-            <p className="text-navy leading-relaxed">
-              Our membership programme is designed for individuals and
-              families who would like ongoing support navigating their
-              healthcare journey. Members benefit from dedicated coordination,
-              personalised assistance, and access to a trusted healthcare
-              network whenever healthcare needs arise.
-            </p>
+      <p className="text-navy leading-relaxed">
+        Our membership programme is designed for individuals and
+        families who would like ongoing support navigating their
+        healthcare journey. Members benefit from dedicated coordination,
+        personalised assistance, and access to a trusted healthcare
+        network whenever healthcare needs arise.
+      </p>
 
-            <a
-              href="#packages"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-[#C88A2B] to-[#fCDA7B] hover:opacity-95 text-royal px-7 py-3.5 rounded-full font-semibold transition shadow-lg"
-            >
-              Explore Membership Options
-            </a>
-          </div>
-        </div>
+      <a
+        href="#packages"
+        className="inline-flex items-center gap-2 bg-gradient-to-r from-[#C88A2B] to-[#fCDA7B] hover:opacity-95 text-royal px-7 py-3.5 rounded-full font-semibold transition shadow-lg"
+      >
+        Explore Membership Options
+      </a>
+    </div>
+  </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm flex flex-col items-center text-center">
-            <HeartHandshake className="w-7 h-7 brand-gold-icon mb-5" />
+  <div className="grid md:grid-cols-3 gap-6">
+    {/* Ongoing Healthcare Support */}
+    <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm flex flex-col items-center text-center">
+      <div className="mb-5 flex items-center justify-center">
+        <Image
+          src="/icons/pfw/11-ongoing-healthcare-support.svg"
+          alt=""
+          width={52}
+          height={52}
+          className="w-11 h-11 sm:w-12 sm:h-12 object-contain"
+        />
+      </div>
 
-            <h3 className="font-serif text-lg text-midnight font-bold mb-2">
-              Ongoing Healthcare Support
-            </h3>
+      <h3 className="font-serif text-lg text-midnight font-bold mb-2">
+        Ongoing Healthcare Support
+      </h3>
 
-            <p className="text-sm text-navy leading-relaxed">
-              Continuous patient support and coordination, helping you stay
-              organised across every stage of your healthcare journey.
-            </p>
-          </div>
+      <p className="text-sm text-navy leading-relaxed">
+        Continuous patient support and coordination, helping you stay
+        organised across every stage of your healthcare journey.
+      </p>
+    </div>
 
-          <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm flex flex-col items-center text-center">
-            <FileSearch className="w-7 h-7 brand-gold-icon mb-5" />
+    {/* Second Opinion Coordination */}
+    <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm flex flex-col items-center text-center">
+      <div className="mb-5 flex items-center justify-center">
+        <Image
+          src="/icons/pfw/12-second-option.svg"
+          alt=""
+          width={52}
+          height={52}
+          className="w-11 h-11 sm:w-12 sm:h-12 object-contain"
+        />
+      </div>
 
-            <h3 className="font-serif text-lg text-midnight font-bold mb-2">
-              Second Opinion Coordination
-            </h3>
+      <h3 className="font-serif text-lg text-midnight font-bold mb-2">
+        Second Opinion Coordination
+      </h3>
 
-            <p className="text-sm text-navy leading-relaxed">
-              Support coordinating additional specialist opinions when you or
-              your healthcare provider request them.
-            </p>
-          </div>
+      <p className="text-sm text-navy leading-relaxed">
+        Support coordinating additional specialist opinions when you or
+        your healthcare provider request them.
+      </p>
+    </div>
 
-          <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm flex flex-col items-center text-center">
-            <Compass className="w-7 h-7 brand-gold-icon mb-5" />
+    {/* Healthcare Navigation */}
+    <div className="bg-white rounded-3xl p-8 border border-slate-100 shadow-sm flex flex-col items-center text-center">
+      <div className="mb-5 flex items-center justify-center">
+        <Image
+          src="/icons/pfw/13-healthcare-navigations.svg"
+          alt=""
+          width={52}
+          height={52}
+          className="w-11 h-11 sm:w-12 sm:h-12 object-contain"
+        />
+      </div>
 
-            <h3 className="font-serif text-lg text-midnight font-bold mb-2">
-              Healthcare Navigation
-            </h3>
+      <h3 className="font-serif text-lg text-midnight font-bold mb-2">
+        Healthcare Navigation
+      </h3>
 
-            <p className="text-sm text-navy leading-relaxed">
-              Personalised patient support to help you understand your options
-              and coordinate the next steps with confidence.
-            </p>
-          </div>
-        </div>
-      </section>
+      <p className="text-sm text-navy leading-relaxed">
+        Personalised patient support to help you understand your options
+        and coordinate the next steps with confidence.
+      </p>
+    </div>
+  </div>
+</section>
 
       {/* MEMBERSHIP INCLUDES */}
-      <section className="py-16 px-6 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-2xl mx-auto text-center mb-10 space-y-3">
-            <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">
-              Membership Includes
+<section className="py-16 px-6 bg-white">
+  <div className="max-w-7xl mx-auto">
+    <div className="max-w-2xl mx-auto text-center mb-10 space-y-3">
+      <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs">
+        Membership Includes
+      </p>
+
+      <h2 className="text-3xl md:text-4xl font-serif text-midnight">
+        What Every Member Receives
+      </h2>
+    </div>
+
+    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {membershipIncludes.map((item, index) => {
+        const includeIcons = [
+          "/icons/pfw/14-dedicated-patients-coordinator.svg",
+          "/icons/pfw/15-healthcare-coordination.svg",
+          "/icons/pfw/16-global-healthcare-network.svg",
+          "/icons/pfw/17-family-support.svg",
+          "/icons/pfw/18-medical-report-organization.svg",
+          "/icons/pfw/19-travel-support.svg",
+        ];
+
+        return (
+          <div
+            key={item.title}
+            className="bg-white rounded-3xl p-8 border border-slate-100 hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center"
+          >
+            <div className="mb-5 flex items-center justify-center">
+              <Image
+                src={includeIcons[index]}
+                alt=""
+                width={52}
+                height={52}
+                className="w-11 h-11 sm:w-12 sm:h-12 object-contain"
+              />
+            </div>
+
+            <h3 className="font-serif text-lg text-midnight font-bold mb-2">
+              {item.title}
+            </h3>
+
+            <p className="text-sm text-navy leading-relaxed">
+              {item.text}
             </p>
-
-            <h2 className="text-3xl md:text-4xl font-serif text-midnight">
-              What Every Member Receives
-            </h2>
           </div>
+        );
+      })}
+    </div>
+  </div>
+</section>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {membershipIncludes.map((item) => (
-              <div
-                key={item.title}
-                className="bg-white rounded-3xl p-8 border border-slate-100 hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center"
-              >
-                <div className="w-12 h-12 bg-royal rounded-2xl flex items-center justify-center mb-5">
-                  <item.icon className="w-6 h-6 brand-gold-icon" />
-                </div>
+{/* IMAGE BAND */}
+<section className="relative h-[320px] lg:h-[420px] overflow-hidden">
+  <Image
+    src="https://images.pexels.com/photos/7551677/pexels-photo-7551677.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    alt="Family providing supportive care and companionship"
+    fill
+    sizes="100vw"
+    className="object-cover"
+  />
 
-                <h3 className="font-serif text-lg text-midnight font-bold mb-2">
-                  {item.title}
-                </h3>
+  <div className="absolute inset-0 bg-gradient-to-r from-royal/90 via-royal/60 to-royal/20" />
 
-                <p className="text-sm text-navy leading-relaxed">
-                  {item.text}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+  <div className="absolute inset-0 flex items-center">
+    <div className="max-w-7xl mx-auto px-6 w-full">
+      <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs mb-3">
+        Personal, Ongoing Coordination
+      </p>
 
-      {/* IMAGE BAND */}
-      <section className="relative h-[320px] lg:h-[420px] overflow-hidden">
-        <Image
-          src="https://images.pexels.com/photos/7551677/pexels-photo-7551677.jpeg?auto=compress&cs=tinysrgb&w=1600"
-          alt="Family providing supportive care and companionship"
-          fill
-          sizes="100vw"
-          className="object-cover"
-        />
-
-        <div className="absolute inset-0 bg-gradient-to-r from-royal/90 via-royal/60 to-royal/20" />
-
-        <div className="absolute inset-0 flex items-center">
-          <div className="max-w-7xl mx-auto px-6 w-full">
-            <p className="text-gold-dark font-semibold tracking-[0.18em] uppercase text-xs mb-3">
-              Personal, Ongoing Coordination
-            </p>
-
-            <h2 className="text-3xl md:text-4xl font-serif text-white max-w-2xl leading-tight">
-              A dedicated coordinator beside you at every step of your
-              healthcare journey.
-            </h2>
-          </div>
-        </div>
-      </section>
+      <h2 className="text-3xl md:text-4xl font-serif text-white max-w-2xl leading-tight">
+        A dedicated coordinator beside you at every step of your
+        healthcare journey.
+      </h2>
+    </div>
+  </div>
+</section>
 
       {/* PACKAGES */}
       <MembershipPackagesTabs />
