@@ -89,7 +89,7 @@ export default function FaqPage() {
         content: (
           <div className="space-y-4">
             <p>
-              PFW aims to collect and use personal information that is
+              Patients First Worldwide aims to collect and use personal information that is
               reasonably necessary to provide the services you request,
               communicate with you and coordinate relevant healthcare and
               support services.
@@ -181,7 +181,7 @@ export default function FaqPage() {
             </p>
 
             <p>
-              PFW takes reasonable organisational and technical measures
+              Patients First Worldwide takes reasonable organisational and technical measures
               designed to protect the information entrusted to us and to limit
               access to those who reasonably require it for legitimate
               purposes.
