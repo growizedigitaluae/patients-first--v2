@@ -106,7 +106,7 @@ ${lead.message}
 ----------------------------------------
 
 This enquiry was submitted through:
-https://www.patientfirstworldwide.com/contact
+https://www.patientsfirstworldwide.com/contact
 
 Please respond to the enquirer using the reply-to address above.
 
@@ -192,7 +192,7 @@ Reference: ${reference}
 
               Submitted through
               <a
-                href="https://www.patientfirstworldwide.com/contact"
+                href="https://www.patientsfirstworldwide.com/contact"
                 style="color:#06263D;"
               >
                 patientsfirstworldwide.com
@@ -258,7 +258,7 @@ Your Dedicated Healthcare Coordination Partner
 Dubai, United Arab Emirates
 Email: ${smtpUser}
 Phone: +971 56 696 0486
-Website: https://www.patientfirstworldwide.com
+Website: https://www.patientsfirstworldwide.com
 
 Reference: ${reference}
         `.trim(),
@@ -407,7 +407,7 @@ Reference: ${reference}
             >
 
               <img
-                src="https://www.patientfirstworldwide.com/images/pfw-email-logo.png"
+                src="https://www.patientsfirstworldwide.com/images/pfw-email-logo.png"
                 alt="Patients First Worldwide"
                 width="190"
                 class="email-logo"
@@ -804,13 +804,13 @@ Reference: ${reference}
                 <br />
 
                 <a
-                  href="https://www.patientfirstworldwide.com"
+                  href="https://www.patientsfirstworldwide.com"
                   style="
                     color:#fCDA7B;
                     text-decoration:none;
                   "
                 >
-                  www.patientfirstworldwide.com
+                  www.patientsfirstworldwide.com
                 </a>
 
               </p>
