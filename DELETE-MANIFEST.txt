@@ -1,0 +1,19 @@
+PATIENTS FIRST WORLDWIDE — CLEANUP MANIFEST
+
+Apply only after confirming the current production branch/backups.
+
+DELETE ROUTES:
+- src/app/(site)/hospitals/[id]/page.tsx
+- src/app/(site)/membership/page.tsx
+
+PENDING DEPENDENCY CLEANUP (delete only after repo-wide reference search confirms unused):
+- src/data/hospitals.ts
+- public/hospitals/*
+- src/collections/MembershipFeatures.ts
+- src/collections/MembershipPlans.ts
+- src/components/MemberPortalComingSoon.tsx
+- src/components/membership/*
+
+IMPORTANT:
+- Do NOT delete member portal infrastructure (e.g. /member auth/API) solely because the public /membership page is removed. Verify whether the private portal is still a business requirement.
+- Do NOT remove hospitalIds from destination data until the destinations page/components are checked for those fields.

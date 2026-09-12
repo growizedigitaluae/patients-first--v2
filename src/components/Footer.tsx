@@ -13,9 +13,8 @@ const navigation = [
 
 const trustLinks = [
   { href: "/faq", label: "Privacy Commitment" },
-  { href: "/destinations", label: "Partner Hospitals" },
+  { href: "/destinations", label: "Destinations" },
   { href: "/medical-specialties", label: "Departments" },
-  { href: "/membership", label: "Membership" },
 ];
 
 export default function Footer() {

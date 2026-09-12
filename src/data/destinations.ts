@@ -9,7 +9,6 @@ export type Destination = {
   services: string[];
   languages: string[];
   assist: string[];
-  hospitalIds: string[];
 };
 
 export const commonAssist = [
@@ -40,7 +39,6 @@ export const destinations: Destination[] = [
     ],
     languages: ["Multi language support"],
     assist: commonAssist,
-    hospitalIds: ["apollo-hospitals", "medanta-medicity", "fortis-healthcare"],
   },
   {
     slug: "saudi-arabia",
@@ -61,7 +59,6 @@ export const destinations: Destination[] = [
     ],
     languages: ["Multi language support"],
     assist: commonAssist,
-    hospitalIds: ["kfshrc", "sulaiman-al-habib"],
   },
   {
     slug: "turkey",
@@ -82,7 +79,6 @@ export const destinations: Destination[] = [
     ],
     languages: ["Multi language support"],
     assist: commonAssist,
-    hospitalIds: ["acibadem-healthcare", "memorial-healthcare", "american-hospital-istanbul"],
   },
   {
     slug: "united-arab-emirates",
@@ -103,7 +99,6 @@ export const destinations: Destination[] = [
     ],
     languages: ["Multi language support"],
     assist: commonAssist,
-    hospitalIds: ["burjeel-holdings", "aster-hospitals", "medcare"],
   },
   {
     slug: "united-states",
@@ -124,7 +119,6 @@ export const destinations: Destination[] = [
     ],
     languages: ["English"],
     assist: commonAssist,
-    hospitalIds: ["mayo-clinic", "md-anderson", "johns-hopkins"],
   },
 ];
 
