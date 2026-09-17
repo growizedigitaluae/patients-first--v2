@@ -18,7 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/how-we-help",
     "/medical-journey",
     "/medical-specialties",
-    "/membership",
+
     "/process",
     "/wellness",
   ].map((route) => ({

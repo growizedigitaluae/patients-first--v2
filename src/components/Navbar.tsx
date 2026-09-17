@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/medical-specialties", label: "Department" },
-  { href: "/membership", label: "Wellness" },
+  { href: "/wellness", label: "Wellness" },
   { href: "/destinations", label: "Destination" },
   { href: "/medical-journey", label: "Medical Journey" },
 ];

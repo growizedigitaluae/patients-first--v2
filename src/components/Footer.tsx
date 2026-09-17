@@ -15,7 +15,7 @@ const trustLinks = [
   { href: "/faq", label: "Privacy Commitment" },
   { href: "/destinations", label: "Partner Hospitals" },
   { href: "/medical-specialties", label: "Departments" },
-  { href: "/membership", label: "Membership" },
+  { href: "/wellness", label: "Wellness" },
 ];
 
 export default function Footer() {

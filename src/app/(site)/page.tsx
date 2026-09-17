@@ -503,7 +503,7 @@ export default function HomePage() {
               <span className="text-gold text-sm font-semibold group-hover:underline">Learn more →</span>
             </Link>
             <Link
-              href="/membership"
+              href="/wellness"
               className="group bg-royal rounded-3xl p-8 text-white hover:-translate-y-1 transition-all duration-300"
             >
               <h3 className="font-serif text-xl mb-2">Patients First Membership</h3>
