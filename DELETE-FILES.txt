@@ -1,0 +1,20 @@
+FINAL PUBLIC FEATURE CLEANUP
+
+Delete:
+src/app/(site)/hospitals/[id]/page.tsx
+src/app/(site)/membership/page.tsx
+src/components/membership/MembershipPackagesTabs.tsx
+src/components/MemberPortalComingSoon.tsx
+src/data/hospitals.ts
+
+Optional after confirming unused:
+public/hospitals/
+
+INTENTIONALLY KEEP backend/admin membership infrastructure:
+src/collections/MembershipPlans.ts
+src/collections/MembershipFeatures.ts
+src/components/admin/ActivateMembershipButton.tsx
+src/scripts/seed.ts membership seed logic
+src/payload-types.ts membership types
+
+Reason: these backend/admin structures may support the private member/admin infrastructure and are not public sitemap routes. Removing them is a separate backend decommissioning task.

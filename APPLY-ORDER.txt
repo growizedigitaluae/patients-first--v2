@@ -1,0 +1,13 @@
+PATIENTS FIRST WORLDWIDE — FINAL SEO CLEANUP PATCH
+
+1. Keep your untouched full-project backup.
+2. Work in a duplicate/test copy of the complete project.
+3. Extract/copy the files in this patch into the matching project paths.
+4. Delete exactly the files listed in DELETE-FILES.txt.
+5. Do not delete .env, .env.local, node_modules, .next, or database files.
+6. Run: npm install
+7. Run: npm run build
+8. Run: npm start and test the main public routes.
+9. Verify /sitemap.xml has NO /hospitals/ URLs and NO /membership.
+10. Verify /robots.txt references https://www.patientsfirstworldwide.com/sitemap.xml.
+11. Only after all checks pass, deploy.

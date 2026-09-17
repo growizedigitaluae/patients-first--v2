@@ -1,8 +1,7 @@
 import { sqliteAdapter } from "@payloadcms/db-sqlite";
 import { buildConfig } from "payload";
 
-import { MembershipFeatures } from "./collections/MembershipFeatures";
-import { MembershipPlans } from "./collections/MembershipPlans";
+
 import { Users } from "./collections/Users";
 
 export default buildConfig({
@@ -17,8 +16,7 @@ export default buildConfig({
   },
   collections: [
     Users,
-    MembershipPlans,
-    MembershipFeatures,
+
   ],
   endpoints: [],
   db: sqliteAdapter({

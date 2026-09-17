@@ -506,9 +506,9 @@ export default function HomePage() {
               href="/wellness"
               className="group bg-royal rounded-3xl p-8 text-white hover:-translate-y-1 transition-all duration-300"
             >
-              <h3 className="font-serif text-xl mb-2">Patients First Membership</h3>
+              <h3 className="font-serif text-xl mb-2">Patient Support & Wellness</h3>
               <p className="text-sm text-slate-300 leading-relaxed mb-6">
-                Ongoing healthcare coordination and personalised patient support, whenever you need it.
+                Practical, compassionate support to help you navigate appointments, records, travel planning, and the wider healthcare journey.
               </p>
               <span className="text-gold text-sm font-semibold group-hover:underline">Learn more →</span>
             </Link>

@@ -2,7 +2,7 @@ export const site = {
   name: "Patient First Worldwide",
   legalName: "Patients First Worldwide",
   tagline: "Your Dedicated Healthcare Coordination Partner",
-  url: "https://patientsfirstworldwide.com",
+  url: "https://www.patientsfirstworldwide.com",
   email: "info@patientsfirstworldwide.com",
   phone: "+971 56 696 0486",
   phoneHref: "tel:+971566960486",
