@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import {
   ArrowRight,
   CheckCircle2,
@@ -505,8 +506,14 @@ export default function OncologyLandingPage() {
 
             {/* Existing PFW form */}
             <div className="rounded-[28px] border border-[#e4ded2] bg-[#faf9f6] p-6 shadow-[0_12px_40px_rgba(8,34,55,0.06)] sm:p-8">
-              <ContactForm />
-            </div>
+  <Suspense
+    fallback={
+      <div className="min-h-[400px] animate-pulse rounded-2xl bg-white/60" />
+    }
+  >
+    <ContactForm />
+  </Suspense>
+</div>
 
           </div>
         </div>
