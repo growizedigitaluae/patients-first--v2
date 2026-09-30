@@ -52,7 +52,7 @@ export const metadata: Metadata = {
 };
 
 const customIcons: Record<string, string> = {
-  "One Point of Contact": "/icons/pfw/04-dedicated-patient-companion.svg",
+  "One Point of Contact": "/icons/pfw/14-dedicated-patients-coordinator.svg",
   "Appropriate Provider Options":
     "/icons/pfw/03-trusted-healthcare-connections.svg",
   "Second Opinion Coordination":
