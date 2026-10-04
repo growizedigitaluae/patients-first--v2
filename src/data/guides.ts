@@ -9,7 +9,139 @@ export type Guide = {
   sections: { heading: string; body: string[] }[];
 };
 
-export const guides: Guide[] = [
+export const guides: Guide[] = [  {
+    slug: "medical-treatment-abroad-questions-before-travel",
+    title:
+      "Before You Travel Abroad for Medical Treatment: 10 Questions Every Patient Should Ask",
+    excerpt:
+      "Considering medical treatment abroad? Discover 10 important questions about hospitals, specialists, second opinions, treatment costs and medical travel before making your decision.",
+    date: "October 2026",
+    category: "Medical Travel",
+    readTime: "8 min read",
+    image: "/blog-1.webp",
+    sections: [
+      {
+        heading: "Before You Travel Abroad for Medical Treatment",
+        body: [
+          "Travelling abroad for medical treatment can open access to specialists, hospitals, technologies and treatment pathways beyond those available close to home.",
+          "But choosing a country is not the first decision.",
+          "Choosing a hospital is not even the first decision.",
+          "The first step is understanding what you actually need.",
+          "At Patients First Worldwide, we believe a well-coordinated medical journey should begin before a flight is booked, before a hotel is reserved and before a patient commits to a particular hospital.",
+          "Here are ten important questions to consider.",
+        ],
+      },
+      {
+        heading:
+          "1. Do I clearly understand my diagnosis and current treatment recommendation?",
+        body: [
+          "Before exploring hospitals around the world, gather the medical information you already have.",
+          "This may include medical reports, laboratory results, imaging, pathology reports, previous treatment summaries, medication lists and recommendations from your treating physician.",
+          "A complete medical file helps the receiving healthcare provider understand your case and determine the appropriate next step.",
+        ],
+      },
+      {
+        heading: "2. Would a second medical opinion be appropriate?",
+        body: [
+          "For some patients—particularly those facing a complex diagnosis, major surgery, multiple treatment options or a rare condition—another specialist opinion may provide additional information before an important decision.",
+          "A second opinion does not necessarily mean the first physician was wrong. It can help patients better understand the available options and questions they may want to discuss with their treating doctors.",
+        ],
+      },
+      {
+        heading:
+          "3. Am I choosing a country—or the right expertise for my medical need?",
+        body: [
+          "It is easy to begin with:",
+          "“Should I go to Germany?”",
+          "“Is India better?”",
+          "“Should I consider the USA?”",
+          "A better starting question is:",
+          "What expertise does my case require, and where can I access it?",
+          "Different hospitals and physicians may have experience in different conditions, procedures and technologies. A country's reputation alone does not determine whether a particular provider is appropriate for an individual patient.",
+        ],
+      },
+      {
+        heading: "4. Has the hospital reviewed my medical records?",
+        body: [
+          "Whenever possible, international patients should understand whether the receiving hospital or physician needs to review their case before travel.",
+          "Depending on the provider and medical situation, this may help clarify the appropriate specialty, whether additional investigations are required, whether a remote consultation is possible and what the next steps may be.",
+          "Do not assume that travelling to a hospital automatically means a particular treatment will be recommended.",
+          "Clinical decisions remain with the treating healthcare professionals after appropriate evaluation.",
+        ],
+      },
+      {
+        heading:
+          "5. Do I understand the estimated cost—and what it includes?",
+        body: [
+          "“Treatment cost” can mean very different things.",
+          "An estimate may or may not include physician fees, hospital charges, investigations, imaging, pathology, medications, medical devices, intensive care, rehabilitation or follow-up.",
+          "Ask what is included, what is excluded and what circumstances could change the estimate.",
+          "A personalized provider estimate is generally more useful than relying solely on a price found online.",
+        ],
+      },
+      {
+        heading:
+          "6. What happens if the treatment plan changes after I arrive?",
+        body: [
+          "Medicine is not a fixed travel package.",
+          "After examination, testing or specialist review, the treating physician may recommend a different investigation or treatment pathway from what was initially anticipated.",
+          "Patients should therefore understand the hospital's process for updated estimates, additional investigations and changes in the expected length of stay.",
+        ],
+      },
+      {
+        heading: "7. What practical support will I need?",
+        body: [
+          "International healthcare involves more than a medical appointment.",
+          "Depending on the journey, a patient may need assistance coordinating appointments, medical documentation, travel planning, accommodation, local transportation, interpreters, family arrangements and follow-up.",
+          "This is particularly important when a patient is unwell or when family members are coordinating care from another country.",
+        ],
+      },
+      {
+        heading: "8. How long should I plan to stay?",
+        body: [
+          "The procedure itself may only be one part of the journey.",
+          "Pre-treatment investigations, recovery, follow-up appointments and medical clearance for travel can affect the length of stay.",
+          "Always seek guidance from the treating provider before finalizing return travel.",
+        ],
+      },
+      {
+        heading: "9. What happens when I return home?",
+        body: [
+          "One of the most overlooked parts of medical travel is continuity.",
+          "Before returning home, patients may need discharge documentation, imaging, pathology results, medication information, rehabilitation recommendations and follow-up instructions.",
+          "Where appropriate, these can then be shared with the patient's local healthcare professionals.",
+          "A medical journey should not end at airport departure.",
+        ],
+      },
+      {
+        heading: "10. Who is coordinating everything?",
+        body: [
+          "International healthcare can quickly involve several parties: the patient, family members, referring physicians, specialists, hospitals, diagnostic centres, insurers, travel providers and other services.",
+          "The more complex the journey becomes, the more important coordination becomes.",
+          "That is where a healthcare coordinator can add practical value—not by making medical decisions, but by helping keep the non-clinical parts of the journey organized.",
+        ],
+      },
+      {
+        heading: "Start With the Medical Need, Not the Air Ticket",
+        body: [
+          "Medical travel should never begin simply because a hospital is famous, a destination is popular or an advertisement offers an attractive price.",
+          "Start with your medical information.",
+          "Understand the questions that need answering.",
+          "Explore appropriate provider options.",
+          "Then build the journey around the healthcare need.",
+        ],
+      },
+      {
+        heading: "How Patients First Worldwide Can Support You",
+        body: [
+          "Patients First Worldwide is an independent patient-support and healthcare coordination company.",
+          "We help patients navigate healthcare within the UAE and internationally, including coordination of medical documentation, provider communication, appointments, second-opinion pathways and practical aspects of the medical journey.",
+          "PFW does not diagnose conditions, recommend treatments or replace the advice of licensed healthcare professionals. All medical decisions remain between the patient and the treating healthcare provider.",
+          "Considering treatment in the UAE or abroad? Request a PFW Coordinator Call and let us help you understand the next practical step in your journey.",
+        ],
+      },
+    ],
+  },
   {
     slug: "preparing-your-medical-records",
     title: "Preparing Your Medical Records for International Care",
