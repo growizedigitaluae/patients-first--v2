@@ -20,29 +20,29 @@ import { ContactForm } from "@/components/ContactForm";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "General & Laparoscopic Surgery Care in UAE | Patients First Worldwide",
+  title: "Endocrinology & Diabetes Care in UAE | Patients First Worldwide",
   description:
-    "Coordinate general and laparoscopic surgery consultations, second opinions and healthcare services in the UAE with Patients First Worldwide.",
+    "Coordinate endocrinology and diabetes consultations, second opinions and healthcare services in the UAE with Patients First Worldwide.",
   keywords: [
-    "general surgeon Dubai",
-    "general surgeon Abu Dhabi",
-    "thyroid surgery UAE",
-    "best general surgeon Abu Dhabi",
-    "general surgery UAE",
-    "laparoscopic surgery UAE",
-    "general surgery consultation Dubai",
-    "surgery second opinion UAE",
-    "general surgeon UAE",
-    "laparoscopic surgeon Dubai",
+    "endocrinologist Dubai",
+    "endocrinologist Abu Dhabi",
+    "thyroid specialist Dubai",
+    "endocrinologist UAE",
+    "diabetes treatment UAE",
+    "endocrinology care UAE",
+    "diabetes specialist UAE",
+    "thyroid care UAE",
+    "endocrinology second opinion UAE",
+    "endocrinology care coordination UAE",
   ],
   alternates: {
-    canonical: `${site.url}/specialties/general-surgery`,
+    canonical: `${site.url}/specialties/endocrinology`,
   },
   openGraph: {
-    title: "General & Laparoscopic Surgery Care in UAE | Patients First Worldwide",
+    title: "Endocrinology & Diabetes Care in UAE | Patients First Worldwide",
     description:
-      "Coordinate general and laparoscopic surgery consultations, second opinions and healthcare services in the UAE with Patients First Worldwide.",
-    url: `${site.url}/specialties/general-surgery`,
+      "Coordinate endocrinology and diabetes consultations, second opinions and healthcare services in the UAE with Patients First Worldwide.",
+    url: `${site.url}/specialties/endocrinology`,
     siteName: site.name,
     type: "website",
   },
@@ -67,7 +67,7 @@ const whyPatientsChoose = [
   },
   {
     title: "Appropriate Provider Options",
-    text: "We help coordinate suitable general surgery provider options based on your case information, requirements and location.",
+    text: "We help coordinate suitable endocrinology provider options based on your case information, requirements and location.",
   },
   {
     title: "Second Opinion Coordination",
@@ -87,52 +87,52 @@ const whyPatientsChoose = [
   },
 ];
 
-const generalSurgeryCases = [
-  "General Surgery Consultations",
-  "Laparoscopic Surgery Consultations",
-  "Abdominal Surgery Coordination",
-  "Thyroid Surgery Coordination",
+const careAreas = [
+  "Endocrinology Consultations",
+  "Diabetes Care Coordination",
+  "Thyroid Care Coordination",
+  "Hormonal & Metabolic Care",
   "Second Opinion Coordination",
   "Diagnostic Coordination",
   "Treatment Pathway Coordination",
-  "Hospital & Surgeon Coordination",
+  "Hospital & Specialist Coordination",
   "Follow-Up Coordination",
 ];
 
 const coordinationServices = [
   {
-    title: "General Surgery Consultation",
-    text: "Coordinate access to appropriate general surgeons based on your case and requirements.",
+    title: "Endocrinology & Diabetes Consultation",
+    text: "Coordinate access to appropriate endocrinology and diabetes specialists based on your case and requirements.",
     icon: Stethoscope,
-  },
-  {
-    title: "Laparoscopic Surgery Consultation",
-    text: "Help coordinate access to appropriate laparoscopic surgery specialists and healthcare providers.",
-    icon: Users,
   },
   {
     title: "Second Opinion",
     text: "Help organize relevant medical information and coordinate another specialist review.",
-    icon: FileText,
+    icon: Users,
   },
   {
     title: "Diagnostic Coordination",
     text: "Help coordinate relevant diagnostic appointments and communication with healthcare providers.",
-    icon: CalendarCheck,
+    icon: FileText,
   },
   {
     title: "Treatment Pathway Coordination",
     text: "Coordinate appointments and communication related to the care pathway recommended by licensed healthcare professionals.",
-    icon: Building2,
-  },
-  {
-    title: "Hospital & Surgeon Coordination",
-    text: "Help coordinate communication and appointments with appropriate surgical providers.",
     icon: CalendarCheck,
   },
   {
-    title: "Follow-Up Coordination",
-    text: "Help organize follow-up appointments and ongoing communication where applicable.",
+    title: "Hospital & Provider Coordination",
+    text: "Help coordinate communication and appointments with appropriate healthcare providers.",
+    icon: Building2,
+  },
+  {
+    title: "Diabetes Care Coordination",
+    text: "Support coordination of diabetes-related appointments and services with the relevant healthcare provider.",
+    icon: CalendarCheck,
+  },
+  {
+    title: "Thyroid Care Coordination",
+    text: "Support coordination of thyroid-related consultations and appointments with appropriate healthcare providers.",
     icon: MessageCircle,
   },
 ];
@@ -167,31 +167,31 @@ const journeySteps = [
 const locations = [
   {
     title: "Dubai",
-    text: "Coordinate general surgery and laparoscopic surgery consultations, second opinions, diagnostics and treatment-related appointments with appropriate healthcare providers.",
+    text: "Coordinate endocrinology and diabetes consultations, second opinions, diagnostics and treatment-related appointments with appropriate healthcare providers.",
   },
   {
     title: "Abu Dhabi",
-    text: "Coordinate access to appropriate general surgeons, laparoscopic surgeons and healthcare providers based on your case requirements.",
+    text: "Coordinate access to appropriate endocrinologists, diabetes specialists and healthcare providers based on your case requirements.",
   },
   {
     title: "Across the UAE",
-    text: "If you are unsure where to seek surgical care, we can help coordinate suitable provider options based on your information, preferences and location.",
+    text: "If you are unsure where to seek endocrinology or diabetes care, we can help coordinate suitable provider options based on your information, preferences and location.",
   },
 ];
 
 const faqs = [
   {
-    question: "Can Patients First Worldwide help me find a general surgeon in Dubai?",
+    question: "Can Patients First Worldwide help me find an endocrinologist in Dubai?",
     answer:
-      "Patients First Worldwide can help coordinate access to appropriate general surgeons in Dubai based on your case information and requirements.",
+      "Patients First Worldwide can help coordinate access to appropriate endocrinology specialists in Dubai based on your case information and requirements.",
   },
   {
-    question: "Can you help coordinate a laparoscopic surgery consultation?",
+    question: "Can you help with diabetes care coordination?",
     answer:
-      "Yes. Our team can help coordinate access to appropriate laparoscopic surgery specialists and healthcare providers based on the information provided.",
+      "Yes. Our team can help coordinate access to appropriate diabetes specialists and healthcare providers based on the information provided.",
   },
   {
-    question: "Can I request a second opinion before surgery?",
+    question: "Can I request a second opinion?",
     answer:
       "Yes. Our team can help organize relevant medical information and coordinate a second-opinion consultation with an appropriate healthcare provider.",
   },
@@ -201,9 +201,9 @@ const faqs = [
       "Yes. You can provide relevant medical information through the enquiry process. Where available, you can also upload medical reports through the enquiry form.",
   },
   {
-    question: "Can you help coordinate thyroid surgery care?",
+    question: "Can you help me find thyroid specialists in Dubai?",
     answer:
-      "We can help coordinate consultations and appointments with appropriate healthcare providers for surgical care recommended by licensed clinicians.",
+      "We can help coordinate access to appropriate thyroid and endocrinology specialists based on your case and requirements.",
   },
   {
     question: "Can my family member contact you on my behalf?",
@@ -211,9 +211,9 @@ const faqs = [
       "A family member or representative can contact our team to begin the coordination process where applicable.",
   },
   {
-    question: "Does Patients First Worldwide perform surgery?",
+    question: "Does Patients First Worldwide diagnose or treat diabetes or endocrine conditions?",
     answer:
-      "No. Patients First Worldwide provides non-clinical healthcare coordination and patient support. Surgery and clinical decisions are provided by licensed healthcare professionals.",
+      "No. Patients First Worldwide provides non-clinical healthcare coordination and patient support. Medical diagnosis, treatment recommendations and clinical decisions are provided by licensed healthcare professionals.",
   },
   {
     question: "Can international patients use your service?",
@@ -223,18 +223,18 @@ const faqs = [
   {
     question: "How do I get started?",
     answer:
-      "You can speak with a Surgery Coordinator, contact us through WhatsApp, call our team or submit your case through the enquiry form.",
+      "You can speak with our team, contact us through WhatsApp, call our team or submit your case through the enquiry form.",
   },
 ];
 
-export default function GeneralSurgeryLandingPage() {
+export default function EndocrinologyLandingPage() {
   return (
     <main className="overflow-hidden bg-[#FAF8F2] text-[#082237]">
       {/* HERO */}
       <section className="relative isolate overflow-hidden bg-[#F8F6EF]">
         <div className="absolute inset-0 -z-10">
           <Image
-            src="/hero-01.webp"
+            src="/endocrinology-hero.webp"
             alt=""
             fill
             priority
@@ -250,15 +250,15 @@ export default function GeneralSurgeryLandingPage() {
           <div className="grid items-start gap-10 lg:grid-cols-[0.92fr_1.08fr] xl:gap-14">
             <div className="flex flex-col justify-start pt-0">
               <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#A56F19] sm:text-sm">
-                General & Laparoscopic Surgery Care Coordination in the UAE
+                Endocrinology & Diabetes Care Coordination in the UAE
               </p>
 
               <h1 className="mt-5 max-w-3xl font-serif text-4xl font-semibold leading-[1.08] tracking-tight text-[#082237] sm:text-5xl lg:text-[58px]">
-                Looking for General or Laparoscopic Surgery Care in the UAE?
+                Looking for Endocrinology or Diabetes Care in the UAE?
               </h1>
 
               <p className="mt-6 max-w-2xl text-base leading-8 text-[#263C50] sm:text-lg">
-                We help coordinate your next step with appropriate general surgery
+                We help coordinate your next step with appropriate endocrinology
                 specialists and healthcare providers.
               </p>
 
@@ -266,7 +266,7 @@ export default function GeneralSurgeryLandingPage() {
                 Whether you have recently received a diagnosis, are seeking a
                 second opinion, or are exploring your healthcare options,
                 Patients First Worldwide helps coordinate access to appropriate
-                general surgery specialists and healthcare providers across the UAE.
+                endocrinology specialists and healthcare providers across the UAE.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -274,7 +274,7 @@ export default function GeneralSurgeryLandingPage() {
                   href="#case-enquiry"
                   className="inline-flex min-h-12 items-center justify-center rounded-full bg-gradient-to-r from-[#C88A2B] via-[#E6B94F] to-[#F8DF8B] px-6 py-3 text-sm font-bold text-[#082237] shadow-[0_10px_24px_rgba(200,138,43,0.20)] transition hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(200,138,43,0.24)]"
                 >
-                  Speak to a Surgery Coordinator
+                  Speak to Our Team
                 </a>
 
                 <a
@@ -283,7 +283,7 @@ export default function GeneralSurgeryLandingPage() {
                   rel="noopener noreferrer"
                   className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#082237]/15 bg-white/80 px-6 py-3 text-sm font-bold text-[#082237] shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:border-[#C88A2B]/60 hover:bg-white"
                 >
-                  WhatsApp a Surgery Coordinator
+                  WhatsApp Our Team
                 </a>
               </div>
 
@@ -370,7 +370,7 @@ export default function GeneralSurgeryLandingPage() {
               Why Patients First Worldwide
             </p>
             <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-[#082237] sm:text-4xl lg:text-[44px]">
-              A Clearer Way to Coordinate Your Surgical Journey
+              A Clearer Way to Coordinate Your Endocrinology Journey
             </h2>
             <p className="mt-5 text-base leading-8 text-[#405366] sm:text-lg">
               Our role is to help make communication, appointments and
@@ -441,7 +441,7 @@ export default function GeneralSurgeryLandingPage() {
               Your Case Is More Than a Medical Report
             </h2>
             <p className="mt-6 text-base leading-8 text-[#405366]">
-              Behind every general surgery diagnosis is a person, a family and many
+              Behind every endocrinology diagnosis is a person, a family and many
               important decisions.
             </p>
             <p className="mt-4 text-base leading-8 text-[#405366]">
@@ -471,10 +471,10 @@ export default function GeneralSurgeryLandingPage() {
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#A56F19]">
-              General & Laparoscopic Surgery Areas We Can Help Coordinate
+              Endocrinology & Diabetes Areas We Can Help Coordinate
             </p>
             <h2 className="mt-4 font-serif text-3xl font-semibold text-[#082237] sm:text-4xl lg:text-[42px]">
-              General & Laparoscopic Surgery Services We Can Help Coordinate
+              Endocrinology & Diabetes Services We Can Help Coordinate
             </h2>
             <p className="mt-5 text-base leading-8 text-[#405366]">
               Coordination support can be discussed based on your individual
@@ -483,7 +483,7 @@ export default function GeneralSurgeryLandingPage() {
           </div>
 
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {generalSurgeryCases.map((item, index) => (
+            {careAreas.map((item, index) => (
               <div
                 key={item}
                 className="flex items-center gap-4 rounded-2xl border border-[#E7E1D5] bg-[#FAF8F2] p-5 transition hover:border-[#D5A442]/60 hover:shadow-md"
@@ -511,7 +511,7 @@ export default function GeneralSurgeryLandingPage() {
               What We Coordinate
             </p>
             <h2 className="mt-4 font-serif text-3xl font-semibold text-[#082237] sm:text-4xl lg:text-[42px]">
-              General & Laparoscopic Surgery Care Coordination
+              Endocrinology & Diabetes Care Coordination
             </h2>
             <p className="mt-5 text-base leading-8 text-[#405366] sm:text-lg">
               Practical coordination around consultations, providers,
@@ -557,7 +557,7 @@ export default function GeneralSurgeryLandingPage() {
               How It Works
             </p>
             <h2 className="mt-4 font-serif text-3xl font-semibold text-[#082237] sm:text-4xl lg:text-[42px]">
-              A Clear Surgical Coordination Journey
+              A Clear Endocrinology Coordination Journey
             </h2>
             <p className="mt-5 text-base leading-8 text-[#405366] sm:text-lg">
               A structured process from your first enquiry through healthcare
@@ -623,10 +623,10 @@ export default function GeneralSurgeryLandingPage() {
                 Across the UAE
               </p>
               <h2 className="mt-4 font-serif text-3xl font-semibold text-[#082237] sm:text-4xl">
-                Access General & Laparoscopic Surgery Care Across the UAE
+                Access Endocrinology & Diabetes Care Across the UAE
               </h2>
               <p className="mt-5 text-base leading-8 text-[#405366] sm:text-lg">
-                If you are unsure where to seek general surgery care, our team can
+                If you are unsure where to seek endocrinology care, our team can
                 help coordinate suitable provider options based on your
                 information, preferences and location.
               </p>
@@ -639,7 +639,7 @@ export default function GeneralSurgeryLandingPage() {
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#C88A2B] via-[#E6B94F] to-[#F8DF8B] px-6 py-3.5 text-sm font-bold text-[#082237] shadow-lg transition hover:-translate-y-0.5"
                 >
                   <MessageCircle className="h-4 w-4" />
-                  WhatsApp a Surgery Coordinator
+                  WhatsApp Our Team
                 </a>
               </div>
             </div>
@@ -778,7 +778,7 @@ export default function GeneralSurgeryLandingPage() {
           </h2>
 
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-300">
-            Whether you are looking for an general surgery consultation, a second
+            Whether you are looking for an endocrinology consultation, a second
             opinion or help coordinating your healthcare journey in the UAE,
             our team can help you take the next coordination step.
           </p>
@@ -788,7 +788,7 @@ export default function GeneralSurgeryLandingPage() {
               href="#case-enquiry"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#C88A2B] via-[#E6B94F] to-[#F8DF8B] px-7 py-4 text-sm font-bold text-[#082237] shadow-[0_12px_35px_rgba(200,138,43,0.25)] transition hover:-translate-y-0.5"
             >
-              Speak to a Surgery Coordinator
+              Speak to Our Team
               <ArrowRight className="h-4 w-4" />
             </a>
 
@@ -799,7 +799,7 @@ export default function GeneralSurgeryLandingPage() {
               className="inline-flex items-center justify-center gap-2 rounded-full border border-[#E6B94F]/60 px-7 py-4 text-sm font-bold text-[#F8DF8B] transition hover:bg-white/5"
             >
               <MessageCircle className="h-4 w-4" />
-              WhatsApp a Surgery Coordinator
+              WhatsApp Our Team
             </a>
 
             <a

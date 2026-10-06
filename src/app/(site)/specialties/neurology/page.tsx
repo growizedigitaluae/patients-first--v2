@@ -15,10 +15,8 @@ import {
   MapPin,
   Upload,
 } from "lucide-react";
-
 import { ContactForm } from "@/components/ContactForm";
 import { site } from "@/lib/site";
-
 export const metadata: Metadata = {
   title: "Neurology & Neurosurgery Care in UAE | Patients First Worldwide",
   description:
@@ -47,7 +45,6 @@ export const metadata: Metadata = {
     type: "website",
   },
 };
-
 const customIcons: Record<string, string> = {
   "One Point of Contact": "/icons/pfw/14-dedicated-patients-coordinator.svg",
   "Appropriate Provider Options":
@@ -59,7 +56,6 @@ const customIcons: Record<string, string> = {
   "International Patient Support":
     "/icons/pfw/16-global-healthcare-network.svg",
 };
-
 const whyPatientsChoose = [
   {
     title: "One Point of Contact",
@@ -86,7 +82,6 @@ const whyPatientsChoose = [
     text: "For patients travelling for healthcare, we can help coordinate relevant appointments and non-clinical aspects of the journey.",
   },
 ];
-
 const neurologyCareAreas = [
   "Neurology Consultations",
   "Neurosurgery Consultations",
@@ -97,7 +92,6 @@ const neurologyCareAreas = [
   "Hospital & Specialist Coordination",
   "Follow-Up Coordination",
 ];
-
 const coordinationServices = [
   {
     title: "Neurology & Neurosurgery Consultation",
@@ -135,7 +129,6 @@ const coordinationServices = [
     icon: MessageCircle,
   },
 ];
-
 const journeySteps = [
   {
     number: "01",
@@ -162,7 +155,6 @@ const journeySteps = [
     icon: CheckCircle2,
   },
 ];
-
 const locations = [
   {
     title: "Dubai",
@@ -177,7 +169,6 @@ const locations = [
     text: "If you are unsure where to seek neurology or neurosurgery care, we can help coordinate suitable provider options based on your information, preferences and location.",
   },
 ];
-
 const faqs = [
   {
     question: "Can Patients First Worldwide help me find a neurologist in Dubai?",
@@ -222,10 +213,9 @@ const faqs = [
   {
     question: "How do I get started?",
     answer:
-      "You can speak with a Neurology Coordinator, contact us through WhatsApp, call our team or submit your case through the enquiry form.",
+      "You can speak with our team, contact us through WhatsApp, call our team or submit your case through the enquiry form.",
   },
 ];
-
 export default function NeurologyLandingPage() {
   return (
     <main className="overflow-hidden bg-[#FAF8F2] text-[#082237]">
@@ -233,7 +223,7 @@ export default function NeurologyLandingPage() {
       <section className="relative isolate overflow-hidden bg-[#F8F6EF]">
         <div className="absolute inset-0 -z-10">
           <Image
-            src="/hero-01.webp"
+            src="/neurology-hero.webp"
             alt=""
             fill
             priority
@@ -241,51 +231,43 @@ export default function NeurologyLandingPage() {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-[#FAF8F2]/90 to-[#FAF8F2]" />
         </div>
-
         <div className="absolute -right-32 -top-32 -z-10 h-[520px] w-[520px] rounded-full bg-gradient-to-br from-[#C88A2B]/25 via-[#F7D77D]/15 to-transparent blur-3xl" />
         <div className="absolute -left-40 bottom-[-240px] -z-10 h-[520px] w-[520px] rounded-full bg-[#082237]/[0.04] blur-3xl" />
-
         <div className="mx-auto max-w-[1500px] px-6 pb-14 pt-28 sm:px-8 sm:pb-20 lg:px-12 lg:pt-32 xl:px-16">
           <div className="grid items-start gap-10 lg:grid-cols-[0.92fr_1.08fr] xl:gap-14">
             <div className="flex flex-col justify-start pt-0">
               <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#A56F19] sm:text-sm">
                 Neurology & Neurosurgery Care Coordination in the UAE
               </p>
-
               <h1 className="mt-5 max-w-3xl font-serif text-4xl font-semibold leading-[1.08] tracking-tight text-[#082237] sm:text-5xl lg:text-[58px]">
                 Looking for Neurology or Neurosurgery Care in the UAE?
               </h1>
-
               <p className="mt-6 max-w-2xl text-base leading-8 text-[#263C50] sm:text-lg">
                 We help coordinate your next step with appropriate neurology and neurosurgery
                 specialists and healthcare providers.
               </p>
-
               <p className="mt-4 max-w-2xl text-base leading-8 text-[#405366]">
                 Whether you have recently received a diagnosis, are seeking a
                 second opinion, or are exploring your healthcare options,
                 Patients First Worldwide helps coordinate access to appropriate
                 neurology and neurosurgery specialists and healthcare providers across the UAE.
               </p>
-
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
                   href="#case-enquiry"
                   className="inline-flex min-h-12 items-center justify-center rounded-full bg-gradient-to-r from-[#C88A2B] via-[#E6B94F] to-[#F8DF8B] px-6 py-3 text-sm font-bold text-[#082237] shadow-[0_10px_24px_rgba(200,138,43,0.20)] transition hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(200,138,43,0.24)]"
                 >
-                  Speak to a Neurology Coordinator
+                  Speak to Our Team
                 </a>
-
                 <a
                   href={site.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#082237]/15 bg-white/80 px-6 py-3 text-sm font-bold text-[#082237] shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:border-[#C88A2B]/60 hover:bg-white"
                 >
-                  WhatsApp a Neurology Coordinator
+                  WhatsApp Our Team
                 </a>
               </div>
-
               <div className="mt-6 max-w-xl border-l-2 border-[#C88A2B]/60 pl-4 text-xs leading-5 text-[#536575]">
                 <span>
                   Already have medical reports? Share your case with our team
@@ -293,7 +275,6 @@ export default function NeurologyLandingPage() {
                 </span>
               </div>
             </div>
-
             {/* Hero enquiry card */}
             <div
               id="case-enquiry"
@@ -311,7 +292,6 @@ export default function NeurologyLandingPage() {
                   next step.
                 </p>
               </div>
-
               <Suspense
                 fallback={
                   <div className="min-h-[420px] animate-pulse rounded-2xl bg-[#FAF8F2]" />
@@ -319,7 +299,6 @@ export default function NeurologyLandingPage() {
               >
                 <ContactForm />
               </Suspense>
-
               <div className="mt-5 flex items-start gap-2 rounded-2xl bg-[#FAF8F2] p-4 text-xs leading-5 text-[#536575]">
                 <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-[#B77B20]" />
                 <span>
@@ -329,7 +308,6 @@ export default function NeurologyLandingPage() {
               </div>
             </div>
           </div>
-
           <div className="mt-12 grid overflow-hidden rounded-[26px] bg-[#082237] shadow-[0_18px_50px_rgba(8,34,55,0.16)] sm:grid-cols-3">
             {[
               ["Healthcare Coordination", "Non-clinical support with your healthcare journey."],
@@ -360,7 +338,6 @@ export default function NeurologyLandingPage() {
           </div>
         </div>
       </section>
-
       {/* WHY PFW */}
       <section className="bg-white py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
@@ -376,7 +353,6 @@ export default function NeurologyLandingPage() {
               healthcare coordination more organized and easier to navigate.
             </p>
           </div>
-
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {whyPatientsChoose.map((item) => {
               const icon = customIcons[item.title];
@@ -410,7 +386,6 @@ export default function NeurologyLandingPage() {
           </div>
         </div>
       </section>
-
       {/* HUMAN / TRUST SECTION */}
       <section className="bg-[#FAF8F2] py-20 sm:py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-6 sm:px-8 lg:grid-cols-2 lg:px-10">
@@ -431,7 +406,6 @@ export default function NeurologyLandingPage() {
               </p>
             </div>
           </div>
-
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#A56F19]">
               A Human Approach
@@ -452,7 +426,6 @@ export default function NeurologyLandingPage() {
               Patients First Worldwide helps make that coordination more
               organized and easier to navigate.
             </p>
-
             <div className="mt-7 rounded-2xl border-l-4 border-[#C88A2B] bg-white p-5 shadow-sm">
               <p className="text-sm leading-7 text-[#405366]">
                 Our role is to support communication and coordination with
@@ -464,7 +437,6 @@ export default function NeurologyLandingPage() {
           </div>
         </div>
       </section>
-
       {/* NEUROLOGY & NEUROSURGERY CARE AREAS */}
       <section className="bg-white py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
@@ -480,7 +452,6 @@ export default function NeurologyLandingPage() {
               case, requirements and available healthcare providers.
             </p>
           </div>
-
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {neurologyCareAreas.map((item, index) => (
               <div
@@ -494,14 +465,12 @@ export default function NeurologyLandingPage() {
               </div>
             ))}
           </div>
-
           <p className="mx-auto mt-8 max-w-3xl text-center text-xs leading-6 text-[#667685]">
             The appropriate specialist, diagnosis and treatment pathway are
             determined by licensed healthcare professionals.
           </p>
         </div>
       </section>
-
       {/* COORDINATION SERVICES */}
       <section className="bg-[#FAF8F2] py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
@@ -517,7 +486,6 @@ export default function NeurologyLandingPage() {
               appointments and healthcare services.
             </p>
           </div>
-
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {coordinationServices.map((service, index) => {
               const Icon = service.icon;
@@ -547,7 +515,6 @@ export default function NeurologyLandingPage() {
           </div>
         </div>
       </section>
-
       {/* HOW IT WORKS */}
       <section className="bg-white py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
@@ -563,7 +530,6 @@ export default function NeurologyLandingPage() {
               coordination.
             </p>
           </div>
-
           <div className="relative mt-14">
             <div className="absolute left-[8%] right-[8%] top-8 hidden h-px bg-gradient-to-r from-[#C88A2B]/10 via-[#C88A2B]/60 to-[#F8DF8B]/10 lg:block" />
             <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
@@ -588,7 +554,6 @@ export default function NeurologyLandingPage() {
               })}
             </div>
           </div>
-
           <div className="mt-14 rounded-[28px] bg-[#082237] p-7 shadow-[0_18px_55px_rgba(8,34,55,0.14)] sm:p-10">
             <div className="flex flex-col gap-6 sm:flex-row sm:items-start">
               <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-[#C88A2B] to-[#F8DF8B]">
@@ -611,7 +576,6 @@ export default function NeurologyLandingPage() {
           </div>
         </div>
       </section>
-
       {/* UAE */}
       <section className="relative overflow-hidden bg-[#F3F1E9] py-20 sm:py-24">
         <div className="absolute -right-24 top-0 h-80 w-80 rounded-full bg-gradient-to-br from-[#C88A2B]/15 to-[#F8DF8B]/10 blur-3xl" />
@@ -629,7 +593,6 @@ export default function NeurologyLandingPage() {
                 help coordinate suitable provider options based on your
                 information, preferences and location.
               </p>
-
               <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                 <a
                   href={site.whatsapp}
@@ -638,11 +601,10 @@ export default function NeurologyLandingPage() {
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#C88A2B] via-[#E6B94F] to-[#F8DF8B] px-6 py-3.5 text-sm font-bold text-[#082237] shadow-lg transition hover:-translate-y-0.5"
                 >
                   <MessageCircle className="h-4 w-4" />
-                  WhatsApp a Neurology Coordinator
+                  WhatsApp Our Team
                 </a>
               </div>
             </div>
-
             <div className="grid gap-5 md:grid-cols-3">
               {locations.map((location) => (
                 <div
@@ -664,7 +626,6 @@ export default function NeurologyLandingPage() {
           </div>
         </div>
       </section>
-
       {/* TRUST */}
       <section className="bg-[#082237] py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
@@ -680,7 +641,6 @@ export default function NeurologyLandingPage() {
               boundaries throughout the coordination process.
             </p>
           </div>
-
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {[
               {
@@ -726,7 +686,6 @@ export default function NeurologyLandingPage() {
           </div>
         </div>
       </section>
-
       {/* FAQ */}
       <section className="bg-[#FAF8F2] py-20 sm:py-24">
         <div className="mx-auto max-w-4xl px-6 sm:px-8">
@@ -738,7 +697,6 @@ export default function NeurologyLandingPage() {
               Frequently Asked Questions
             </h2>
           </div>
-
           <div className="mt-10 space-y-4">
             {faqs.map((faq) => (
               <details
@@ -761,36 +719,30 @@ export default function NeurologyLandingPage() {
           </div>
         </div>
       </section>
-
       {/* FINAL CTA */}
       <section className="relative overflow-hidden bg-[#082237] py-20 sm:py-24">
         <div className="absolute -right-24 -top-24 h-80 w-80 rounded-full bg-gradient-to-br from-[#C88A2B]/25 to-[#F8DF8B]/10 blur-3xl" />
         <div className="absolute -bottom-40 -left-24 h-80 w-80 rounded-full bg-[#1B4863]/30 blur-3xl" />
-
         <div className="relative mx-auto max-w-5xl px-6 text-center sm:px-8">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#E6B94F]">
             Your Next Step
           </p>
-
           <h2 className="mt-4 font-serif text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-[48px]">
             You Don't Have to Navigate the Next Step Alone
           </h2>
-
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-300">
             Whether you are looking for a neurology or neurosurgery consultation, a second
             opinion or help coordinating your healthcare journey in the UAE,
             our team can help you take the next coordination step.
           </p>
-
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <a
               href="#case-enquiry"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#C88A2B] via-[#E6B94F] to-[#F8DF8B] px-7 py-4 text-sm font-bold text-[#082237] shadow-[0_12px_35px_rgba(200,138,43,0.25)] transition hover:-translate-y-0.5"
             >
-              Speak to a Neurology Coordinator
+              Speak to Our Team
               <ArrowRight className="h-4 w-4" />
             </a>
-
             <a
               href={site.whatsapp}
               target="_blank"
@@ -798,9 +750,8 @@ export default function NeurologyLandingPage() {
               className="inline-flex items-center justify-center gap-2 rounded-full border border-[#E6B94F]/60 px-7 py-4 text-sm font-bold text-[#F8DF8B] transition hover:bg-white/5"
             >
               <MessageCircle className="h-4 w-4" />
-              WhatsApp a Neurology Coordinator
+              WhatsApp Our Team
             </a>
-
             <a
               href={site.phoneHref}
               className="inline-flex items-center justify-center gap-2 rounded-full border border-white/15 px-7 py-4 text-sm font-semibold text-white transition hover:bg-white/5"
@@ -811,7 +762,6 @@ export default function NeurologyLandingPage() {
           </div>
         </div>
       </section>
-
       {/* DISCLAIMER */}
       <section className="bg-[#F3F1E9] px-6 py-8">
         <div className="mx-auto max-w-5xl text-center">
@@ -830,7 +780,6 @@ export default function NeurologyLandingPage() {
           </p>
         </div>
       </section>
-
       {/* Mobile fixed conversion bar */}
       <div className="fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-[#082237]/95 p-2 shadow-[0_-10px_30px_rgba(8,34,55,0.18)] backdrop-blur-md sm:hidden">
         <div className="grid grid-cols-2 gap-2">

@@ -87,7 +87,7 @@ const whyPatientsChoose = [
   },
 ];
 
-const endocrinologyCases = [
+const careAreas = [
   "Endocrinology Consultations",
   "Diabetes Care Coordination",
   "Thyroid Care Coordination",
@@ -223,7 +223,7 @@ const faqs = [
   {
     question: "How do I get started?",
     answer:
-      "You can speak with an Endocrinology Coordinator, contact us through WhatsApp, call our team or submit your case through the enquiry form.",
+      "You can speak with our team, contact us through WhatsApp, call our team or submit your case through the enquiry form.",
   },
 ];
 
@@ -234,7 +234,7 @@ export default function EndocrinologyLandingPage() {
       <section className="relative isolate overflow-hidden bg-[#F8F6EF]">
         <div className="absolute inset-0 -z-10">
           <Image
-            src="/hero-01.webp"
+            src="/endocrinology-hero.webp"
             alt=""
             fill
             priority
@@ -274,7 +274,7 @@ export default function EndocrinologyLandingPage() {
                   href="#case-enquiry"
                   className="inline-flex min-h-12 items-center justify-center rounded-full bg-gradient-to-r from-[#C88A2B] via-[#E6B94F] to-[#F8DF8B] px-6 py-3 text-sm font-bold text-[#082237] shadow-[0_10px_24px_rgba(200,138,43,0.20)] transition hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(200,138,43,0.24)]"
                 >
-                  Speak to an Endocrinology Coordinator
+                  Speak to Our Team
                 </a>
 
                 <a
@@ -283,7 +283,7 @@ export default function EndocrinologyLandingPage() {
                   rel="noopener noreferrer"
                   className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#082237]/15 bg-white/80 px-6 py-3 text-sm font-bold text-[#082237] shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:border-[#C88A2B]/60 hover:bg-white"
                 >
-                  WhatsApp an Endocrinology Coordinator
+                  WhatsApp Our Team
                 </a>
               </div>
 
@@ -483,7 +483,7 @@ export default function EndocrinologyLandingPage() {
           </div>
 
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {endocrinologyCases.map((item, index) => (
+            {careAreas.map((item, index) => (
               <div
                 key={item}
                 className="flex items-center gap-4 rounded-2xl border border-[#E7E1D5] bg-[#FAF8F2] p-5 transition hover:border-[#D5A442]/60 hover:shadow-md"
@@ -639,7 +639,7 @@ export default function EndocrinologyLandingPage() {
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#C88A2B] via-[#E6B94F] to-[#F8DF8B] px-6 py-3.5 text-sm font-bold text-[#082237] shadow-lg transition hover:-translate-y-0.5"
                 >
                   <MessageCircle className="h-4 w-4" />
-                  WhatsApp an Endocrinology Coordinator
+                  WhatsApp Our Team
                 </a>
               </div>
             </div>
@@ -788,7 +788,7 @@ export default function EndocrinologyLandingPage() {
               href="#case-enquiry"
               className="inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#C88A2B] via-[#E6B94F] to-[#F8DF8B] px-7 py-4 text-sm font-bold text-[#082237] shadow-[0_12px_35px_rgba(200,138,43,0.25)] transition hover:-translate-y-0.5"
             >
-              Speak to an Endocrinology Coordinator
+              Speak to Our Team
               <ArrowRight className="h-4 w-4" />
             </a>
 
@@ -799,7 +799,7 @@ export default function EndocrinologyLandingPage() {
               className="inline-flex items-center justify-center gap-2 rounded-full border border-[#E6B94F]/60 px-7 py-4 text-sm font-bold text-[#F8DF8B] transition hover:bg-white/5"
             >
               <MessageCircle className="h-4 w-4" />
-              WhatsApp an Endocrinology Coordinator
+              WhatsApp Our Team
             </a>
 
             <a
