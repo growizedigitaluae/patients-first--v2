@@ -3,6 +3,7 @@
 import { useActionState, useEffect, useRef } from "react";
 import { useSearchParams } from "next/navigation";
 import { CheckCircle2, Send } from "lucide-react";
+import { sendGTMEvent } from "@next/third-parties/google";
 import { submitLead, type ContactState } from "@/app/(site)/contact/actions";
 import { countries, defaultCountryCode } from "@/data/countries";
 
@@ -25,9 +26,14 @@ export function ContactForm() {
   const formRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
-    if (state.status === "success") {
-      formRef.current?.reset();
-    }
+    if (state.status !== "success") return;
+
+    formRef.current?.reset();
+
+    sendGTMEvent({
+      event: "pfw_generate_lead",
+      form_name: "pfw_consultation",
+    });
   }, [state.status]);
 
   if (state.status === "success") {
