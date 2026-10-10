@@ -1,141 +1,63 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { ArrowLeft, CheckCircle2, ClipboardList, MessageCircle, Plane, ShieldCheck } from "lucide-react";
+import { ArrowLeft, CheckCircle2, ShieldCheck, MessageCircle, Users, Building2, Plane, MapPin, Stethoscope } from "lucide-react";
 import { ArabicInboundContactForm } from "@/components/ArabicInboundContactForm";
+import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "العلاج في الإمارات | تنسيق رحلة المريض",
-  description:
-    "هل تفكر في تلقي العلاج في الإمارات؟ تعرّف على خدمات تنسيق رحلة المريض والدعم العملي غير الطبي من Patients First Worldwide.",
-  alternates: { canonical: "/ar/treatment-in-uae" },
-  robots: { index: true, follow: true },
+  title: "السياحة العلاجية في الإمارات | Patients First Worldwide",
+  description: "هل تخطط للسفر إلى الإمارات للعلاج؟ تساعدك Patients First Worldwide في التواصل مع مقدمي الرعاية الصحية وتنسيق المواعيد واحتياجات السفر والإقامة.",
+  alternates: { canonical: `${site.url}/ar/treatment-in-uae` },
+  openGraph: { title: "رحلتك العلاجية إلى الإمارات تبدأ معنا | Patients First Worldwide", description: "دعم غير طبي وتنسيق عملي لرحلتك العلاجية إلى الإمارات.", url: `${site.url}/ar/treatment-in-uae`, siteName: site.name, type: "website" },
 };
-
+const specialties = [
+  ["رعاية السرطان وأمراض الدم", "استفسارات تنسيق الرعاية المتعلقة بالأورام وأمراض الدم والتشخيص والرعاية متعددة التخصصات."],
+  ["أمراض القلب وجراحة القلب", "استفسارات تتعلق بتقييم القلب والخدمات والإجراءات القلبية."],
+  ["الأعصاب وجراحة الأعصاب", "استفسارات الرعاية المتعلقة بالأعصاب والدماغ والعمود الفقري وجراحة الأعصاب."],
+  ["العظام والعمود الفقري", "استفسارات العظام والمفاصل والطب الرياضي والعمود الفقري والتأهيل."],
+  ["صحة المرأة والخصوبة", "استفسارات الطب الإنجابي وأطفال الأنابيب وأمراض النساء وصحة المرأة."],
+  ["طب الأطفال", "استفسارات تنسيق الرعاية الطبية والجراحية للأطفال."],
+  ["المسالك البولية وأمراض الكلى", "استفسارات الرعاية المتعلقة بالمسالك البولية والكلى."],
+  ["طب العيون", "استفسارات الفحوصات والإجراءات المتخصصة المتعلقة بالعين."],
+  ["زراعة الأعضاء والحالات المعقدة", "استفسارات قد تتطلب التواصل والتنسيق بين عدة تخصصات طبية."],
+];
 const steps = [
-  { n: "٠١", title: "أرسل استفسارك", text: "أخبرنا بنوع الدعم الذي تبحث عنه والطريقة المناسبة للتواصل معك." },
-  { n: "٠٢", title: "ناقش احتياجاتك", text: "يراجع فريقنا استفسارك ويوضح خدمات التنسيق التي قد تكون متاحة." },
-  { n: "٠٣", title: "تعرّف على الخطوات التالية", text: "إذا رغبت في المتابعة، نوضح نطاق الدعم والرسوم المطبقة قبل البدء." },
+  { n: "٠١", title: "أرسل استفسارك", text: "أخبرنا باختصار عن العلاج أو الدعم الذي تبحث عنه وبلد إقامتك والطريقة المناسبة للتواصل معك." },
+  { n: "٠٢", title: "دعنا نتعرّف على احتياجاتك", text: "يراجع فريقنا استفسارك ويوضح خدمات التنسيق التي قد تكون متاحة لرحلتك العلاجية إلى الإمارات." },
+  { n: "٠٣", title: "تعرّف على الخطوات التالية", text: "عند الاقتضاء، نساعد في تنسيق التواصل مع مقدمي الرعاية الصحية المعنيين. ويحدد مقدمو الرعاية مدى الملاءمة الطبية والتوافر." },
 ];
-
-const support = [
-  { icon: ClipboardList, title: "تنسيق الاستفسارات والمواعيد", text: "المساعدة في إيصال استفسارك وتنسيق الخطوات المتعلقة بالمواعيد مع مقدمي الرعاية الصحية، حسب التوافر." },
-  { icon: MessageCircle, title: "دعم التواصل", text: "المساعدة في تنظيم المعلومات والتواصل لفهم الإجراءات الإدارية بصورة أوضح." },
-  { icon: Plane, title: "تنسيق ترتيبات السفر", text: "عند الطلب وحسب التوافر، يمكن مناقشة الدعم اللوجستي غير الطبي المرتبط برحلتك العلاجية." },
-];
-
 const faqs = [
-  { q: "هل تقدم Patients First Worldwide العلاج الطبي؟", a: "لا. تقدم الشركة خدمات تنسيق ودعم غير طبي للمرضى. التشخيص والقرارات العلاجية والرعاية الطبية من اختصاص المهنيين الصحيين المرخصين." },
-  { q: "هل تضمنون موعداً أو نتيجة علاجية؟", a: "لا. يحدد مقدمو الرعاية الصحية مدى توفر المواعيد والقرارات والخطط والنتائج الطبية. يمكن لفريقنا مناقشة خدمات التنسيق المتعلقة باستفسارك." },
-  { q: "ما تكلفة خدمات التنسيق؟", a: "تعتمد الرسوم على نوع الدعم المطلوب. بعد مراجعة استفسارك، يوضح الفريق الخدمات والرسوم المطبقة قبل اتخاذ قرار المتابعة." },
-  { q: "هل يجب إرسال التقارير الطبية عبر هذا النموذج؟", a: "لا. يرجى عدم إرسال التقارير الطبية التفصيلية أو المعلومات شديدة الحساسية عبر النموذج الأولي. يمكن للفريق توضيح الخطوات المناسبة عند التواصل معك." },
+  { q: "هل تقدم Patients First Worldwide العلاج الطبي؟", a: "لا. تقدم الشركة خدمات دعم المرضى وتنسيق رحلتهم العلاجية. التشخيص والمشورة الطبية والعلاج والقرارات السريرية من مسؤولية المهنيين الصحيين المرخصين." },
+  { q: "هل يمكنكم ضمان موعد طبي أو نتيجة علاجية؟", a: "لا. يحدد مقدمو الرعاية الصحية مدى الملاءمة الطبية والمواعيد المتاحة والقرارات العلاجية. لا نضمن المواعيد أو النتائج." },
+  { q: "ما تكلفة خدمات التنسيق؟", a: "تختلف الرسوم بحسب الخدمات المطلوبة. بعد مراجعة استفسارك، نوضح نطاق الخدمات والتكاليف المطبقة قبل موافقتك على المتابعة." },
+  { q: "هل يجب أن أختار دبي أو أبوظبي قبل التواصل؟", a: "ليس من الضروري اختيار الوجهة قبل إرسال الاستفسار. أخبرنا باحتياجاتك وسنوضح خطوات التنسيق الممكنة حسب التوافر. وتبقى القرارات الطبية من اختصاص المهنيين المرخصين." },
+  { q: "هل أرسل تقاريري الطبية عبر نموذج الاستفسار؟", a: "يرجى عدم إرسال تقارير طبية مفصلة أو معلومات صحية حساسة عبر النموذج الأولي. سيشرح لك فريقنا طريقة مشاركة المستندات عبر القنوات المناسبة عند الحاجة." },
 ];
+const sectionTitle = "mt-4 font-serif text-3xl font-semibold tracking-tight text-[#082237] sm:text-4xl lg:text-[44px]";
 
-export default function ArabicInboundTreatmentPage() {
+export default function ArabicInboundTreatmentUAEPage() {
   return (
-    <main dir="rtl" lang="ar" className="bg-ivory text-navy">
-      <section className="relative overflow-hidden px-5 pb-16 pt-28 sm:px-8 sm:pb-20 sm:pt-36">
-        <div aria-hidden className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(212,178,107,0.22),transparent_42%),linear-gradient(145deg,#f8f8f5_0%,#ffffff_55%,#f4f0e6_100%)]" />
-        <div className="relative mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1.05fr_0.85fr] lg:gap-14">
-          <div>
-            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-gold/40 bg-white/75 px-4 py-2 text-xs font-bold text-gold-dark">
-              Patients First Worldwide <span className="h-1 w-1 rounded-full bg-gold" /> دعم المرضى الدوليين
-            </p>
-            <h1 className="max-w-3xl text-4xl font-semibold leading-[1.2] tracking-tight text-midnight sm:text-5xl lg:text-[3.65rem]">
-              هل تخطط لتلقي العلاج في الإمارات؟
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-700 sm:text-xl">
-              احصل على إرشاد عملي ودعم غير طبي لتنسيق رحلتك أثناء استكشاف خيارات الرعاية الصحية في الإمارات.
-            </p>
-            <ul className="mt-7 space-y-3 text-base text-slate-700">
-              {["خطوة أولى واضحة لبدء استفسارك", "دعم في التواصل وتنسيق المواعيد", "معرفة الإجراءات والرسوم المطبقة قبل المتابعة"].map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-gold-dark" />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a href="#lead-form" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-midnight px-7 py-3 font-semibold text-white shadow-lg transition hover:bg-[#0d3555]">
-                أرسل استفسارك <ArrowLeft className="h-4 w-4" />
-              </a>
-              <a href="https://wa.me/971566960486" target="_blank" rel="noreferrer" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-midnight/20 bg-white px-7 py-3 font-semibold text-midnight transition hover:border-gold">
-                <MessageCircle className="h-4 w-4" /> تواصل عبر واتساب
-              </a>
-            </div>
-            <p className="mt-4 text-xs leading-5 text-slate-500">تقدم الشركة خدمات تنسيق غير طبية فقط، ولا تقدم المشورة الطبية أو العلاج. تبقى القرارات الطبية من اختصاص المهنيين الصحيين المرخصين.</p>
-          </div>
+    <main dir="rtl" lang="ar" className="overflow-hidden bg-[#FAF8F2] text-[#082237]">
+      <section className="relative isolate overflow-hidden bg-[#F8F6EF]"><div className="absolute inset-0 -z-10 bg-gradient-to-bl from-white via-[#FAF8F2] to-[#F2E8D5]"/><div className="absolute -left-32 -top-32 -z-10 h-[520px] w-[520px] rounded-full bg-gradient-to-br from-[#C88A2B]/20 via-[#F7D77D]/15 to-transparent blur-3xl"/>
+        <div className="mx-auto max-w-[1500px] px-6 pb-14 pt-28 sm:px-8 sm:pb-20 lg:px-12 lg:pt-32 xl:px-16"><div className="grid items-start gap-10 lg:grid-cols-[0.92fr_1.08fr] xl:gap-14">
+          <div className="flex flex-col justify-start"><p className="text-xs font-semibold tracking-[0.08em] text-[#E6B94F] sm:text-sm">Patients First Worldwide | دعم المرضى الدوليين</p><h1 className="mt-5 max-w-3xl font-serif text-4xl font-semibold leading-[1.2] tracking-tight text-[#082237] sm:text-5xl lg:text-[58px]">رحلتك العلاجية إلى الإمارات تبدأ معنا</h1><p className="mt-6 max-w-2xl text-base leading-8 text-[#082237/85] sm:text-lg">نساعد المرضى القادمين من مختلف أنحاء العالم على تنسيق رحلتهم العلاجية إلى دولة الإمارات العربية المتحدة، من التواصل مع المستشفيات ومقدمي الرعاية الصحية إلى تنسيق المواعيد واحتياجات السفر والإقامة، وفقًا للخدمات المتاحة.</p><div className="mt-6 space-y-3 text-sm leading-7 text-[#082237/80]"><p className="flex items-start gap-3"><CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-[#E6B94F]"/> التواصل مع المستشفيات ومقدمي الرعاية الصحية</p><p className="flex items-start gap-3"><CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-[#E6B94F]"/> تنسيق المواعيد والخطوات التالية</p><p className="flex items-start gap-3"><CheckCircle2 className="mt-1 h-5 w-5 shrink-0 text-[#E6B94F]"/> توضيح نطاق الخدمات والتكاليف قبل البدء</p></div><div className="mt-8 flex flex-col gap-3 sm:flex-row"><a href="#case-enquiry" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#C88A2B] via-[#E6B94F] to-[#F8DF8B] px-7 py-3 text-sm font-bold text-[#082237]">ابدأ رحلتك العلاجية <ArrowLeft className="h-4 w-4"/></a><a href={site.whatsapp} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[#082237]/15 bg-white/90 px-7 py-3 text-sm font-bold text-[#082237]"><MessageCircle className="h-4 w-4"/> تواصل معنا عبر واتساب</a></div><p className="mt-6 max-w-xl border-r-2 border-[#C88A2B]/60 pr-4 text-xs leading-6 text-[#082237/70]">تقدم Patients First Worldwide خدمات دعم وتنسيق غير طبية، ولا تقدم التشخيص أو العلاج أو المشورة الطبية. تبقى القرارات الطبية من مسؤولية مقدمي الرعاية الصحية المرخصين.</p></div>
+          <div id="case-enquiry" className="scroll-mt-24 rounded-[30px] border border-white/80 bg-white/95 p-7 shadow-[0_25px_80px_rgba(8,34,55,0.14)] backdrop-blur sm:p-9 lg:p-10"><div className="mb-6"><p className="text-xs font-semibold tracking-[0.12em] text-[#E6B94F]">ابدأ من هنا</p><h2 className="mt-2 font-serif text-2xl font-semibold text-[#082237] sm:text-3xl">أخبرنا عن احتياجاتك العلاجية</h2><p className="mt-2 text-sm leading-7 text-[#082237/70]">شاركنا بعض التفاصيل الأساسية، وسيتواصل معك فريقنا لفهم احتياجاتك وشرح خيارات التنسيق المتاحة.</p></div><Suspense fallback={<div className="min-h-[420px] animate-pulse rounded-2xl bg-[#FAF8F2]"/>}><ArabicInboundContactForm/></Suspense><div className="mt-5 flex items-start gap-2 rounded-2xl bg-[#FAF8F2] p-4 text-xs leading-6 text-[#082237/70]"><ShieldCheck className="mt-1 h-4 w-4 shrink-0 text-[#E6B94F]"/><span>يرجى عدم إدخال تقارير طبية مفصلة أو معلومات صحية حساسة في هذا النموذج الأولي.</span></div></div></div>
+          <div className="mt-12 grid overflow-hidden rounded-[26px] bg-[#082237] shadow-[0_18px_50px_rgba(8,34,55,0.16)] sm:grid-cols-3">{[{title:"خبرات طبية متنوعة",text:"استكشاف خيارات الرعاية عبر مجموعة من التخصصات الطبية."},{title:"تنسيق التواصل والمواعيد",text:"المساعدة في التواصل والخطوات المتعلقة بالمواعيد حسب التوافر."},{title:"دعم عملي للرحلة",text:"مناقشة التنسيق الإداري واحتياجات السفر عند توفر الخدمة."}].map((x,i)=><div key={x.title} className={`p-6 text-center sm:p-7 ${i<2?"border-b border-white/10 sm:border-b-0 sm:border-l":""}`}><div className="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-[#C88A2B] to-[#F8DF8B]">{i===0?<Stethoscope className="h-5 w-5 text-[#082237]"/>:i===1?<Users className="h-5 w-5 text-[#082237]"/>:<Plane className="h-5 w-5 text-[#082237]"/>}</div><h3 className="mt-4 font-serif text-lg font-bold text-white">{x.title}</h3><p className="mt-2 text-sm leading-6 text-white/70">{x.text}</p></div>)}</div>
+        </div></section>
 
-          <div id="lead-form" className="scroll-mt-24 rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-[0_24px_80px_rgba(5,33,56,0.12)] sm:p-8">
-            <div className="mb-6">
-              <p className="text-xs font-bold text-gold-dark">ابدأ من هنا</p>
-              <h2 className="mt-2 text-2xl font-semibold leading-tight text-midnight sm:text-3xl">أخبرنا كيف يمكننا مساعدتك</h2>
-              <p className="mt-3 text-sm leading-6 text-slate-600">أرسل بعض التفاصيل ليتمكن فريقنا من التواصل معك ومناقشة استفسارك وخدمات التنسيق الممكنة.</p>
-            </div>
-            <Suspense fallback={<div className="h-80 animate-pulse rounded-xl bg-ivory" />}>
-              <ArabicInboundContactForm />
-            </Suspense>
-          </div>
-        </div>
-      </section>
+      <section className="bg-white py-20 sm:py-24"><div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10"><div className="mx-auto max-w-3xl text-center"><p className="text-xs font-semibold text-[#E6B94F]">وجهة رعاية صحية عالمية</p><h2 className={sectionTitle}>لماذا يستكشف المرضى الدوليون خيارات العلاج في الإمارات؟</h2><p className="mt-5 text-base leading-8 text-[#082237/80] sm:text-lg">تضم دبي وأبوظبي مجموعة من مقدمي الرعاية الصحية ضمن بيئة متصلة بالعالم. وتعتمد الخيارات المناسبة على احتياجات كل مريض وتقييم المهنيين الصحيين المرخصين.</p></div><div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{[{icon:<Stethoscope className="h-6 w-6 text-[#E6B94F]"/>,title:"خبرات طبية",text:"مهنيون صحيون بخبرات وتدريبات سريرية متنوعة."},{icon:<Building2 className="h-6 w-6 text-[#E6B94F]"/>,title:"مستشفيات وتقنيات",text:"استثمار في المرافق الطبية والتشخيص وتقنيات العلاج."},{icon:<Users className="h-6 w-6 text-[#E6B94F]"/>,title:"رعاية متعددة التخصصات",text:"قد تتطلب بعض الحالات تنسيق التواصل بين عدة تخصصات."},{icon:<Plane className="h-6 w-6 text-[#E6B94F]"/>,title:"اتصال عالمي",text:"ترتبط دبي وأبوظبي بوجهات عديدة حول العالم."}].map(x=><div key={x.title} className="rounded-[24px] bg-[#082237] p-6 text-white"><div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-white/10">{x.icon}</div><h3 className="font-serif text-lg font-bold">{x.title}</h3><p className="mt-3 text-sm leading-7 text-white/70">{x.text}</p></div>)}</div></div></section>
 
-      <section className="px-5 py-16 sm:px-8 sm:py-20">
-        <div className="mx-auto max-w-7xl">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-bold text-gold-dark">كيف نعمل</p>
-            <h2 className="mt-3 text-3xl font-semibold leading-tight text-midnight sm:text-4xl">خطوات أوضح لبدء رحلتك العلاجية</h2>
-            <p className="mt-4 text-base leading-7 text-slate-600">ابدأ بالتواصل معنا، ثم قرر الخطوة التالية بعد فهم خدمات التنسيق المتاحة.</p>
-          </div>
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {steps.map((step) => (
-              <article key={step.n} className="rounded-2xl border border-slate-200 bg-white p-7">
-                <span className="text-sm font-bold tracking-widest text-gold-dark">{step.n}</span>
-                <h3 className="mt-4 text-xl font-semibold text-midnight">{step.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-600">{step.text}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      <section className="bg-[#FAF8F2] py-20 sm:py-24"><div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10"><div className="mx-auto max-w-3xl text-center"><p className="text-xs font-semibold text-[#E6B94F]">تخصصات طبية متنوعة</p><h2 className={sectionTitle}>استكشف مجالات الرعاية الصحية في الإمارات</h2><p className="mt-5 text-base leading-8 text-[#082237/80]">يمكن لفريق PFW مناقشة استفسارك والمساعدة في تنسيق التواصل مع مقدمي الرعاية الصحية المعنيين حسب التوافر. ويحدد مقدم الرعاية الملاءمة الطبية.</p></div><div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{specialties.map(([title,text])=><div key={title} className="rounded-[26px] border border-[#082237/10] bg-white p-7"><div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#082237]"><CheckCircle2 className="h-6 w-6 text-[#E6B94F]"/></div><h3 className="font-serif text-xl font-bold text-[#082237]">{title}</h3><p className="mt-3 text-sm leading-7 text-[#082237/80]">{text}</p></div>)}</div><p className="mt-6 text-center text-xs leading-6 text-[#082237/70]">لا تمثل هذه القائمة توصية طبية أو تأكيدًا على توافر خدمة أو ملاءمتها لحالة معينة.</p></div></section>
 
-      <section className="bg-white px-5 py-16 sm:px-8 sm:py-20">
-        <div className="mx-auto max-w-7xl">
-          <p className="text-xs font-bold text-gold-dark">كيف ندعمك</p>
-          <h2 className="mt-3 text-3xl font-semibold leading-tight text-midnight sm:text-4xl">دعم عملي يضع احتياجاتك أولاً</h2>
-          <p className="mt-4 max-w-3xl text-base leading-7 text-slate-600">تختلف احتياجات كل شخص. وتعتمد الخدمات المتاحة على احتياجاتك وتوفر مقدمي الرعاية ونطاق الخدمة المتفق عليه.</p>
-          <div className="mt-9 grid gap-5 md:grid-cols-3">
-            {support.map(({ icon: Icon, title, text }) => (
-              <article key={title} className="rounded-2xl border border-slate-200 bg-ivory/70 p-7">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-midnight text-gold"><Icon className="h-5 w-5" /></span>
-                <h3 className="mt-5 text-lg font-semibold text-midnight">{title}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-600">{text}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      <section className="bg-white py-20 sm:py-24"><div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10"><div className="mx-auto max-w-3xl text-center"><p className="text-xs font-semibold text-[#E6B94F]">مدينتان متصلتان بالعالم</p><h2 className={sectionTitle}>دبي أم أبوظبي؟</h2><p className="mt-5 text-base leading-8 text-[#082237/80]">ليس من الضروري اختيار الوجهة قبل إرسال استفسارك. أخبرنا بما تبحث عنه لنناقش خطوات التنسيق الممكنة.</p></div><div className="mt-12 grid gap-6 md:grid-cols-2"><div className="rounded-[28px] border border-[#082237/10] bg-[#FAF8F2] p-8"><MapPin className="h-7 w-7 text-[#E6B94F]"/><h3 className="mt-4 font-serif text-2xl font-bold">دبي</h3><p className="mt-3 text-sm leading-7 text-[#082237/80]">مدينة متصلة عالميًا تضم مجموعة من المستشفيات والمراكز التخصصية وبنية داعمة للسفر.</p></div><div className="rounded-[28px] border border-[#082237/10] bg-[#FAF8F2] p-8"><MapPin className="h-7 w-7 text-[#E6B94F]"/><h3 className="mt-4 font-serif text-2xl font-bold">أبوظبي</h3><p className="mt-3 text-sm leading-7 text-[#082237/80]">تضم عاصمة الإمارات مستشفيات وخدمات تخصصية في مجالات طبية متنوعة.</p></div></div></div></section>
 
-      <section className="px-5 py-16 sm:px-8 sm:py-20">
-        <div className="mx-auto max-w-4xl">
-          <div className="text-center">
-            <ShieldCheck className="mx-auto h-8 w-8 text-gold-dark" />
-            <h2 className="mt-3 text-3xl font-semibold text-midnight">أسئلة قد تهمك</h2>
-          </div>
-          <div className="mt-8 divide-y divide-slate-200 rounded-2xl border border-slate-200 bg-white px-6">
-            {faqs.map((faq) => (
-              <details key={faq.q} className="group py-5">
-                <summary className="cursor-pointer list-none pr-6 font-semibold text-midnight">{faq.q}<span className="float-left text-gold-dark transition group-open:rotate-45">+</span></summary>
-                <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-600">{faq.a}</p>
-              </details>
-            ))}
-          </div>
-          <div className="mt-9 rounded-2xl bg-midnight px-6 py-8 text-center text-white sm:px-10">
-            <h2 className="text-2xl font-semibold">هل ترغب في مناقشة استفسارك؟</h2>
-            <p className="mx-auto mt-3 max-w-2xl text-sm leading-6 text-slate-300">تواصل مع Patients First Worldwide للتعرف على خدمات التنسيق غير الطبية لرحلتك العلاجية في الإمارات.</p>
-            <a href="#lead-form" className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#C88A2B] to-[#FCDA7B] px-7 py-3 font-semibold text-midnight">أرسل استفسارك <ArrowLeft className="h-4 w-4" /></a>
-          </div>
-          <p className="mt-6 text-center text-xs leading-5 text-slate-500">لا تقدم هذه الخدمة التشخيص أو المشورة الطبية أو العلاج، ولا تضمن توفر المواعيد أو النتائج الطبية. في حالات الطوارئ، اتصل بخدمات الطوارئ المحلية.</p>
-        </div>
-      </section>
+      <section className="bg-[#FAF8F2] py-20 sm:py-24"><div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10"><div className="mx-auto max-w-3xl text-center"><p className="text-xs font-semibold text-[#E6B94F]">كيف نعمل</p><h2 className={sectionTitle}>ثلاث خطوات لبدء رحلتك العلاجية</h2><p className="mt-5 text-base leading-8 text-[#082237/80]">ابدأ بإرسال استفسارك، ثم تعرّف على خدمات التنسيق والخطوات الممكنة قبل اتخاذ قرارك.</p></div><div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">{steps.map(s=><div key={s.n} className="rounded-[26px] border border-[#082237/10] bg-white p-7"><p className="text-sm font-bold tracking-[0.2em] text-[#E6B94F]">{s.n}</p><h3 className="mt-4 font-serif text-xl font-bold text-[#082237]">{s.title}</h3><p className="mt-3 text-sm leading-7 text-[#082237/80]">{s.text}</p></div>)}</div></div></section>
+
+      <section className="bg-white py-20 sm:py-24"><div className="mx-auto max-w-4xl px-6 sm:px-8"><div className="text-center"><p className="text-xs font-semibold text-[#E6B94F]">الأسئلة الشائعة</p><h2 className={sectionTitle}>إجابات عن أسئلتك</h2></div><div className="mt-10 divide-y divide-[#082237/10] rounded-[26px] border border-[#082237/10] bg-[#FAF8F2] px-6 sm:px-8">{faqs.map(f=><details key={f.q} className="group py-5"><summary className="cursor-pointer list-none pl-6 font-semibold text-[#082237]">{f.q}<span className="float-left text-[#E6B94F] transition group-open:rotate-45">+</span></summary><p className="mt-3 text-sm leading-7 text-[#082237/80]">{f.a}</p></details>)}</div></div></section>
+
+      <section className="bg-[#082237] py-14 sm:py-16"><div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-7 px-6 sm:px-8 md:flex-row md:items-center lg:px-10"><div><p className="text-xs font-semibold text-[#F0C45B]">بوابتك إلى الرعاية الصحية في الإمارات</p><h2 className="mt-3 font-serif text-3xl font-semibold text-white sm:text-4xl">قد تبدأ رحلتك بمحادثة واحدة</h2><p className="mt-3 max-w-2xl text-sm leading-7 text-white/70">أخبرنا ببلد إقامتك ونوع الدعم الذي تبحث عنه، وسنوضح الخطوات المتاحة لاستفسارك.</p></div><div className="flex w-full flex-col gap-3 sm:w-auto sm:min-w-64"><a href="#case-enquiry" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#C88A2B] via-[#E6B94F] to-[#F8DF8B] px-7 py-3 text-sm font-bold text-[#082237]">ابدأ رحلتك العلاجية <ArrowLeft className="h-4 w-4"/></a><a href={site.whatsapp} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/25 px-7 py-3 text-sm font-bold text-white hover:bg-white/10"><MessageCircle className="h-4 w-4"/> تواصل عبر واتساب</a></div></div></section>
+      <footer dir="rtl" className="bg-[#082237] px-6 pb-10 pt-8 sm:px-8 sm:pb-12"><div className="mx-auto max-w-5xl rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-5 text-center sm:px-8 sm:py-6"><p className="mx-auto max-w-4xl text-xs leading-7 text-white/70 sm:text-sm sm:leading-8">تقدم Patients First Worldwide خدمات دعم المرضى والتنسيق غير الطبي. لا تقدم PFW التشخيص أو العلاج أو المشورة الطبية، ولا تضمن توافر المواعيد أو النتائج العلاجية. وتبقى القرارات الطبية من مسؤولية مقدمي الرعاية الصحية المرخصين. في حالات الطوارئ الطبية، يرجى الاتصال بخدمات الطوارئ المحلية فورًا.</p></div></footer>
+      <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 border-t border-white/10 bg-[#082237]/95 p-2 backdrop-blur sm:hidden"><a href="#case-enquiry" className="rounded-full bg-gradient-to-r from-[#C88A2B] to-[#F8DF8B] px-3 py-3 text-center text-sm font-bold text-[#082237]">ابدأ الاستفسار</a><a href={site.whatsapp} target="_blank" rel="noopener noreferrer" className="rounded-full px-3 py-3 text-center text-sm font-bold text-white">واتساب</a></div>
     </main>
   );
 }
