@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import Image from "next/image";
 import { ArrowRight, CheckCircle2, ShieldCheck, MessageCircle, Users, Building2, Plane, ClipboardList, MapPin, Stethoscope } from "lucide-react";
 import { ContactForm } from "@/components/ContactForm";
 import { site } from "@/lib/site";
@@ -46,7 +47,18 @@ export default function InboundTreatmentUAEPage() {
   return (
     <main className="overflow-hidden bg-[#FAF8F2] text-[#082237]">
       <section className="relative isolate overflow-hidden bg-[#F8F6EF]">
-        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-white via-[#FAF8F2] to-[#F2E8D5]" />
+        {/* Shared healthcare-coordination hero image, styled like the Oncology landing page. */}
+        <div className="absolute inset-0 -z-10">
+          <Image
+            src="/about-us-2a.webp"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-center opacity-35"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-[#FAF8F2]/95 to-[#FAF8F2]" />
+        </div>
         <div className="absolute -right-32 -top-32 -z-10 h-[520px] w-[520px] rounded-full bg-gradient-to-br from-[#C88A2B]/20 via-[#F7D77D]/15 to-transparent blur-3xl" />
         <div className="absolute -left-40 bottom-[-240px] -z-10 h-[520px] w-[520px] rounded-full bg-[#082237]/[0.04] blur-3xl" />
         <div className="mx-auto max-w-[1500px] px-6 pb-14 pt-28 sm:px-8 sm:pb-20 lg:px-12 lg:pt-32 xl:px-16">
@@ -75,7 +87,7 @@ export default function InboundTreatmentUAEPage() {
         </div>
       </section>
 
-      <section className="bg-white py-20 sm:py-24"><div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10"><div className="mx-auto max-w-3xl text-center"><p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#E6B94F]">A Global Healthcare Destination</p><h2 className={`mt-4 ${sectionTitle}`}>Why International Patients Explore the UAE</h2><p className="mt-5 text-base leading-8 text-[#082237/80] sm:text-lg">Dubai and Abu Dhabi offer a range of healthcare providers and services within an internationally connected setting. The right options depend on each patient’s needs and assessment by licensed professionals.</p></div><div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{[{icon:<Stethoscope className="h-6 w-6 text-[#E6B94F]"/>,title:"Medical expertise",text:"Healthcare professionals with varied training and clinical experience."},{icon:<Building2 className="h-6 w-6 text-[#E6B94F]"/>,title:"Hospitals & technology",text:"Providers invest in medical facilities, diagnostics and treatment technologies."},{icon:<Users className="h-6 w-6 text-[#E6B94F]"/>,title:"Multidisciplinary care",text:"Some complex conditions may involve coordination among multiple specialists."},{icon:<Plane className="h-6 w-6 text-[#E6B94F]"/>,title:"Global connectivity",text:"Dubai and Abu Dhabi connect with destinations across many regions."}].map(x=><div key={x.title} className="rounded-[24px] bg-[#082237] p-6 text-white"><div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-white/10">{x.icon}</div><h3 className="font-serif text-lg font-bold">{x.title}</h3><p className="mt-3 text-sm leading-7 text-white/70">{x.text}</p></div>)}</div></div></section>
+      <section className="bg-white py-20 sm:py-24"><div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10"><div className="mx-auto max-w-3xl text-center"><p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#E6B94F]">A Global Healthcare Destination</p><h2 className={`mt-4 ${sectionTitle}`}>Why Patients Explore the UAE</h2><p className="mt-5 text-base leading-8 text-[#082237/80] sm:text-lg">Dubai and Abu Dhabi offer a range of healthcare providers and services within an internationally connected setting. The right options depend on each patient’s needs and assessment by licensed professionals.</p></div><div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{[{icon:<Stethoscope className="h-6 w-6 text-[#E6B94F]"/>,title:"Medical expertise",text:"Healthcare professionals with varied training and clinical experience."},{icon:<Building2 className="h-6 w-6 text-[#E6B94F]"/>,title:"Hospitals & technology",text:"Providers invest in medical facilities, diagnostics and treatment technologies."},{icon:<Users className="h-6 w-6 text-[#E6B94F]"/>,title:"Multidisciplinary care",text:"Some complex conditions may involve coordination among multiple specialists."},{icon:<Plane className="h-6 w-6 text-[#E6B94F]"/>,title:"Global connectivity",text:"Dubai and Abu Dhabi connect with destinations across many regions."}].map(x=><div key={x.title} className="rounded-[24px] bg-[#082237] p-6 text-white"><div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-white/10">{x.icon}</div><h3 className="font-serif text-lg font-bold">{x.title}</h3><p className="mt-3 text-sm leading-7 text-white/70">{x.text}</p></div>)}</div></div></section>
 
       <section className="bg-[#FAF8F2] py-20 sm:py-24"><div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10"><div className="mx-auto max-w-3xl text-center"><p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#E6B94F]">Care Across Specialties</p><h2 className={`mt-4 ${sectionTitle}`}>Explore Healthcare Areas Across the UAE</h2><p className="mt-5 text-base leading-8 text-[#082237/80]">PFW can discuss your enquiry and help coordinate communication with relevant healthcare providers, subject to availability. Clinical suitability is determined by the provider.</p></div><div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{specialties.map(([title,text])=><div key={title} className={cardClass}><div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#082237]"><CheckCircle2 className="h-6 w-6 text-[#E6B94F]"/></div><h3 className="font-serif text-xl font-bold text-[#082237]">{title}</h3><p className="mt-3 text-sm leading-7 text-[#082237/80]">{text}</p></div>)}</div><p className="mt-6 text-center text-xs leading-6 text-[#082237/70]">This overview is not a recommendation or confirmation that a specific treatment or provider is suitable or available.</p></div></section>
 

@@ -148,8 +148,8 @@ export function ContactForm() {
           defaultValue={state.values?.message}
         />
         <span className={fieldNoteClass}>
-          Share as much detail as you&rsquo;re comfortable with &mdash; the more our team knows,
-          the better we can match you with the right care and coordinate with the relevant
+          Share with us you&rsquo;re information,
+          that we can match you with the right care and coordinate with the relevant
           medical facility.
         </span>
         {state.errors?.message && <p className="mt-1.5 text-xs text-red-600">{state.errors.message[0]}</p>}
