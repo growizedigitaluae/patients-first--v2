@@ -19,7 +19,11 @@ export async function submitLead(_prev: ContactState, formData: FormData): Promi
     email: String(formData.get("email") ?? ""),
     phone,
     contactMethod: String(formData.get("contactMethod") ?? ""),
-    careArea: String(formData.get("careArea") ?? ""),
+    careArea: (() => {
+      const careArea = String(formData.get("careArea") ?? "").trim();
+      const interest = String(formData.get("interest") ?? "").trim();
+      return interest ? `${careArea} | Interest: ${interest}` : careArea;
+    })(),
     message: String(formData.get("message") ?? ""),
   };
 

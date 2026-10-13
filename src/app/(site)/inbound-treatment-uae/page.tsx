@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import Image from "next/image";
 import { ArrowRight, CheckCircle2, ShieldCheck, MessageCircle, Users, Building2, Plane, ClipboardList, MapPin, Stethoscope } from "lucide-react";
-import { ContactForm } from "@/components/ContactForm";
+import { InboundContactForm } from "@/components/InboundContactForm";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -77,7 +77,7 @@ export default function InboundTreatmentUAEPage() {
             </div>
             <div id="case-enquiry" className="scroll-mt-24 rounded-[30px] border border-white/80 bg-white/95 p-7 shadow-[0_25px_80px_rgba(8,34,55,0.14)] backdrop-blur sm:p-9 lg:p-10">
               <div className="mb-6"><p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#E6B94F]">Start Here</p><h2 className="mt-2 font-serif text-2xl font-semibold text-[#082237] sm:text-3xl">Tell Us About Your Treatment Needs</h2><p className="mt-2 text-sm leading-6 text-[#082237/70]">Share a few basic details so our team can understand your enquiry and explain available coordination options.</p></div>
-              <Suspense fallback={<div className="min-h-[420px] animate-pulse rounded-2xl bg-[#FAF8F2]" />}><ContactForm /></Suspense>
+              <Suspense fallback={<div className="min-h-[420px] animate-pulse rounded-2xl bg-[#FAF8F2]" />}><InboundContactForm /></Suspense>
               <div className="mt-5 flex items-start gap-2 rounded-2xl bg-[#FAF8F2] p-4 text-xs leading-5 text-[#082237/70]"><ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-[#E6B94F]" /><span>Please do not enter detailed medical records or sensitive health information in this initial form. Our team can explain appropriate document-sharing steps if needed.</span></div>
             </div>
           </div>
