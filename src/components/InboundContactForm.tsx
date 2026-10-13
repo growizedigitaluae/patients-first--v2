@@ -279,8 +279,8 @@ export function InboundContactForm() {
           "Sending…"
         ) : (
           <>
-            Send My Enquiry
-            <Send className="h-4 w-4" aria-hidden="true" />
+            Connect with a PFW Care Coordinator
+            <Send className="h-4 w-4 shrink-0" aria-hidden="true" />
           </>
         )}
       </button>
