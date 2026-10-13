@@ -249,9 +249,10 @@ export function InboundContactForm() {
           defaultValue={state.values?.message}
         />
         <p className="mt-1 text-xs leading-relaxed text-[#082237]/70">
-          Please do not include diagnoses, detailed medical information,
-          medical reports, passport details, or payment information in this
-          initial enquiry.
+          This form is the first step in your enquiry. Your
+PFW coordinator will follow up with you and
+arrange the sharing of any medical reports
+needed for coordination.
         </p>
         {state.errors?.message && (
           <p className="mt-1.5 text-xs text-red-600">
