@@ -1,53 +1,162 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import Image from "next/image";
-import { ArrowRight, CheckCircle2, ShieldCheck, MessageCircle, Users, Building2, Plane, ClipboardList, MapPin, Stethoscope } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCircle2,
+  ShieldCheck,
+  MessageCircle,
+  Users,
+  Building2,
+  Plane,
+  MapPin,
+  Stethoscope,
+} from "lucide-react";
+
 import { InboundContactForm } from "@/components/InboundContactForm";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Medical Tourism in the UAE | Patients First Worldwide",
-  description: "Planning to travel to the UAE for treatment? Patients First Worldwide helps international patients coordinate hospital communication, appointments and practical travel needs.",
-  alternates: { canonical: `${site.url}/inbound-treatment-uae` },
+  description:
+    "Planning to travel to the UAE for treatment? Patients First Worldwide helps international patients coordinate hospital communication, appointments and practical travel needs.",
+  alternates: {
+    canonical: `${site.url}/inbound-treatment-uae`,
+  },
   openGraph: {
     title: "Medical Tourism in the UAE | Patients First Worldwide",
-    description: "Explore non-clinical patient coordination and practical support for your treatment journey to the UAE.",
-    url: `${site.url}/inbound-treatment-uae`, siteName: site.name, type: "website",
+    description:
+      "Explore non-clinical patient coordination and practical support for your treatment journey to the UAE.",
+    url: `${site.url}/inbound-treatment-uae`,
+    siteName: site.name,
+    type: "website",
   },
 };
 
 const specialties = [
-  ["Cancer Care & Haematology", "Explore enquiries relating to oncology, haematology, diagnostics and multidisciplinary care."],
-  ["Cardiology & Cardiac Surgery", "Coordination enquiries for cardiovascular assessment, procedures and cardiac care."],
-  ["Neurology & Neurosurgery", "Support for enquiries involving neurological, brain, spine and neurosurgical care."],
-  ["Orthopaedics & Spine", "Joint, sports medicine, orthopaedic, spine and rehabilitation enquiries."],
-  ["Women’s Health & Fertility", "Enquiries relating to reproductive medicine, IVF, gynaecology and women’s health."],
-  ["Paediatrics", "Coordination enquiries for children’s medical and surgical care."],
-  ["Urology & Nephrology", "Enquiries involving urological and kidney conditions."],
-  ["Ophthalmology", "Enquiries about specialist eye assessment and procedures."],
-  ["Transplantation & Complex Care", "Enquiries that may involve multiple specialties and coordinated provider communication."],
+  [
+    "Cardiology & Cardiac Surgery",
+    "Coordination enquiries involving cardiovascular assessment, cardiac procedures, surgery and related specialist care.",
+  ],
+  [
+    "Oncology & Haematology",
+    "Support for enquiries involving cancer care, haematology, diagnostics and multidisciplinary oncology services.",
+  ],
+  [
+    "Orthopaedics & Spine",
+    "Enquiries relating to joints, sports medicine, orthopaedic procedures, spine care and rehabilitation.",
+  ],
+  [
+    "Neurology & Neurosurgery",
+    "Support for enquiries involving neurological, brain, spine and neurosurgical conditions.",
+  ],
+  [
+    "Women’s Health & Fertility",
+    "Enquiries relating to reproductive medicine, IVF, gynaecology, maternal care and women’s health.",
+  ],
+  [
+    "Paediatrics & Neonatology",
+    "Coordination enquiries for children's medical, surgical and neonatal care.",
+  ],
+  [
+    "Ophthalmology",
+    "Enquiries about specialist eye assessment, ophthalmic procedures and complex eye conditions.",
+  ],
+  [
+    "Urology & Nephrology",
+    "Enquiries involving urological and kidney conditions, diagnostics and related specialist care.",
+  ],
+  [
+    "Gastroenterology & Hepatology",
+    "Support for enquiries involving digestive health, gastrointestinal conditions and liver-related care.",
+  ],
+  [
+    "Transplantation",
+    "Coordination enquiries involving transplant pathways and complex multidisciplinary healthcare.",
+  ],
+  [
+    "Rehabilitation & Recovery",
+    "Support for rehabilitation, recovery planning and coordination with relevant healthcare providers.",
+  ],
+  [
+    "Dentistry & Oral Surgery",
+    "Enquiries relating to dental care, oral surgery and specialist dental procedures.",
+  ],
+  [
+    "Bariatric & Metabolic Care",
+    "Coordination enquiries involving bariatric procedures, metabolic health and related specialist services.",
+  ],
+  [
+    "Aesthetic & Reconstructive Surgery",
+    "Enquiries relating to aesthetic and reconstructive procedures and coordination with relevant providers.",
+  ],
+  [
+    "Executive Health Screening",
+    "Support for enquiries about comprehensive health screening and coordinated preventive healthcare services.",
+  ],
+  [
+    "Rare & Complex Conditions",
+    "Enquiries that may require multidisciplinary coordination, specialist input and access to advanced healthcare services.",
+  ],
 ];
+
 const steps = [
-  { n: "01", title: "Tell us what you need", text: "Share a brief outline of the treatment or support you are looking for, your country of residence and preferred contact method." },
-  { n: "02", title: "Discuss available coordination", text: "Our team reviews your enquiry and explains relevant coordination services and possible next steps." },
-  { n: "03", title: "Understand the options", text: "Where appropriate, we help coordinate communication with relevant healthcare providers. Providers determine clinical suitability and availability." },
-  { n: "04", title: "Plan practical arrangements", text: "If you choose to proceed, we explain the agreed service scope and applicable fees before coordination begins. Travel-related support is subject to availability." },
+  {
+    n: "01",
+    title: "Tell us what you need",
+    text: "Share a brief outline of the treatment or support you are looking for, your country of residence and preferred contact method.",
+  },
+  {
+    n: "02",
+    title: "Discuss available coordination",
+    text: "Our team reviews your enquiry and explains relevant coordination services and possible next steps.",
+  },
+  {
+    n: "03",
+    title: "Understand the options",
+    text: "Where appropriate, we help coordinate communication with relevant healthcare providers. Providers determine clinical suitability and availability.",
+  },
+  {
+    n: "04",
+    title: "Plan practical arrangements",
+    text: "If you choose to proceed, we explain the agreed service scope and applicable fees before coordination begins. Travel-related support is subject to availability.",
+  },
 ];
+
 const faqs = [
-  { q: "Does Patients First Worldwide provide medical treatment?", a: "No. PFW provides patient support and non-clinical coordination. Diagnosis, medical advice, treatment recommendations and clinical decisions are the responsibility of licensed healthcare professionals." },
-  { q: "Can you guarantee a hospital, appointment or treatment outcome?", a: "No. Healthcare providers determine clinical suitability, available appointments and treatment decisions. PFW does not guarantee appointments or outcomes." },
-  { q: "How much do coordination services cost?", a: "Fees depend on the services requested. After reviewing your enquiry, we explain the service scope and applicable costs before you agree to proceed." },
-  { q: "Can you help me choose between Dubai and Abu Dhabi?", a: "You do not need to decide before contacting us. We can discuss your enquiry and help coordinate communication with relevant providers, subject to availability. Clinical decisions remain with licensed professionals." },
-  { q: "Should I upload my medical reports through this form?", a: "Please do not include detailed medical records or sensitive health information in this initial enquiry. If documents are needed, our team can explain the appropriate sharing process." },
+  {
+    q: "Does Patients First Worldwide provide medical treatment?",
+    a: "No. PFW provides patient support and non-clinical coordination. Diagnosis, medical advice, treatment recommendations and clinical decisions are the responsibility of licensed healthcare professionals.",
+  },
+  {
+    q: "Can you guarantee a hospital, appointment or treatment outcome?",
+    a: "No. Healthcare providers determine clinical suitability, available appointments and treatment decisions. PFW does not guarantee appointments or outcomes.",
+  },
+  {
+    q: "How much do coordination services cost?",
+    a: "Fees depend on the services requested. After reviewing your enquiry, we explain the service scope and applicable costs before you agree to proceed.",
+  },
+  {
+    q: "Can you help me choose where in the UAE to receive care?",
+    a: "You do not need to decide on a city before contacting us. You can tell us what you are looking for and your preferred location, and we can discuss available coordination options across the UAE, subject to provider availability.",
+  },
+  {
+    q: "Should I upload my medical reports through this form?",
+    a: "Please do not include detailed medical records or sensitive health information in this initial enquiry. If documents are needed, our team can explain the appropriate sharing process.",
+  },
 ];
-const sectionTitle = "font-serif text-3xl font-semibold tracking-tight text-[#082237] sm:text-4xl lg:text-[44px]";
-const cardClass = "rounded-[26px] border border-[#082237/10] bg-[#FAF8F2] p-7";
+
+const sectionTitle =
+  "font-serif text-3xl font-semibold tracking-tight text-[#082237] sm:text-4xl lg:text-[44px]";
+
+const cardClass =
+  "rounded-[26px] border border-[#082237]/10 bg-[#FAF8F2] p-7";
 
 export default function InboundTreatmentUAEPage() {
   return (
     <main className="overflow-hidden bg-[#FAF8F2] text-[#082237]">
+      {/* HERO */}
       <section className="relative isolate overflow-hidden bg-[#F8F6EF]">
-        {/* Shared healthcare-coordination hero image, styled like the Oncology landing page. */}
         <div className="absolute inset-0 -z-10">
           <Image
             src="/about-us-2a.webp"
@@ -57,51 +166,523 @@ export default function InboundTreatmentUAEPage() {
             sizes="100vw"
             className="object-cover object-center opacity-35"
           />
+
           <div className="absolute inset-0 bg-gradient-to-b from-white/90 via-[#FAF8F2]/95 to-[#FAF8F2]" />
         </div>
+
         <div className="absolute -right-32 -top-32 -z-10 h-[520px] w-[520px] rounded-full bg-gradient-to-br from-[#C88A2B]/20 via-[#F7D77D]/15 to-transparent blur-3xl" />
+
         <div className="absolute -left-40 bottom-[-240px] -z-10 h-[520px] w-[520px] rounded-full bg-[#082237]/[0.04] blur-3xl" />
+
         <div className="mx-auto max-w-[1500px] px-6 pb-14 pt-28 sm:px-8 sm:pb-20 lg:px-12 lg:pt-32 xl:px-16">
           <div className="grid items-start gap-10 lg:grid-cols-[0.92fr_1.08fr] xl:gap-14">
             <div className="flex flex-col justify-start">
-              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#E6B94F] sm:text-sm">Patients First Worldwide · International Patient Support</p>
-              <h1 className="mt-5 max-w-3xl font-serif text-4xl font-semibold leading-[1.08] tracking-tight text-[#082237] sm:text-5xl lg:text-[58px]">When Health Matters Most, Choose a Destination Built for Excellence.</h1>
-              <h2 className="mt-5 text-xl font-semibold text-[#E6B94F] sm:text-2xl">Discover healthcare options in the United Arab Emirates</h2>
-              <p className="mt-5 max-w-2xl text-base leading-8 text-[#082237/85] sm:text-lg">The UAE brings together hospitals, healthcare professionals and modern medical infrastructure across a globally connected destination. Patients First Worldwide helps international patients navigate enquiries and coordinate practical next steps.</p>
-              <p className="mt-4 max-w-2xl text-base leading-8 text-[#082237/80]">From communication with healthcare providers to appointment coordination and, where available, travel-related arrangements, our role is to make the administrative journey clearer—not to provide clinical care.</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[#E6B94F] sm:text-sm">
+                Patients First Worldwide · International Patient Support
+              </p>
+
+              <h1 className="mt-5 max-w-3xl font-serif text-4xl font-semibold leading-[1.08] tracking-tight text-[#082237] sm:text-5xl lg:text-[58px]">
+                When Health Matters Most, Choose a Destination Built for Excellence.
+              </h1>
+
+              <h2 className="mt-5 text-xl font-semibold text-[#E6B94F] sm:text-2xl">
+                Discover healthcare options in the United Arab Emirates
+              </h2>
+
+              <p className="mt-5 max-w-2xl text-base leading-8 text-[#082237]/85 sm:text-lg">
+                The UAE brings together hospitals, healthcare professionals and
+                modern medical infrastructure across a globally connected
+                destination. Patients First Worldwide helps international
+                patients navigate enquiries and coordinate practical next
+                steps.
+              </p>
+
+              <p className="mt-4 max-w-2xl text-base leading-8 text-[#082237]/80">
+                From communication with healthcare providers to appointment
+                coordination and, where available, travel-related
+                arrangements, our role is to make the administrative journey
+                clearer—not to provide clinical care.
+              </p>
+
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a href="#case-enquiry" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#C88A2B] via-[#E6B94F] to-[#F8DF8B] px-7 py-3 text-sm font-bold text-[#082237] shadow-[0_10px_24px_rgba(200,138,43,0.24)] transition hover:-translate-y-0.5">Explore Treatment in the UAE <ArrowRight className="h-4 w-4" /></a>
-                <a href={site.whatsapp} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[#082237]/15 bg-white/90 px-7 py-3 text-sm font-bold text-[#082237] shadow-sm transition hover:border-[#C88A2B]/60"><MessageCircle className="h-4 w-4" /> WhatsApp Our Team</a>
+                <a
+                  href="#case-enquiry"
+                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#C88A2B] via-[#E6B94F] to-[#F8DF8B] px-7 py-3 text-sm font-bold text-[#082237] shadow-[0_10px_24px_rgba(200,138,43,0.24)] transition hover:-translate-y-0.5"
+                >
+                  Explore Treatment in the UAE
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+
+                <a
+                  href={site.whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-[#082237]/15 bg-white/90 px-7 py-3 text-sm font-bold text-[#082237] shadow-sm transition hover:border-[#C88A2B]/60"
+                >
+                  <MessageCircle className="h-4 w-4" />
+                  WhatsApp Our Team
+                </a>
               </div>
-              <div className="mt-6 max-w-xl border-l-2 border-[#C88A2B]/60 pl-4 text-xs leading-5 text-[#082237/70]">PFW provides non-clinical coordination. Medical assessment, advice and treatment are provided by licensed healthcare professionals.</div>
+
+              <div className="mt-6 max-w-xl border-l-2 border-[#C88A2B]/60 pl-4 text-xs leading-5 text-[#082237]/70">
+                PFW provides non-clinical coordination. Medical assessment,
+                advice and treatment are provided by licensed healthcare
+                professionals.
+              </div>
             </div>
-            <div id="case-enquiry" className="scroll-mt-24 rounded-[30px] border border-white/80 bg-white/95 p-7 shadow-[0_25px_80px_rgba(8,34,55,0.14)] backdrop-blur sm:p-9 lg:p-10">
-              <div className="mb-6"><p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#E6B94F]">Start Here</p><h2 className="mt-2 font-serif text-2xl font-semibold text-[#082237] sm:text-3xl">Tell Us About Your Treatment Needs</h2><p className="mt-2 text-sm leading-6 text-[#082237/70]">Share a few basic details so our team can understand your enquiry and explain available coordination options.</p></div>
-              <Suspense fallback={<div className="min-h-[420px] animate-pulse rounded-2xl bg-[#FAF8F2]" />}><InboundContactForm /></Suspense>
-              <div className="mt-5 flex items-start gap-2 rounded-2xl bg-[#FAF8F2] p-4 text-xs leading-5 text-[#082237/70]"><ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-[#E6B94F]" /><span>Please do not enter detailed medical records or sensitive health information in this initial form. Our team can explain appropriate document-sharing steps if needed.</span></div>
+
+            <div
+              id="case-enquiry"
+              className="scroll-mt-24 rounded-[30px] border border-white/80 bg-white/95 p-7 shadow-[0_25px_80px_rgba(8,34,55,0.14)] backdrop-blur sm:p-9 lg:p-10"
+            >
+              <Suspense
+                fallback={
+                  <div className="min-h-[420px] animate-pulse rounded-2xl bg-[#FAF8F2]" />
+                }
+              >
+                <InboundContactForm />
+              </Suspense>
+
+              <div className="mt-5 flex items-start gap-2 rounded-2xl bg-[#FAF8F2] p-4 text-xs leading-5 text-[#082237]/70">
+                <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-[#E6B94F]" />
+
+                <span>
+                  Please do not enter detailed medical records or sensitive
+                  health information in this initial form. Our team can
+                  explain appropriate document-sharing steps if needed.
+                </span>
+              </div>
             </div>
           </div>
+
           <div className="mt-12 grid overflow-hidden rounded-[26px] bg-[#082237] shadow-[0_18px_50px_rgba(8,34,55,0.16)] sm:grid-cols-3">
-            {[{title:"International Medical Expertise",text:"Explore healthcare options across a range of specialties."},{title:"Provider & Appointment Coordination",text:"Support with communication and appointment-related next steps, subject to availability."},{title:"Practical Journey Support",text:"Discuss administrative and travel-related coordination where available."}].map((item,i)=><div key={item.title} className={`p-6 text-center sm:p-7 ${i<2?"border-b border-white/10 sm:border-b-0 sm:border-r":""}`}><div className="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-[#C88A2B] to-[#F8DF8B]">{i===0?<Stethoscope className="h-5 w-5 text-[#082237]"/>:i===1?<Users className="h-5 w-5 text-[#082237]"/>:<Plane className="h-5 w-5 text-[#082237]"/>}</div><h3 className="mt-4 font-serif text-lg font-bold text-white">{item.title}</h3><p className="mt-2 text-sm leading-6 text-white/70">{item.text}</p></div>)}
+            {[
+              {
+                title: "International Medical Expertise",
+                text: "Explore healthcare options across a range of specialties.",
+              },
+              {
+                title: "Provider & Appointment Coordination",
+                text: "Support with communication and appointment-related next steps, subject to availability.",
+              },
+              {
+                title: "Practical Journey Support",
+                text: "Discuss administrative and travel-related coordination where available.",
+              },
+            ].map((item, i) => (
+              <div
+                key={item.title}
+                className={`p-6 text-center sm:p-7 ${
+                  i < 2
+                    ? "border-b border-white/10 sm:border-b-0 sm:border-r"
+                    : ""
+                }`}
+              >
+                <div className="mx-auto flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-[#C88A2B] to-[#F8DF8B]">
+                  {i === 0 ? (
+                    <Stethoscope className="h-5 w-5 text-[#082237]" />
+                  ) : i === 1 ? (
+                    <Users className="h-5 w-5 text-[#082237]" />
+                  ) : (
+                    <Plane className="h-5 w-5 text-[#082237]" />
+                  )}
+                </div>
+
+                <h3 className="mt-4 font-serif text-lg font-bold text-white">
+                  {item.title}
+                </h3>
+
+                <p className="mt-2 text-sm leading-6 text-white/70">
+                  {item.text}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-20 sm:py-24"><div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10"><div className="mx-auto max-w-3xl text-center"><p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#E6B94F]">A Global Healthcare Destination</p><h2 className={`mt-4 ${sectionTitle}`}>Why Patients Explore the UAE</h2><p className="mt-5 text-base leading-8 text-[#082237/80] sm:text-lg">Dubai and Abu Dhabi offer a range of healthcare providers and services within an internationally connected setting. The right options depend on each patient’s needs and assessment by licensed professionals.</p></div><div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{[{icon:<Stethoscope className="h-6 w-6 text-[#E6B94F]"/>,title:"Medical expertise",text:"Healthcare professionals with varied training and clinical experience."},{icon:<Building2 className="h-6 w-6 text-[#E6B94F]"/>,title:"Hospitals & technology",text:"Providers invest in medical facilities, diagnostics and treatment technologies."},{icon:<Users className="h-6 w-6 text-[#E6B94F]"/>,title:"Multidisciplinary care",text:"Some complex conditions may involve coordination among multiple specialists."},{icon:<Plane className="h-6 w-6 text-[#E6B94F]"/>,title:"Global connectivity",text:"Dubai and Abu Dhabi connect with destinations across many regions."}].map(x=><div key={x.title} className="rounded-[24px] bg-[#082237] p-6 text-white"><div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-white/10">{x.icon}</div><h3 className="font-serif text-lg font-bold">{x.title}</h3><p className="mt-3 text-sm leading-7 text-white/70">{x.text}</p></div>)}</div></div></section>
+      {/* WHY UAE */}
+      <section className="bg-white py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#E6B94F]">
+              A Global Healthcare Destination
+            </p>
 
-      <section className="bg-[#FAF8F2] py-20 sm:py-24"><div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10"><div className="mx-auto max-w-3xl text-center"><p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#E6B94F]">Care Across Specialties</p><h2 className={`mt-4 ${sectionTitle}`}>Explore Healthcare Areas Across the UAE</h2><p className="mt-5 text-base leading-8 text-[#082237/80]">PFW can discuss your enquiry and help coordinate communication with relevant healthcare providers, subject to availability. Clinical suitability is determined by the provider.</p></div><div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">{specialties.map(([title,text])=><div key={title} className={cardClass}><div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#082237]"><CheckCircle2 className="h-6 w-6 text-[#E6B94F]"/></div><h3 className="font-serif text-xl font-bold text-[#082237]">{title}</h3><p className="mt-3 text-sm leading-7 text-[#082237/80]">{text}</p></div>)}</div><p className="mt-6 text-center text-xs leading-6 text-[#082237/70]">This overview is not a recommendation or confirmation that a specific treatment or provider is suitable or available.</p></div></section>
+            <h2 className={`mt-4 ${sectionTitle}`}>
+              Why Patients Explore the UAE
+            </h2>
 
-      <section className="bg-white py-20 sm:py-24"><div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10"><div className="mx-auto max-w-3xl text-center"><p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#E6B94F]">Two Connected Cities</p><h2 className={`mt-4 ${sectionTitle}`}>Dubai or Abu Dhabi?</h2><p className="mt-5 text-base leading-8 text-[#082237/80]">You do not need to choose a destination before starting an enquiry. Tell us what you are looking for, and we can discuss the coordination steps that may be available.</p></div><div className="mt-12 grid gap-6 md:grid-cols-2"><div className="rounded-[28px] border border-[#082237/10] bg-[#FAF8F2] p-8"><MapPin className="h-7 w-7 text-[#E6B94F]"/><h3 className="mt-4 font-serif text-2xl font-bold">Dubai</h3><p className="mt-3 text-sm leading-7 text-[#082237/80]">An internationally connected city with a range of hospitals, specialist centres and supporting travel infrastructure.</p></div><div className="rounded-[28px] border border-[#082237/10] bg-[#FAF8F2] p-8"><MapPin className="h-7 w-7 text-[#E6B94F]"/><h3 className="mt-4 font-serif text-2xl font-bold">Abu Dhabi</h3><p className="mt-3 text-sm leading-7 text-[#082237/80]">The UAE capital has hospitals and specialist services across a range of medical areas.</p></div></div></div></section>
+            <p className="mt-5 text-base leading-8 text-[#082237]/80 sm:text-lg">
+              The UAE offers healthcare providers and services across its
+              Emirates within an internationally connected setting. The right
+              options depend on each patient’s needs and assessment by
+              licensed professionals.
+            </p>
+          </div>
 
-      <section className="bg-[#FAF8F2] py-20 sm:py-24"><div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10"><div className="mx-auto max-w-3xl text-center"><p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#E6B94F]">How We Work</p><h2 className={`mt-4 ${sectionTitle}`}>Four Steps to Begin Your Treatment Journey</h2><p className="mt-5 text-base leading-8 text-[#082237/80]">From the first enquiry to understanding practical next steps, PFW provides a coordination point for your journey.</p></div><div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">{steps.map(s=><div key={s.n} className="rounded-[26px] border border-[#082237/10] bg-white p-7"><p className="text-sm font-bold tracking-[0.2em] text-[#E6B94F]">{s.n}</p><h3 className="mt-4 font-serif text-xl font-bold text-[#082237]">{s.title}</h3><p className="mt-3 text-sm leading-7 text-[#082237/80]">{s.text}</p></div>)}</div></div></section>
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              {
+                icon: <Stethoscope className="h-6 w-6 text-[#E6B94F]" />,
+                title: "Medical expertise",
+                text: "Healthcare professionals with varied training and clinical experience.",
+              },
+              {
+                icon: <Building2 className="h-6 w-6 text-[#E6B94F]" />,
+                title: "Hospitals & technology",
+                text: "Providers invest in medical facilities, diagnostics and treatment technologies.",
+              },
+              {
+                icon: <Users className="h-6 w-6 text-[#E6B94F]" />,
+                title: "Multidisciplinary care",
+                text: "Some complex conditions may involve coordination among multiple specialists.",
+              },
+              {
+                icon: <Plane className="h-6 w-6 text-[#E6B94F]" />,
+                title: "Global connectivity",
+                text: "The UAE connects with destinations across the Middle East, Asia, Africa, Europe and beyond.",
+              },
+            ].map((x) => (
+              <div
+                key={x.title}
+                className="rounded-[24px] bg-[#082237] p-6 text-white"
+              >
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-white/10">
+                  {x.icon}
+                </div>
 
-      <section className="bg-white py-20 sm:py-24"><div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10"><div className="grid items-center gap-10 lg:grid-cols-[0.8fr_1.2fr]"><div><p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#E6B94F]">Already Have a Diagnosis?</p><h2 className={`mt-4 ${sectionTitle}`}>Explore Your Next Steps in the UAE</h2><p className="mt-5 text-base leading-8 text-[#082237/80]">If you already have a diagnosis or proposed treatment plan, you can tell us what support you are seeking. Our team can explain available coordination options and how communication with relevant providers may be arranged.</p><a href="#case-enquiry" className="mt-7 inline-flex min-h-12 items-center gap-2 rounded-full bg-gradient-to-r from-[#C88A2B] via-[#E6B94F] to-[#F8DF8B] px-7 py-3 text-sm font-bold text-[#082237]">Submit an Enquiry <ArrowRight className="h-4 w-4"/></a></div><div className="grid gap-4 sm:grid-cols-2">{["Specialist consultations","Second-opinion enquiries","Complex surgery enquiries","Cancer and cardiac care enquiries","Advanced diagnostics","IVF and reproductive medicine","Paediatric care enquiries","Rehabilitation and complex care"].map(item=><div key={item} className="flex items-start gap-3 rounded-2xl border border-[#082237/10] bg-[#FAF8F2] p-4"><CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#E6B94F]"/><span className="text-sm leading-6 text-[#082237/85]">{item}</span></div>)}</div></div></div></section>
+                <h3 className="font-serif text-lg font-bold">{x.title}</h3>
 
-      <section className="bg-[#FAF8F2] py-20 sm:py-24"><div className="mx-auto max-w-4xl px-6 sm:px-8"><div className="text-center"><p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#E6B94F]">Frequently Asked Questions</p><h2 className={`mt-4 ${sectionTitle}`}>Before You Begin</h2></div><div className="mt-10 divide-y divide-[#082237/10] rounded-[26px] border border-[#082237/10] bg-white px-6 sm:px-8">{faqs.map(f=><details key={f.q} className="group py-5"><summary className="cursor-pointer list-none pr-6 font-semibold text-[#082237]">{f.q}<span className="float-right text-[#E6B94F] transition group-open:rotate-45">+</span></summary><p className="mt-3 text-sm leading-7 text-[#082237/80]">{f.a}</p></details>)}</div></div></section>
+                <p className="mt-3 text-sm leading-7 text-white/70">
+                  {x.text}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-      <section className="bg-[#082237] py-14 sm:py-16"><div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-7 px-6 sm:px-8 md:flex-row md:items-center lg:px-10"><div><p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#F0C45B]">Your Gateway to Healthcare in the UAE</p><h2 className="mt-3 max-w-3xl font-serif text-3xl font-semibold text-white sm:text-4xl">Your Journey Can Begin with One Conversation.</h2><p className="mt-3 max-w-2xl text-sm leading-7 text-white/70">Tell us where you are travelling from and what kind of coordination support you are looking for. We will explain the next steps available for your enquiry.</p></div><div className="flex w-full flex-col gap-3 sm:w-auto sm:min-w-64"><a href="#case-enquiry" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#C88A2B] via-[#E6B94F] to-[#F8DF8B] px-7 py-3 text-sm font-bold text-[#082237]">Request a Coordinator Call <ArrowRight className="h-4 w-4"/></a><a href={site.whatsapp} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/25 px-7 py-3 text-sm font-bold text-white hover:bg-white/10"><MessageCircle className="h-4 w-4"/> WhatsApp Our Team</a></div></div></section>
-      <footer className="bg-[#082237] px-6 pb-10 pt-8 sm:px-8 sm:pb-12"><div className="mx-auto max-w-5xl rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-5 text-center sm:px-8 sm:py-6"><p className="mx-auto max-w-4xl text-xs leading-6 text-white/70 sm:text-sm sm:leading-7">Patients First Worldwide provides international patient support and non-clinical coordination. PFW does not diagnose conditions, prescribe treatment or provide medical advice, and does not guarantee appointment availability or outcomes. Medical decisions are made by licensed healthcare professionals. In a medical emergency, contact local emergency services.</p></div></footer>
-      <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 border-t border-white/10 bg-[#082237]/95 p-2 backdrop-blur sm:hidden"><a href="#case-enquiry" className="rounded-full bg-gradient-to-r from-[#C88A2B] to-[#F8DF8B] px-3 py-3 text-center text-sm font-bold text-[#082237]">Start Enquiry</a><a href={site.whatsapp} target="_blank" rel="noopener noreferrer" className="rounded-full px-3 py-3 text-center text-sm font-bold text-white">WhatsApp</a></div>
+      {/* 16 SPECIALTIES */}
+      <section className="bg-[#FAF8F2] py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#E6B94F]">
+              Care Across Specialties
+            </p>
+
+            <h2 className={`mt-4 ${sectionTitle}`}>
+              Explore Healthcare Areas Across the UAE
+            </h2>
+
+            <p className="mt-5 text-base leading-8 text-[#082237]/80">
+              PFW can discuss your enquiry and help coordinate communication
+              with relevant healthcare providers, subject to availability.
+              Clinical suitability is determined by the provider.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {specialties.map(([title, text]) => (
+              <div key={title} className={cardClass}>
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-[#082237]">
+                  <CheckCircle2 className="h-6 w-6 text-[#E6B94F]" />
+                </div>
+
+                <h3 className="font-serif text-xl font-bold text-[#082237]">
+                  {title}
+                </h3>
+
+                <p className="mt-3 text-sm leading-7 text-[#082237]/80">
+                  {text}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-6 text-center text-xs leading-6 text-[#082237]/70">
+            This overview is not a recommendation or confirmation that a
+            specific treatment or provider is suitable or available.
+          </p>
+        </div>
+      </section>
+
+      {/* HEALTHCARE ACROSS THE UAE */}
+      <section className="bg-white py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#E6B94F]">
+              Healthcare Across the UAE
+            </p>
+
+            <h2 className={`mt-4 ${sectionTitle}`}>
+              Care Options Across the Emirates
+            </h2>
+
+            <p className="mt-5 text-base leading-8 text-[#082237]/80">
+              You do not need to choose a city before starting an enquiry.
+              Tell us what you are looking for, your preferred location if you
+              have one, and what kind of coordination support you need. We can
+              discuss available options across the United Arab Emirates,
+              subject to provider availability.
+            </p>
+          </div>
+
+          <div className="mt-12 rounded-[30px] border border-[#082237]/10 bg-[#FAF8F2] p-8 sm:p-10">
+            <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+              <div>
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#082237]">
+                  <MapPin className="h-7 w-7 text-[#E6B94F]" />
+                </div>
+
+                <h3 className="mt-5 font-serif text-2xl font-bold text-[#082237] sm:text-3xl">
+                  Your Preferred UAE Destination
+                </h3>
+
+                <p className="mt-3 text-sm leading-7 text-[#082237]/80">
+                  Whether your preference is Dubai, Abu Dhabi, Sharjah or
+                  another Emirate, you can tell us where you would like to
+                  explore care.
+                </p>
+              </div>
+
+              <div className="grid gap-3 sm:grid-cols-2">
+                {[
+                  "Dubai",
+                  "Abu Dhabi",
+                  "Sharjah",
+                  "Ajman",
+                  "Ras Al Khaimah",
+                  "Fujairah",
+                  "Umm Al Quwain",
+                  "Not sure yet",
+                ].map((location) => (
+                  <div
+                    key={location}
+                    className="flex items-center gap-3 rounded-2xl border border-[#082237]/10 bg-white px-5 py-4"
+                  >
+                    <MapPin className="h-5 w-5 shrink-0 text-[#E6B94F]" />
+
+                    <span className="text-sm font-semibold text-[#082237]">
+                      {location}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="mt-8 border-t border-[#082237]/10 pt-6 text-center">
+              <p className="text-sm leading-7 text-[#082237]/75">
+                Not sure which location is right for your needs? That is okay.
+                Start with your enquiry and let our care coordination team
+                explain the available options.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* HOW WE WORK */}
+      <section className="bg-[#FAF8F2] py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+          <div className="mx-auto max-w-3xl text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#E6B94F]">
+              How We Work
+            </p>
+
+            <h2 className={`mt-4 ${sectionTitle}`}>
+              Four Steps to Begin Your Treatment Journey
+            </h2>
+
+            <p className="mt-5 text-base leading-8 text-[#082237]/80">
+              From the first enquiry to understanding practical next steps,
+              PFW provides a coordination point for your journey.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {steps.map((s) => (
+              <div
+                key={s.n}
+                className="rounded-[26px] border border-[#082237]/10 bg-white p-7"
+              >
+                <p className="text-sm font-bold tracking-[0.2em] text-[#E6B94F]">
+                  {s.n}
+                </p>
+
+                <h3 className="mt-4 font-serif text-xl font-bold text-[#082237]">
+                  {s.title}
+                </h3>
+
+                <p className="mt-3 text-sm leading-7 text-[#082237]/80">
+                  {s.text}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* NEXT STEPS */}
+      <section className="bg-white py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
+          <div className="grid items-center gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#E6B94F]">
+                Already Have a Diagnosis?
+              </p>
+
+              <h2 className={`mt-4 ${sectionTitle}`}>
+                Explore Your Next Steps in the UAE
+              </h2>
+
+              <p className="mt-5 text-base leading-8 text-[#082237]/80">
+                If you already have a diagnosis or proposed treatment plan,
+                you can tell us what support you are seeking. Our team can
+                explain available coordination options and how communication
+                with relevant providers may be arranged.
+              </p>
+
+              <a
+                href="#case-enquiry"
+                className="mt-7 inline-flex min-h-12 items-center gap-2 rounded-full bg-gradient-to-r from-[#C88A2B] via-[#E6B94F] to-[#F8DF8B] px-7 py-3 text-sm font-bold text-[#082237]"
+              >
+                Submit an Enquiry
+                <ArrowRight className="h-4 w-4" />
+              </a>
+            </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              {[
+                "Specialist consultations",
+                "Second-opinion enquiries",
+                "Complex surgery enquiries",
+                "Cancer and cardiac care enquiries",
+                "Advanced diagnostics",
+                "IVF and reproductive medicine",
+                "Paediatric care enquiries",
+                "Rehabilitation and complex care",
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="flex items-start gap-3 rounded-2xl border border-[#082237]/10 bg-[#FAF8F2] p-4"
+                >
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[#E6B94F]" />
+
+                  <span className="text-sm leading-6 text-[#082237]/85">
+                    {item}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-[#FAF8F2] py-20 sm:py-24">
+        <div className="mx-auto max-w-4xl px-6 sm:px-8">
+          <div className="text-center">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#E6B94F]">
+              Frequently Asked Questions
+            </p>
+
+            <h2 className={`mt-4 ${sectionTitle}`}>Before You Begin</h2>
+          </div>
+
+          <div className="mt-10 divide-y divide-[#082237]/10 rounded-[26px] border border-[#082237]/10 bg-white px-6 sm:px-8">
+            {faqs.map((f) => (
+              <details key={f.q} className="group py-5">
+                <summary className="cursor-pointer list-none pr-6 font-semibold text-[#082237]">
+                  {f.q}
+
+                  <span className="float-right text-[#E6B94F] transition group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+
+                <p className="mt-3 text-sm leading-7 text-[#082237]/80">
+                  {f.a}
+                </p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FINAL CTA */}
+      <section className="bg-[#082237] py-14 sm:py-16">
+        <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-7 px-6 sm:px-8 md:flex-row md:items-center lg:px-10">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#F0C45B]">
+              Your Gateway to Healthcare in the UAE
+            </p>
+
+            <h2 className="mt-3 max-w-3xl font-serif text-3xl font-semibold text-white sm:text-4xl">
+              Your Journey Can Begin with One Conversation.
+            </h2>
+
+            <p className="mt-3 max-w-2xl text-sm leading-7 text-white/70">
+              Tell us where you are travelling from and what kind of
+              coordination support you are looking for. We will explain the
+              next steps available for your enquiry.
+            </p>
+          </div>
+
+          <div className="flex w-full flex-col gap-3 sm:w-auto sm:min-w-64">
+            <a
+              href="#case-enquiry"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#C88A2B] via-[#E6B94F] to-[#F8DF8B] px-7 py-3 text-sm font-bold text-[#082237]"
+            >
+              Request a Coordinator Call
+              <ArrowRight className="h-4 w-4" />
+            </a>
+
+            <a
+              href={site.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-white/25 px-7 py-3 text-sm font-bold text-white hover:bg-white/10"
+            >
+              <MessageCircle className="h-4 w-4" />
+              WhatsApp Our Team
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* FOOTER */}
+      <footer className="bg-[#082237] px-6 pb-10 pt-8 sm:px-8 sm:pb-12">
+        <div className="mx-auto max-w-5xl rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-5 text-center sm:px-8 sm:py-6">
+          <p className="mx-auto max-w-4xl text-xs leading-6 text-white/70 sm:text-sm sm:leading-7">
+            Patients First Worldwide provides international patient support
+            and non-clinical coordination. PFW does not diagnose conditions,
+            prescribe treatment or provide medical advice, and does not
+            guarantee appointment availability or outcomes. Medical decisions
+            are made by licensed healthcare professionals. In a medical
+            emergency, contact local emergency services.
+          </p>
+        </div>
+      </footer>
+
+      {/* MOBILE STICKY CTA */}
+      <div className="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 border-t border-white/10 bg-[#082237]/95 p-2 backdrop-blur sm:hidden">
+        <a
+          href="#case-enquiry"
+          className="rounded-full bg-gradient-to-r from-[#C88A2B] to-[#F8DF8B] px-3 py-3 text-center text-sm font-bold text-[#082237]"
+        >
+          Start Enquiry
+        </a>
+
+        <a
+          href={site.whatsapp}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="rounded-full px-3 py-3 text-center text-sm font-bold text-white"
+        >
+          WhatsApp
+        </a>
+      </div>
     </main>
   );
 }
