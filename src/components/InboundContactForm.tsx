@@ -85,7 +85,7 @@ export function InboundContactForm() {
         </p>
 
         <p className="text-base leading-7 text-[#082237]/90">
-          Leave your contact details, and a PFW care coordinator will reach
+          Leave your contact details, and a Patients First Worldwide coordinator will reach
           out to listen, understand what matters to you, and help you explore
           your next steps.
         </p>
@@ -250,7 +250,7 @@ export function InboundContactForm() {
         />
         <p className="mt-1 text-xs leading-relaxed text-[#082237]/70">
           This form is the first step in your enquiry. Your
-PFW coordinator will follow up with you and
+Patients First Worldwide coordinator will follow up with you and
 arrange the sharing of any medical reports
 needed for coordination.
         </p>
