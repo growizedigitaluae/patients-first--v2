@@ -1,5 +1,5 @@
 export const site = {
-  name: "Patient First Worldwide",
+  name: "Patients First Worldwide",
   legalName: "Patients First Worldwide",
   tagline: "Your Dedicated Healthcare Coordination Partner",
   url: "https://www.patientsfirstworldwide.com",
