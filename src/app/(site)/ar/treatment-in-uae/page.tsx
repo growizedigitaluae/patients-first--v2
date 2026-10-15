@@ -39,7 +39,7 @@ const specialties = [
   "جراحة العظام والعمود الفقري",
   "طب الأعصاب وجراحة الأعصاب",
   "صحة المرأة والخصوبة",
-  "طب الأطفال وحديثو الولادة",
+  "طب الأطفال وحديثي الولادة",
   "طب العيون",
   "المسالك البولية وأمراض الكلى",
   "أمراض الجهاز الهضمي والكبد",
@@ -48,18 +48,18 @@ const specialties = [
   "طب الأسنان وجراحة الفم",
   "رعاية السمنة والتمثيل الغذائي",
   "الجراحة التجميلية والترميمية",
-  "الفحوصات الصحية التنفيذية",
+  "الفحوصات الصحية الشاملة للمديرين التنفيذيين",
   "الحالات النادرة والمعقدة",
 ];
 
 const faqs = [
   {
     q: "هل تقدم Patients First Worldwide العلاج الطبي؟",
-    a: "لا. تقدم PFW خدمات دعم المرضى والتنسيق غير السريري. التشخيص والمشورة الطبية والتوصيات العلاجية والقرارات السريرية هي من مسؤولية المهنيين الصحيين المرخصين.",
+    a: "لا. تقدم Patients First Worldwide خدمات دعم المرضى والتنسيق غير السريري. التشخيص والمشورة الطبية والتوصيات العلاجية والقرارات السريرية هي من مسؤولية المهنيين الصحيين المرخصين.",
   },
   {
     q: "هل يمكنكم ضمان مستشفى أو موعد أو نتيجة علاجية؟",
-    a: "لا. يحدد مقدمو الرعاية الصحية الملاءمة الطبية والمواعيد المتاحة والقرارات العلاجية. ولا تضمن PFW المواعيد أو النتائج العلاجية.",
+    a: "لا. يحدد مقدمو الرعاية الصحية الملاءمة الطبية والمواعيد المتاحة والقرارات العلاجية. ولا تضمن Patients First Worldwide المواعيد أو النتائج العلاجية.",
   },
   {
     q: "ما تكلفة خدمات التنسيق؟",
@@ -70,7 +70,7 @@ const faqs = [
     a: "ليس من الضروري أن تحدد مدينة معينة قبل التواصل معنا. يمكنك إخبارنا بما تبحث عنه وموقعك المفضل، وسنناقش خيارات التنسيق المتاحة في مختلف أنحاء الإمارات، حسب توافر مقدمي الرعاية.",
   },
   {
-    q: "هل أرسل تقاريري الطبية عبر هذا النموذج؟",
+    q: "هل أشارك تقاريري الطبية عبر هذا النموذج؟",
     a: "يرجى عدم إدخال السجلات الطبية التفصيلية أو المعلومات الصحية الحساسة في هذا الاستفسار الأولي. إذا كانت المستندات مطلوبة، يمكن لفريقنا توضيح الطريقة المناسبة لمشاركتها.",
   },
 ];
@@ -89,23 +89,21 @@ export default function ArabicInboundTreatmentUAEPage() {
           HERO
       ========================================================= */}
       <section className="relative overflow-hidden bg-[#F8F6EF]">
-        {/* Decorative background shapes */}
         <div className="absolute -left-32 -top-32 -z-0 h-[520px] w-[520px] rounded-full bg-gradient-to-br from-[#C88A2B]/15 via-[#F7D77D]/10 to-transparent blur-3xl" />
 
         <div className="absolute -right-40 bottom-[-240px] -z-0 h-[520px] w-[520px] rounded-full bg-[#082237]/[0.035] blur-3xl" />
 
         <div className="relative z-10 mx-auto max-w-[1500px] px-6 pb-12 pt-28 sm:px-8 sm:pb-16 lg:px-12 lg:pt-32 xl:px-16">
           <div className="grid items-stretch gap-8 lg:grid-cols-[0.95fr_1.05fr] xl:gap-12">
-            {/* =====================================================
-                RIGHT SIDE IN RTL — HERO CONTENT
-            ===================================================== */}
+            {/* HERO CONTENT */}
             <div className="flex flex-col">
               <div>
                 <h1 className="max-w-3xl font-serif text-4xl font-semibold leading-[1.08] tracking-tight text-[#082237] sm:text-5xl lg:text-[58px]">
                   عندما تكون الصحة هي الأهم، اختر وجهة صُممت للتميز.
                 </h1>
 
-                <h2 className="mt-5 text-xl font-semibold leading-8 text-[#E6B94F] sm:text-2xl">
+                {/* Royal Navy Blue for readability */}
+                <h2 className="mt-5 text-xl font-semibold leading-8 text-[#082237] sm:text-2xl">
                   رعاية صحية متقدمة في الإمارات. اشعر بالتفهم والاهتمام بعيدًا
                   عن وطنك.
                 </h2>
@@ -123,7 +121,6 @@ export default function ArabicInboundTreatmentUAEPage() {
                   والإقامة، حتى تشعر أنت وعائلتك بالدعم في كل خطوة.
                 </p>
 
-                {/* CTA BUTTONS */}
                 <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                   <a
                     href="#case-enquiry"
@@ -144,16 +141,13 @@ export default function ArabicInboundTreatmentUAEPage() {
                   </a>
                 </div>
 
-                {/* Disclaimer */}
                 <div className="mt-5 max-w-xl border-r-2 border-[#C88A2B]/60 pr-4 text-xs leading-5 text-[#082237]/70">
                   تقدم Patients First Worldwide خدمات تنسيق غير سريرية. ويقدم
                   المهنيون الصحيون المرخصون التقييم الطبي والمشورة والعلاج.
                 </div>
               </div>
 
-              {/* =====================================================
-                  HERO IMAGE
-              ===================================================== */}
+              {/* HERO IMAGE */}
               <div className="mt-8 overflow-hidden rounded-[28px] border border-white/80 bg-white p-2 shadow-[0_18px_50px_rgba(8,34,55,0.12)]">
                 <div className="relative h-[220px] overflow-hidden rounded-[22px] sm:h-[260px]">
                   <Image
@@ -180,9 +174,7 @@ export default function ArabicInboundTreatmentUAEPage() {
               </div>
             </div>
 
-            {/* =====================================================
-                CONTACT FORM
-            ===================================================== */}
+            {/* CONTACT FORM */}
             <div
               id="case-enquiry"
               className="scroll-mt-24 flex h-full flex-col rounded-[30px] border border-white/80 bg-white/95 p-7 shadow-[0_25px_80px_rgba(8,34,55,0.14)] backdrop-blur sm:p-9 lg:p-10"
@@ -216,7 +208,7 @@ export default function ArabicInboundTreatmentUAEPage() {
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <div className="grid items-center gap-8 lg:grid-cols-[0.8fr_1.2fr]">
             <div>
-              <p className="text-xs font-semibold tracking-[0.2em] text-[#E6B94F]">
+              <p className="text-xs font-semibold tracking-[0.2em] text-[#082237]">
                 هل لديك تشخيص بالفعل؟
               </p>
 
@@ -272,7 +264,7 @@ export default function ArabicInboundTreatmentUAEPage() {
       <section className="bg-white py-12 sm:py-16">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-semibold tracking-[0.2em] text-[#E6B94F]">
+            <p className="text-xs font-semibold tracking-[0.2em] text-[#082237]">
               وجهة عالمية للرعاية الصحية
             </p>
 
@@ -283,7 +275,8 @@ export default function ArabicInboundTreatmentUAEPage() {
             <p className="mt-4 text-base leading-8 text-[#082237]/80 sm:text-lg">
               تجمع دولة الإمارات بين مستشفيات حاصلة على اعتماد JCI وأطباء
               متخصصين مدربين دوليًا وخيارات علاجية متقدمة. ومع Patients First
-              Worldwide، يمكنك استكشاف هذه الخبرات بدعم مصمم وفق احتياجاتك.
+              Worldwide، يمكنك استكشاف هذه الخبرات بدعم مصمم خصيصًا لتلبية
+              احتياجاتك.
             </p>
           </div>
 
@@ -337,12 +330,12 @@ export default function ArabicInboundTreatmentUAEPage() {
       <section className="bg-[#FAF8F2] py-12 sm:py-16">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-semibold tracking-[0.2em] text-[#E6B94F]">
+            <p className="text-xs font-semibold tracking-[0.2em] text-[#082237]">
               الرعاية عبر مختلف التخصصات
             </p>
 
             <h2 className={`mt-3 ${sectionTitle}`}>
-              استكشف مجالات الرعاية الصحية في الإمارات
+              استكشف التخصصات الطبية في الإمارات
             </h2>
 
             <p className="mt-4 text-base leading-8 text-[#082237]/80">
@@ -368,7 +361,8 @@ export default function ArabicInboundTreatmentUAEPage() {
                   ✓
                 </span>
 
-                <h3 className="font-serif text-[15px] font-semibold leading-5 text-[#082237] transition-colors duration-300 group-hover:text-[#9A681B]">
+                {/* Keep text Royal Navy Blue even on hover */}
+                <h3 className="font-serif text-[15px] font-semibold leading-5 text-[#082237]">
                   {title}
                 </h3>
               </div>
@@ -388,7 +382,7 @@ export default function ArabicInboundTreatmentUAEPage() {
       <section className="bg-white py-12 sm:py-16">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <div className="mx-auto max-w-3xl text-center">
-            <p className="text-xs font-semibold tracking-[0.2em] text-[#E6B94F]">
+            <p className="text-xs font-semibold tracking-[0.2em] text-[#082237]">
               الرعاية الصحية في جميع أنحاء الإمارات
             </p>
 
@@ -464,7 +458,7 @@ export default function ArabicInboundTreatmentUAEPage() {
       <section className="bg-[#FAF8F2] py-12 sm:py-16">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-10">
           <div className="mx-auto max-w-4xl text-center">
-            <p className="text-xs font-semibold tracking-[0.2em] text-[#E6B94F]">
+            <p className="text-xs font-semibold tracking-[0.2em] text-[#082237]">
               كيف نعمل
             </p>
 
@@ -488,8 +482,8 @@ export default function ArabicInboundTreatmentUAEPage() {
               },
               {
                 n: "٠٢",
-                title: "دعم مصمم حول احتياجاتك",
-                text: "توجه احتياجاتك وتفضيلاتك ومخاوفك نوع الدعم الذي نقدمه. سيتحدث معك منسق PFW ويوضح كيف يمكننا مساعدتك، وفق وتيرتك.",
+                title: "دعم مصمم خصيصًا لتلبية احتياجاتك",
+                text: "توجه احتياجاتك وتفضيلاتك ومخاوفك نوع الدعم الذي نقدمه. سيتحدث معك منسق Patients First Worldwide ويوضح كيف يمكننا مساعدتك، بالوتيرة التي تناسبك.",
               },
               {
                 n: "٠٣",
@@ -499,14 +493,14 @@ export default function ArabicInboundTreatmentUAEPage() {
               {
                 n: "٠٤",
                 title: "ننسق التفاصيل",
-                text: "عندما تكون مستعدًا، نساعد في تنسيق المواعيد ودعم السفر المتاح. ونوضح الترتيبات والتكاليف بوضوح قبل التزامك، ونبقى نقطة التواصل الخاصة بك على امتداد الرحلة.",
+                text: "عندما تكون مستعدًا، نساعد في تنسيق المواعيد ودعم السفر المتاح. ونوضح الترتيبات والتكاليف بوضوح قبل التزامك، ونبقى جهة تواصلك طوال الرحلة.",
               },
             ].map((step) => (
               <div
                 key={step.n}
                 className="rounded-[26px] border border-[#082237]/10 bg-white p-6"
               >
-                <p className="text-sm font-bold tracking-[0.2em] text-[#E6B94F]">
+                <p className="text-sm font-bold tracking-[0.2em] text-[#082237]">
                   {step.n}
                 </p>
 
@@ -523,7 +517,7 @@ export default function ArabicInboundTreatmentUAEPage() {
 
           <div className="mx-auto mt-8 max-w-3xl text-center">
             <h3 className="font-serif text-2xl font-semibold text-[#082237] sm:text-3xl">
-              لنبدأ بما يهمك.
+              لنخطُ الخطوة التالية معًا.
             </h3>
 
             <p className="mt-3 text-base leading-8 text-[#082237]/80">
@@ -535,7 +529,7 @@ export default function ArabicInboundTreatmentUAEPage() {
               href="#case-enquiry"
               className="mt-6 inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#C88A2B] via-[#E6B94F] to-[#F8DF8B] px-7 py-3 text-sm font-bold text-[#082237]"
             >
-              تحدث مع فريقنا
+              تحدث مع فريق Patients First Worldwide
               <ArrowLeft className="h-4 w-4" />
             </a>
           </div>
@@ -548,7 +542,7 @@ export default function ArabicInboundTreatmentUAEPage() {
       <section className="bg-[#FAF8F2] py-12 sm:py-16">
         <div className="mx-auto max-w-4xl px-6 sm:px-8">
           <div className="text-center">
-            <p className="text-xs font-semibold tracking-[0.2em] text-[#E6B94F]">
+            <p className="text-xs font-semibold tracking-[0.2em] text-[#082237]">
               الأسئلة الشائعة
             </p>
 
@@ -602,7 +596,7 @@ export default function ArabicInboundTreatmentUAEPage() {
               href="#case-enquiry"
               className="inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#C88A2B] via-[#E6B94F] to-[#F8DF8B] px-7 py-3 text-sm font-bold text-[#082237]"
             >
-              تواصل مع منسق رعاية من PFW
+              اطلب مكالمة من منسق رعاية لدى Patients First Worldwide
               <ArrowLeft className="h-4 w-4" />
             </a>
 
@@ -629,10 +623,11 @@ export default function ArabicInboundTreatmentUAEPage() {
         <div className="mx-auto max-w-5xl rounded-2xl border border-white/10 bg-white/[0.04] px-5 py-5 text-center sm:px-8 sm:py-6">
           <p className="mx-auto max-w-4xl text-xs leading-6 text-white/70 sm:text-sm sm:leading-7">
             تقدم Patients First Worldwide خدمات دعم المرضى والتنسيق غير
-            الطبي. لا تقدم PFW التشخيص أو العلاج أو المشورة الطبية، ولا تضمن
-            توافر المواعيد أو النتائج العلاجية. وتبقى القرارات الطبية من
-            مسؤولية مقدمي الرعاية الصحية المرخصين. في حالات الطوارئ الطبية،
-            يرجى الاتصال بخدمات الطوارئ المحلية فورًا.
+            الطبي. لا تقدم Patients First Worldwide التشخيص أو العلاج أو
+            المشورة الطبية، ولا تضمن توافر المواعيد أو النتائج العلاجية.
+            وتبقى القرارات الطبية من مسؤولية مقدمي الرعاية الصحية المرخصين.
+            في حالات الطوارئ الطبية، يرجى الاتصال بخدمات الطوارئ المحلية
+            فورًا.
           </p>
         </div>
       </footer>

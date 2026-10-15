@@ -96,7 +96,7 @@ export function ArabicInboundContactForm() {
         </p>
 
         <p className="text-base leading-7 text-[#082237]/90">
-          اترك بيانات الاتصال الخاصة بك، وسيتواصل معك منسق رعاية من PFW
+          اترك بيانات الاتصال الخاصة بك، وسيتواصل معك منسق رعاية من Patients First Worldwide
           للاستماع إليك وفهم ما يهمك، ومساعدتك في استكشاف خطواتك التالية.
         </p>
       </div>
@@ -313,7 +313,7 @@ export function ArabicInboundContactForm() {
           "جارٍ الإرسال…"
         ) : (
           <>
-            تواصل مع منسق رعاية من PFW
+            تواصل مع منسق رعاية من Patients First Worldwide
             <Send
               className="h-4 w-4"
               aria-hidden="true"
